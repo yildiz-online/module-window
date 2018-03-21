@@ -12,7 +12,7 @@ The window module wrap graphic renderer and handle inputs.
 
 ## Requirements
 
-To build this module, you will need a java 9 JDK, Mingw64, and Maven 3.
+To build this module, you will need a java 9 JDK, and Maven 3.
 
 ## Coding Style and other information
 
@@ -39,8 +39,6 @@ Go to your root directory, where you POM file is located.
 
 Then invoke maven
 
-for windows:
-
 	mvn clean install
 
 
@@ -49,8 +47,6 @@ This will compile the source code, then run the unit tests, and finally build a 
 ## Usage
 
 In your maven project, add the dependency
-
-for windows:
 
 ```xml
 <dependency>
