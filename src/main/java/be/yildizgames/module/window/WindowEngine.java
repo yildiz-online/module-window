@@ -24,7 +24,10 @@
 
 package be.yildizgames.module.window;
 
+import be.yildizgames.module.window.dummy.DummyWindowEngineProvider;
 import be.yildizgames.module.window.input.WindowInputListener;
+
+import java.util.ServiceLoader;
 
 /**
  * Window engine.
@@ -97,4 +100,9 @@ public interface WindowEngine {
      * @param listener Listener to add.
      */
     void registerInput(WindowInputListener listener);
+
+    static WindowEngine getEngine() {
+        ServiceLoader<WindowEngineProvider> provider = ServiceLoader.load(WindowEngineProvider.class);
+        return provider.findFirst().orElseGet(DummyWindowEngineProvider::new).getEngine();
+    }
 }
