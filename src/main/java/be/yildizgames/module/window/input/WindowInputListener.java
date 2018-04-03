@@ -31,6 +31,14 @@ package be.yildizgames.module.window.input;
  */
 public interface WindowInputListener {
 
+    default void keyPressed(Key key) {
+
+    }
+
+    default void keyReleased(Key key) {
+
+    }
+
     /**
      * Dispatch key from the keyboard to all listeners in the current Widget.
      *
