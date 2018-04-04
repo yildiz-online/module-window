@@ -29,6 +29,7 @@ package be.yildizgames.module.window.input;
  *
  * @author Grégory Van den Borre
  */
+@Deprecated
 public enum SpecialKey {
 
     /**

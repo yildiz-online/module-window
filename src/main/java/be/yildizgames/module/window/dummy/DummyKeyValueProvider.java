@@ -22,33 +22,18 @@
  *
  */
 
-package be.yildizgames.module.window.input;
+package be.yildizgames.module.window.dummy;
+
+import be.yildizgames.module.window.input.KeyValue;
+import be.yildizgames.module.window.input.KeyValueProvider;
 
 /**
- * Enumeration of the 4 arrow keys.
- *
  * @author Grégory Van den Borre
  */
-@Deprecated()
-public enum ArrowKey {
+public class DummyKeyValueProvider implements KeyValueProvider {
 
-    /**
-     * Arrow up key.
-     */
-    UP,
-
-    /**
-     * Arrow down key.
-     */
-    DOWN,
-
-    /**
-     * Arrow left key.
-     */
-    LEFT,
-
-    /**
-     * Arrow right key.
-     */
-    RIGHT
+    @Override
+    public KeyValue getKeyValue() {
+        return null;
+    }
 }

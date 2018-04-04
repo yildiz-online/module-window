@@ -29,6 +29,7 @@ package be.yildizgames.module.window.input;
  *
  * @author Grégory Van den Borre
  */
+@Deprecated
 @FunctionalInterface
 public interface SpecialKeyPressedListener {
 

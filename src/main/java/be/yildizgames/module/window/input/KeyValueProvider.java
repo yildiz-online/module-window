@@ -25,30 +25,9 @@
 package be.yildizgames.module.window.input;
 
 /**
- * Enumeration of the 4 arrow keys.
- *
  * @author Grégory Van den Borre
  */
-@Deprecated()
-public enum ArrowKey {
+public interface KeyValueProvider {
 
-    /**
-     * Arrow up key.
-     */
-    UP,
-
-    /**
-     * Arrow down key.
-     */
-    DOWN,
-
-    /**
-     * Arrow left key.
-     */
-    LEFT,
-
-    /**
-     * Arrow right key.
-     */
-    RIGHT
+    KeyValue getKeyValue();
 }
