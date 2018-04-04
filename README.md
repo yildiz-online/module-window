@@ -12,7 +12,7 @@ The window module wrap graphic renderer and handle inputs.
 
 ## Requirements
 
-To build this module, you will need a java 9 JDK, and Maven 3.
+To build this module, you will need the latest java JDK, and Maven 3.
 
 ## Coding Style and other information
 
@@ -42,7 +42,7 @@ Then invoke maven
 	mvn clean install
 
 
-This will compile the source code, then run the unit tests, and finally build a jar file and DLL/SO for the environment you chose.
+This will compile the source code, then run the unit tests, and finally build a jar file.
 
 ## Usage
 
