@@ -25,63 +25,16 @@
 
 package be.yildizgames.module.window.input;
 
-import be.yildizgames.module.window.dummy.DummyKeyValueProvider;
+public enum Key {
 
-import java.util.Objects;
-import java.util.ServiceLoader;
-
-public class Key {
-
-    private static final KeyValue values = Key.getKeyValue();
-
-    public static final Key ENTER = values.enter();
-
-    public static final Key CTRL = values.ctrl();
-
-    public static final Key DELETE = values.delete();
-
-    public static final Key ESC = values.esc();
-
-    public static final Key TAB = values.tab();
-
-    public static final Key UP = values.up();
-
-    public static final Key DOWN = values.down();
-
-    public static final Key LEFT = values.left();
-
-    public static final Key RIGHT = values.right();
-
-    private final int value;
-
-    private Key(int value) {
-        super();
-        this.value = value;
-    }
-
-    public static Key valueOf(int value) {
-        return new Key(value);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Key key = (Key) o;
-        return value == key.value;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(value);
-    }
-
-    private static KeyValue getKeyValue() {
-        ServiceLoader<KeyValueProvider> provider = ServiceLoader.load(KeyValueProvider.class);
-        return provider.findFirst().orElseGet(DummyKeyValueProvider::new).getKeyValue();
-    }
+    EMPTY,
+    ENTER,
+    CTRL,
+    DELETE,
+    ESC,
+    TAB,
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT,
 }

@@ -31,57 +31,18 @@ package be.yildizgames.module.window.input;
  */
 public interface WindowInputListener {
 
+    default void specialKeyPressed(Key key) {}
+
+    default void specialKeyReleased(Key key) {}
+
     /**
      * Dispatch key from the keyboard to all listeners in the current Widget.
      *
      * @param character Key pressed.
      */
-    default void keyboardKeyPressed(char character) {
-    }
+    default void keyboardKeyPressed(char character) {}
 
-    /**
-     * Keyboard enter key has been pressed.
-     */
-    default void keyboardEnterKeyPressed() {
-    }
-
-    /**
-     * Dispatch special key from the keyboard to all listeners in the current Widget.
-     *
-     * @param key Key pressed.
-     */
-    default void specialKeyPressed(SpecialKey key) {
-    }
-
-    /**
-     * Keyboard numeric pad number has been pressed.
-     *
-     * @param number Number pressed.
-     */
-    default void keyboardNumberPressed(int number) {
-    }
-
-    /**
-     * Keyboard delete key has been pressed.
-     */
-    default void keyboardDeleteKeyPressed() {
-    }
-
-    /**
-     * Keyboard arrow key has been pressed.
-     *
-     * @param key Enum value to get witch arrow has been pressed.
-     */
-    default void keyboardArrowPressed(ArrowKey key) {
-    }
-
-    /**
-     * A keyboard key has been released.
-     *
-     * @param keyCode Code of the key released.
-     */
-    default void keyReleased(int keyCode) {
-    }
+    default void keyboardKeyReleased(char character) {}
 
     /**
      * Dispatch a left button release from the mouse to all listeners in the current Widget.

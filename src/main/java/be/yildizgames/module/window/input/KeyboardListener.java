@@ -38,66 +38,23 @@ public interface KeyboardListener {
      * @param key Key pressed.
      * @return True if the listener used the key, false otherwise.
      */
-    @Deprecated
     boolean keyPressed(char key);
 
-    /**
-     * Called when enter key is pressed.
-     *
-     * @return True if the listener used the key, false otherwise.
-     */
-    @Deprecated
-    default boolean enterKeyPressed() {
-        return false;
-    }
-
-    /**
-     * Called when delete key is pressed.
-     *
-     * @return True if the listener used the key, false otherwise.
-     */
-    @Deprecated
-    default boolean deleteKeyPressed() {
-        return false;
-    }
-
-    /**
-     * Called when an arrow key has been pressed.
-     *
-     * @param arrow Enum value to get witch arrow has been pressed.
-     * @return True if the listener used the key, false otherwise.
-     */
-    @Deprecated
-    default boolean arrowKeyPressed(ArrowKey arrow) {
-        return false;
-    }
 
     /**
      * Called when a key is released.
      *
      * @param key Code of the key.
      */
-    @Deprecated
-    default void keyReleased(int key) {
+    default void keyReleased(char key) {
         //Default empty implementation.
     }
 
-    /**
-     * Called when a number from the keypad is pressed.
-     *
-     * @param number Number pressed.
-     * @return True if the listener used the key, false otherwise.
-     */
-    @Deprecated
-    default boolean numberPressed(int number) {
-        return false;
-    }
-
-    default void keyPressed(Key key) {
+    default void specialKeyPressed(Key key) {
 
     }
 
-    default void keyReleased(Key key) {
+    default void specialKeyReleased(Key key) {
 
     }
 }
