@@ -57,6 +57,7 @@ public enum Key {
     PAGE_DOWN,
     BREAK,
     ALT,
-    PAUSE
+    PAUSE,
+    DELETE
 
 }
