@@ -25,6 +25,7 @@
 package be.yildizgames.module.color;
 
 import java.io.Serializable;
+import java.util.Random;
 
 /**
  * Class representing RGBA color.
@@ -186,6 +187,11 @@ public final class Color implements Serializable {
         } else {
             return value;
         }
+    }
+
+    public static Color random() {
+        Random r = new Random();
+        return Color.rgb(r.nextInt(MAX_VALUE), r.nextInt(MAX_VALUE), r.nextInt(MAX_VALUE));
     }
 
     /**
