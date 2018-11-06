@@ -39,6 +39,9 @@ public final class Color implements Serializable {
      * Black constant.
      */
     public static final Color BLACK = Color.rgb(0, 0, 0);
+
+    private static final Random RANDOM = new Random();
+
     /**
      * Max value for a color parameter(255).
      */
@@ -190,8 +193,7 @@ public final class Color implements Serializable {
     }
 
     public static Color random() {
-        Random r = new Random();
-        return Color.rgb(r.nextInt(MAX_VALUE), r.nextInt(MAX_VALUE), r.nextInt(MAX_VALUE));
+        return Color.rgb(RANDOM.nextInt(MAX_VALUE), RANDOM.nextInt(MAX_VALUE), RANDOM.nextInt(MAX_VALUE));
     }
 
     /**
