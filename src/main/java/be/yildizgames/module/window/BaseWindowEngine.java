@@ -22,72 +22,44 @@
  *
  */
 
-package be.yildizgames.module.window.dummy;
+package be.yildizgames.module.window;
 
-import be.yildizgames.module.window.Cursor;
-import be.yildizgames.module.window.ScreenSize;
-import be.yildizgames.module.window.BaseWindowEngine;
-import be.yildizgames.module.window.WindowHandle;
+import be.yildizgames.module.window.dummy.DummyWindowEngineProvider;
 import be.yildizgames.module.window.input.WindowInputListener;
 
+import java.util.ServiceLoader;
+
 /**
+ * Window engine.
+ *
  * @author Grégory Van den Borre
  */
-public class DummyWindowEngine implements BaseWindowEngine {
+public interface BaseWindowEngine extends WindowEngine {
 
-    @Override
-    public Cursor createCursor(Cursor cursor) {
-        return cursor;
+    /**
+     * Update the window wrapping the game viewports.
+     */
+    void updateWindow();
+
+    /**
+     * Delete the resources used when loading the engine.
+     */
+    void deleteLoadingResources();
+
+    /**
+     * @return The handle of this window.
+     */
+    WindowHandle getHandle();
+
+    /**
+     * Add an input listener to retrieve input event from this window.
+     *
+     * @param listener Listener to add.
+     */
+    void registerInput(WindowInputListener listener);
+
+    static BaseWindowEngine getEngine() {
+        ServiceLoader<WindowEngineProvider> provider = ServiceLoader.load(WindowEngineProvider.class);
+        return provider.findFirst().orElseGet(DummyWindowEngineProvider::new).getEngine();
     }
-
-    @Override
-    public void setWindowTitle(String title) {
-        // does nothing.
-    }
-
-    @Override
-    public void setCursor(Cursor cursor) {
-        // does nothing.
-    }
-
-    @Override
-    public void updateWindow() {
-        // does nothing.
-    }
-
-    @Override
-    public void showCursor() {
-        // does nothing.
-    }
-
-    @Override
-    public void hideCursor() {
-        // does nothing.
-    }
-
-    @Override
-    public ScreenSize getScreenSize() {
-        return new ScreenSize(1,1);
-    }
-
-    @Override
-    public void setWindowIcon(String file) {
-        // does nothing.
-    }
-
-    @Override
-    public void deleteLoadingResources() {
-        // does nothing.
-    }
-
-    @Override
-    public WindowHandle getHandle() {
-        return new WindowHandle(0L);
-    }
-
-    @Override
-    public void registerInput(WindowInputListener listener) {
-        // does nothing.
-    }
-
 }

@@ -21,13 +21,7 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  SOFTWARE.
  *
  */
-
 package be.yildizgames.module.window;
-
-import be.yildizgames.module.window.dummy.DummyWindowEngineProvider;
-import be.yildizgames.module.window.input.WindowInputListener;
-
-import java.util.ServiceLoader;
 
 /**
  * Window engine.
@@ -41,7 +35,7 @@ public interface WindowEngine {
      *
      * @param cursor Contains the data to build the cursor.
      */
-    void createCursor(Cursor cursor);
+    Cursor createCursor(Cursor cursor);
 
     /**
      * Set the title for the main window.
@@ -56,11 +50,6 @@ public interface WindowEngine {
      * @param cursor Cursor to use.
      */
     void setCursor(Cursor cursor);
-
-    /**
-     * Update the window wrapping the game viewports.
-     */
-    void updateWindow();
 
     /**
      * Display the mouse.
@@ -83,26 +72,4 @@ public interface WindowEngine {
      * @param file Icon file.
      */
     void setWindowIcon(String file);
-
-    /**
-     * Delete the resources used when loading the engine.
-     */
-    void deleteLoadingResources();
-
-    /**
-     * @return The handle of this window.
-     */
-    WindowHandle getHandle();
-
-    /**
-     * Add an input listener to retrieve input event from this window.
-     *
-     * @param listener Listener to add.
-     */
-    void registerInput(WindowInputListener listener);
-
-    static WindowEngine getEngine() {
-        ServiceLoader<WindowEngineProvider> provider = ServiceLoader.load(WindowEngineProvider.class);
-        return provider.findFirst().orElseGet(DummyWindowEngineProvider::new).getEngine();
-    }
 }
