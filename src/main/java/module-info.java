@@ -24,6 +24,9 @@
 
 module be.yildizgames.module.window {
 
+    requires be.yildizgames.common.geometry;
+    requires be.yildizgames.common.util;
+
     exports be.yildizgames.module.color;
     exports be.yildizgames.module.coordinate;
     exports be.yildizgames.module.window;
