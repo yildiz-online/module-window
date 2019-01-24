@@ -1,4 +1,6 @@
 # Yildiz-Engine module-window.
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyildiz-online%2Fmodule-window.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fyildiz-online%2Fmodule-window?ref=badge_shield)
+
 
 This is the official repository of the window Module, part of the Yildiz-Engine project.
 The window module wrap graphic renderer and handle inputs.
@@ -32,6 +34,9 @@ https://sonarqube.com/overview?id=be.yildiz-games:module-window
 
 All source code files are licensed under the permissive MIT license
 (http://opensource.org/licenses/MIT) unless marked differently in a particular folder/file.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fyildiz-online%2Fmodule-window.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fyildiz-online%2Fmodule-window?ref=badge_large)
 
 ## Build instructions
 
