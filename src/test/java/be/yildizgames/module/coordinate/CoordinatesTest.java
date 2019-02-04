@@ -33,10 +33,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 /**
  * @author Grégory Van den Borre
  */
-class CoordinatesTest {
+public class CoordinatesTest {
 
     @Test
-    void testCoordinatesIntIntIntInt() {
+    public void testCoordinatesIntIntIntInt() {
         BaseCoordinate c = new Coordinates(10, 15, 14, 16);
         assertEquals(10, c.width);
         assertEquals(15, c.height);
@@ -45,7 +45,7 @@ class CoordinatesTest {
     }
 
     @Test
-    void testCoordinatesSizeIntInt() {
+    public void testCoordinatesSizeIntInt() {
         BaseCoordinate c = new Coordinates(new Size(10, 15), 14, 16);
         assertEquals(10, c.width);
         assertEquals(15, c.height);
@@ -55,7 +55,7 @@ class CoordinatesTest {
     }
 
     @Test
-    void testCoordinatesSizePosition() {
+    public void testCoordinatesSizePosition() {
         BaseCoordinate c = new Coordinates(new Size(10, 15), new Position(14, 16));
         assertEquals(15, c.height);
         assertEquals(10, c.width);
@@ -67,7 +67,7 @@ class CoordinatesTest {
 
 
     @Test
-    void testGetSize() {
+    public void testGetSize() {
         Coordinates c = new Coordinates(10, 15, 14, 16);
         Size s = c.getSize();
         assertEquals(10, s.width);

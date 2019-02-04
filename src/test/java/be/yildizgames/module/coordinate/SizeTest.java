@@ -32,10 +32,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 /**
  * @author Grégory Van den Borre
  */
-class SizeTest {
+public class SizeTest {
 
     @Test
-    void test() {
+    public void test() {
         Size s = new Size(15, 20);
         assertEquals(15, s.width);
         assertEquals(20, s.height);
@@ -51,17 +51,17 @@ class SizeTest {
     }
 
     @Test
-    void testNegative() {
+    public void testNegative() {
         assertThrows(AssertionError.class, () -> new Size(-1));
     }
 
     @Test
-    void testNegativeHeight() {
+    public void testNegativeHeight() {
         assertThrows(AssertionError.class, () -> new Size(10, -1));
     }
 
     @Test
-    void testNegativeWidth() {
+    public void testNegativeWidth() {
         assertThrows(AssertionError.class, () -> new Size(-1, 10));
     }
 

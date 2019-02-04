@@ -31,10 +31,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * @author Grégory Van den Borre
  */
-class WindowHandleTest {
+public class WindowHandleTest {
 
     @Test
-    void testWindowHandle() {
+    public void testWindowHandle() {
         WindowHandle h = new WindowHandle(17);
         assertEquals(17, h.value);
     }

@@ -32,10 +32,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 /**
  * @author Grégory Van den Borre
  */
-class PositionTest {
+public class PositionTest {
 
     @Test
-    void testPositionBaseCoordinate() {
+    public void testPositionBaseCoordinate() {
         BaseCoordinate bc = new Position(5, 10);
         Position p = new Position(bc);
         assertEquals(bc, p);
@@ -43,13 +43,13 @@ class PositionTest {
     }
 
     @Test
-    void testPositionInt() {
+    public void testPositionInt() {
         Position p = new Position(10);
         assertEquals(new Position(10, 10), p);
     }
 
     @Test
-    void testPositionIntInt() {
+    public void testPositionIntInt() {
         Position p = new Position(10, 15);
         assertEquals(10, p.left);
         assertEquals(15, p.top);

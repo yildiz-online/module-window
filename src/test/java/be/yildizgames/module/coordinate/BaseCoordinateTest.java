@@ -33,10 +33,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * @author Grégory Van den Borre
  */
-class BaseCoordinateTest {
+public class BaseCoordinateTest {
 
     @Test
-    void test() {
+    public void test() {
         assertEquals(0, BaseCoordinate.ZERO.width);
         assertEquals(0, BaseCoordinate.ZERO.height);
         assertEquals(0, BaseCoordinate.ZERO.left);
@@ -44,7 +44,7 @@ class BaseCoordinateTest {
     }
 
     @Test
-    void testConstructor() {
+    public void testConstructor() {
         int top = 5;
         int left = 10;
         int width = 12;
@@ -57,7 +57,7 @@ class BaseCoordinateTest {
     }
 
     @Test
-    void testContains() {
+    public void testContains() {
         int top = 5;
         int left = 10;
         int width = 12;
@@ -74,7 +74,7 @@ class BaseCoordinateTest {
     }
 
     @Test
-    void testEquals() {
+    public void testEquals() {
         int top = 5;
         int left = 10;
         int width = 12;
@@ -91,7 +91,7 @@ class BaseCoordinateTest {
     }
 
     @Test
-    void testToString() {
+    public void testToString() {
         int top = 5;
         int left = 10;
         int width = 12;

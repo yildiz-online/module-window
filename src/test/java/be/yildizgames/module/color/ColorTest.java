@@ -35,17 +35,17 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * @author Grégory Van den Borre
  */
-class ColorTest {
+public class ColorTest {
 
     @Test
-    final void testAdd() {
+    public final void testAdd() {
         Color base = Color.rgba(10, 20, 30, 40);
         Color base2 = base.add(10);
         assertEquals(Color.rgba(20, 30, 40, 40), base2);
     }
 
     @Test
-    final void testAddAll() {
+    public final void testAddAll() {
         Color base = Color.rgba(10, 20, 30, 40);
         Color base2 = base.add(1, 2, 3);
         assertEquals(Color.rgba(11, 22, 33, 40), base2);
@@ -53,7 +53,7 @@ class ColorTest {
 
     /***/
     @Test
-    final void testEqualsObject() {
+    public final void testEqualsObject() {
         assertTrue(Color.BLACK.equals(Color.BLACK));
         assertTrue(Color.BLACK.equals(Color.rgb(0, 0, 0)));
         assertFalse(Color.BLACK.equals(null));
@@ -69,7 +69,7 @@ class ColorTest {
 
     /***/
     @Test
-    final void testHashCode() {
+    public final void testHashCode() {
         assertEquals(Color.BLACK.hashCode(), Color.rgb(0, 0, 0).hashCode());
     }
 
@@ -82,7 +82,7 @@ class ColorTest {
 
     /***/
     @Test
-    final void testYzColorIntIntInt() {
+    public final void testYzColorIntIntInt() {
         final int value = 5;
         final int tooHighValue = 1000;
         final int tooLowValue = -5;

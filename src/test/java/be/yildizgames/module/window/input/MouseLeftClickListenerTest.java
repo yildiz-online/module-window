@@ -30,10 +30,10 @@ import org.junit.jupiter.api.Test;
 /**
  * @author Grégory Van den Borre
  */
-class MouseLeftClickListenerTest {
+public class MouseLeftClickListenerTest {
 
     @Test
-    void testClickAt() {
+    public void testClickAt() {
         MouseLeftClickListener l = () -> {
         };
         l.clickAt(MouseMoveMockFactory.get(10, 10));
