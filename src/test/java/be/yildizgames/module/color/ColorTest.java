@@ -75,7 +75,7 @@ public class ColorTest {
 
     /***/
     @Test
-    final void testToString() {
+    public final void testToString() {
         Color c = Color.BLACK;
         assertEquals("0,0,0," + Color.MAX_VALUE, c.toString());
     }
