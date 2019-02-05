@@ -88,6 +88,8 @@ public class ScreenPartCursor {
 
     public Cursor getCursor(ScreenPart part) {
         switch (part) {
+            case CENTER:
+                return center;
             case LEFT:
                 return left;
             case RIGHT:
@@ -104,8 +106,6 @@ public class ScreenPartCursor {
                 return bottomLeft;
             case RIGHT_BOTTOM:
                 return bottomRight;
-            case CENTER:
-                return center;
             default:
                 return center;
         }

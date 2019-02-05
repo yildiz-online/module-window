@@ -28,18 +28,54 @@ package be.yildizgames.module.window.widget;
 
 import be.yildizgames.module.color.Color;
 import be.yildizgames.module.coordinate.Coordinates;
+import be.yildizgames.module.window.ScreenSize;
 
+/**
+ * Native window shell.
+ * @author Grégory Van den Borre
+ */
 public interface WindowShell {
 
-    WindowTextLine createNativeTextLine();
+    /**
+     * The the window title.
+     * @param title Title to set.
+     * @return This object for chaining.
+     */
+    WindowShell setTitle(String title);
 
-    WindowButton createNativeButton();
-
-    WindowProgressBar createProgressBar();
-
-    WindowShell setTitle(String text);
-
+    /**
+     * The the window size and position.
+     * @param coordinates Window size and position to set.
+     * @return This object for chaining.
+     */
     WindowShell setCoordinates(Coordinates coordinates);
+
+    /**
+     * Set the window icon.
+     * @param file Icon file path.
+     * @return This object for chaining.
+     */
+    WindowShell setIcon(String file);
+
+    WindowShell setBackground(Color color);
+
+    WindowShell setBackground(String file);
+
+    WindowShell setSize(int width, int height);
+
+    WindowShell setVisible(boolean visible);
+
+    WindowShell setFullScreen();
+
+    ScreenSize getScreenSize();
+
+    void update();
+
+    void open();
+
+    void close();
+
+    void checkForEvent();
 
     WindowModal createMessageBox();
 
@@ -47,27 +83,19 @@ public interface WindowShell {
 
     WindowTextArea createTextArea();
 
-    WindowImage createImage(String image);
+    WindowTextLine createTextLine();
 
-    void update();
-
-    WindowShell setIcon(String file);
-
-    void close();
+    WindowButton createButton();
 
     WindowButton createButton(String background, String hover);
 
-    int getWidth();
+    WindowImage createImage(String image);
 
-    int getHeight();
+    WindowProgressBar createProgressBar();
 
-    WindowShell setBackground(Color color);
+    WindowTreeRoot createTreeRoot(int height, int width, WindowTreeElement... elements);
 
-    WindowShell setSize(int width, int height);
+    WindowDropdown createDropdown();
 
-    WindowShell setVisible(boolean visible);
-
-    WindowDropdown createNativeDropdown();
-
-    WindowTextButton createNativeTextButton();
+    WindowTextButton createTextButton();
 }
