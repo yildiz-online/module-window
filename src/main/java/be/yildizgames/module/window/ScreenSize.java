@@ -25,14 +25,28 @@
 
 package be.yildizgames.module.window;
 
+/**
+ * Screen size coordinates in pixels.
+ * @author Grégory Van den Borre
+ */
 public class ScreenSize {
 
+    /**
+     * Screen width, in pixels.
+     */
     public final int width;
 
+    /**
+     * Screen height, in pixels.
+     */
     public final int height;
 
-
-    public ScreenSize(int width, int height) {
+    /**
+     * Create a new screen size instance.
+     * @param width Screen width, in pixels, cannot be smaller than 0.
+     * @param height Screen height, in pixels, cannot be smaller than 0.
+     */
+    public ScreenSize(final int width, final int height) {
         assert width > 0;
         assert height > 0;
         this.width = width;

@@ -24,7 +24,7 @@
 package be.yildizgames.module.window;
 
 /**
- * Window engine.
+ * Window engine API.
  *
  * @author Grégory Van den Borre
  */

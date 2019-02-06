@@ -26,13 +26,16 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.coordinate.Coordinates;
+/**
+ * A native widget progress bar.
+ * @author Grégory Van den Borre
+ */
+public interface WindowProgressBar extends BaseWindowWidget<WindowProgressBar>{
 
-public interface WindowProgressBar {
-
-    WindowProgressBar setVisible(boolean visible);
-
-    WindowProgressBar setProgress(int downloaded);
-
-    WindowProgressBar setCoordinates(Coordinates coordinate);
+    /**
+     * Set the progress completion.
+     * @param progress Between 0 (empty) to 100 (full).
+     * @return This object for chaining.
+     */
+    WindowProgressBar setProgress(int progress);
 }

@@ -26,15 +26,29 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.coordinate.Coordinates;
+/**
+ * A native widget dropdown.
+ * @author Grégory Van den Borre
+ */
+public interface WindowDropdown extends BaseWindowWidget<WindowDropdown> {
 
-public interface WindowDropdown {
-
-    WindowDropdown setCoordinates(Coordinates coordinates);
-
+    /**
+     * Set an element of the dropdown selected.
+     * @param line Line to set selected
+     * @return This object for chaining.
+     */
     WindowDropdown select(int line);
 
+    /**
+     * Set the dropdown elements.
+     * @param items Items to set.
+     * @return This object for chaining.
+     */
     WindowDropdown setItems(String... items);
 
+    /**
+     * Provide the index of the currently selected line.
+     * @return The selected line index.
+     */
     int getSelectionIndex();
 }

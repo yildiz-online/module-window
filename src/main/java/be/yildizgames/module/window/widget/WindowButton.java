@@ -26,14 +26,18 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.coordinate.Coordinates;
 import be.yildizgames.module.window.input.MouseLeftClickListener;
 
-public interface WindowButton {
+/**
+ * A native widget button.
+ * @author Grégory Van den Borre
+ */
+public interface WindowButton extends BaseWindowWidget <WindowButton>{
 
-    WindowButton setVisible(boolean visible);
-
+    /**
+     * Add a listener to be invoked when the button is clicked on.
+     * @param l Listener to invoke.
+     * @return This object for chaining.
+     */
     WindowButton addMouseLeftClickListener(MouseLeftClickListener l);
-
-    WindowButton setCoordinates(Coordinates coordinates);
 }

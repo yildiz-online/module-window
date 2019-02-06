@@ -26,13 +26,16 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.coordinate.Coordinates;
+/**
+ * A native widget text area.
+ * @author Grégory Van den Borre
+ */
+public interface WindowTextArea extends BaseWindowWidget<WindowTextArea>{
 
-public interface WindowTextArea {
-
-    WindowTextArea setVisible(boolean visible);
-
-    WindowTextArea setCoordinates(Coordinates coordinates);
-
+    /**
+     * Set the text area content.
+     * @param text Text content.
+     * @return This object for chaining.
+     */
     WindowTextArea setText(String text);
 }

@@ -2,9 +2,9 @@
  *
  * This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
  *
- * Copyright (c) 2019 Grégory Van den Borre
+ * Copyright (c) 2018 Grégory Van den Borre
  *
- * More infos available: https://engine.yildiz-games.be
+ * More infos available: https://www.yildiz-games.be
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  * documentation files (the "Software"), to deal in the Software without restriction, including without
@@ -26,32 +26,26 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.window.input.MouseLeftClickListener;
+import be.yildizgames.module.coordinate.Coordinates;
 
 /**
- * A native widget modal window.
+ * Base element with common behavior for the different widgets.
+ * @param <T> Widget true type.
  * @author Grégory Van den Borre
  */
-public interface WindowModal {
+public interface BaseWindowWidget <T extends BaseWindowWidget> {
 
     /**
-     * Add a listener to be invoked when the button is clicked on.
-     * @param l Listener to invoke.
+     * Set the widget size and position.
+     * @param coordinates Widget size and position.
      * @return This object for chaining.
      */
-    WindowModal addMouseLeftClickListener(MouseLeftClickListener l);
+    T setCoordinates(Coordinates coordinates);
 
     /**
-     * Set the modal window title.
-     * @param title Title to set.
+     * Show or hide the widget.
+     * @param visible True will set the widget visible, false will hide it.
      * @return This object for chaining.
      */
-    WindowModal setTitle(String title);
-
-    /**
-     * Set the modal window text.
-     * @param text Text to set.
-     * @return This object for chaining.
-     */
-    WindowModal setText(String text);
+    T setVisible(boolean visible);
 }

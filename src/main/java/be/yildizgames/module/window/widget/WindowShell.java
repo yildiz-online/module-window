@@ -27,14 +27,13 @@
 package be.yildizgames.module.window.widget;
 
 import be.yildizgames.module.color.Color;
-import be.yildizgames.module.coordinate.Coordinates;
 import be.yildizgames.module.window.ScreenSize;
 
 /**
  * Native window shell.
  * @author Grégory Van den Borre
  */
-public interface WindowShell {
+public interface WindowShell extends BaseWindowWidget<WindowShell>{
 
     /**
      * The the window title.
@@ -44,51 +43,92 @@ public interface WindowShell {
     WindowShell setTitle(String title);
 
     /**
-     * The the window size and position.
-     * @param coordinates Window size and position to set.
-     * @return This object for chaining.
-     */
-    WindowShell setCoordinates(Coordinates coordinates);
-
-    /**
      * Set the window icon.
      * @param file Icon file path.
      * @return This object for chaining.
      */
     WindowShell setIcon(String file);
 
+    /**
+     * Set the window background color.
+     * @param color Color to use.
+     * @return This object for chaining.
+     */
     WindowShell setBackground(Color color);
 
+    /**
+     * Set the window background image.
+     * @param file Background image file.
+     * @return This object for chaining.
+     */
     WindowShell setBackground(String file);
 
     WindowShell setSize(int width, int height);
 
-    WindowShell setVisible(boolean visible);
-
     WindowShell setFullScreen();
 
+    /**
+     * Provide the window size.
+     * @return The window size.
+     */
     ScreenSize getScreenSize();
 
-    void update();
-
+    /**
+     * Open the window.
+     */
     void open();
 
+    /**
+     * Close the window.
+     */
     void close();
 
+    /**
+     * Check for an event and sleep if none.
+     */
+    void update();
+
+    /**
+     * Check for an event without sleeping.
+     */
     void checkForEvent();
 
+    /**
+     * Create a new message modal window.
+     * @return The created modal window.
+     */
     WindowModal createMessageBox();
 
+    /**
+     * Create a new message modal window with a button for confirmation.
+     * @return The created modal window.
+     */
     WindowModal createMessageButtonBox();
 
+    /**
+     * Create a new text area widget.
+     * @return The created text area.
+     */
     WindowTextArea createTextArea();
 
+    /**
+     * Create a new text line widget.
+     * @return The created text line.
+     */
     WindowTextLine createTextLine();
 
+    /**
+     * Create a new button widget.
+     * @return The created button.
+     */
     WindowButton createButton();
 
     WindowButton createButton(String background, String hover);
 
+    /**
+     * Create a new image widget.
+     * @return The created image.
+     */
     WindowImage createImage(String image);
 
     WindowProgressBar createProgressBar();
@@ -97,5 +137,5 @@ public interface WindowShell {
 
     WindowDropdown createDropdown();
 
-    WindowTextButton createTextButton();
+    WindowButtonText createTextButton();
 }

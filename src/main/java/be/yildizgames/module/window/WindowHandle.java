@@ -36,7 +36,11 @@ public final class WindowHandle {
      */
     public final long value;
 
-    public WindowHandle(long value) {
+    /**
+     * Create a new handle instance
+     * @param value Handle value.
+     */
+    public WindowHandle(final long value) {
         super();
         this.value = value;
     }

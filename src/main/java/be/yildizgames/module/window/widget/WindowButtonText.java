@@ -26,32 +26,8 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.window.input.MouseLeftClickListener;
+public interface WindowButtonText extends WindowButton {
 
-/**
- * A native widget modal window.
- * @author Grégory Van den Borre
- */
-public interface WindowModal {
+    WindowButtonText setText(String text);
 
-    /**
-     * Add a listener to be invoked when the button is clicked on.
-     * @param l Listener to invoke.
-     * @return This object for chaining.
-     */
-    WindowModal addMouseLeftClickListener(MouseLeftClickListener l);
-
-    /**
-     * Set the modal window title.
-     * @param title Title to set.
-     * @return This object for chaining.
-     */
-    WindowModal setTitle(String title);
-
-    /**
-     * Set the modal window text.
-     * @param text Text to set.
-     * @return This object for chaining.
-     */
-    WindowModal setText(String text);
 }

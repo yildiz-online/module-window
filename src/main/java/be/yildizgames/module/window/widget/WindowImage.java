@@ -26,10 +26,10 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.coordinate.Coordinates;
-
-public interface WindowImage {
-
-    WindowImage setCoordinates(Coordinates coordinates);
+/**
+ * A native widget image.
+ * @author Grégory Van den Borre
+ */
+public interface WindowImage extends BaseWindowWidget<WindowImage>{
 
 }

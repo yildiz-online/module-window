@@ -30,7 +30,7 @@ import be.yildizgames.module.window.input.WindowInputListener;
 import java.util.ServiceLoader;
 
 /**
- * Window engine.
+ * Complete window engine, in addition of the window engine exposed API, provide some functionalities to be used internally by associated engines..
  *
  * @author Grégory Van den Borre
  */

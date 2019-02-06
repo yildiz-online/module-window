@@ -27,7 +27,7 @@
 package be.yildizgames.module.window.widget;
 
 /**
- * A simple text line.
+ * A native widget text line.
  * @author Grégory Van den Borre
  */
 public interface WindowTextLine {
