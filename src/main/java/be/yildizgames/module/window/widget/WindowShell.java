@@ -63,6 +63,12 @@ public interface WindowShell extends BaseWindowWidget<WindowShell>{
      */
     WindowShell setBackground(String file);
 
+    /**
+     * Set the window size.
+     * @param width Window width.
+     * @param height Window height.
+     * @return This object for chaining.
+     */
     WindowShell setSize(int width, int height);
 
     WindowShell setFullScreen();

@@ -26,5 +26,9 @@
 
 package be.yildizgames.module.window.widget;
 
+/**
+ * A native widget tree.
+ * @author Grégory Van den Borre
+ */
 public interface WindowTreeRoot {
 }
