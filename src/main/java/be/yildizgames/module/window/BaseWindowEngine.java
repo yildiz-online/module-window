@@ -40,6 +40,7 @@ public interface BaseWindowEngine extends WindowEngine {
      * Update the window wrapping the game viewports.
      * @deprecated Use update instead
      */
+    @Deprecated(forRemoval = true, since = "3.0.0")
     void updateWindow();
 
     void update();
