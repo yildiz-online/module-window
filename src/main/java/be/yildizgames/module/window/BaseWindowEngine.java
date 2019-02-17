@@ -38,8 +38,11 @@ public interface BaseWindowEngine extends WindowEngine {
 
     /**
      * Update the window wrapping the game viewports.
+     * @deprecated Use update instead
      */
     void updateWindow();
+
+    void update();
 
     /**
      * Delete the resources used when loading the engine.

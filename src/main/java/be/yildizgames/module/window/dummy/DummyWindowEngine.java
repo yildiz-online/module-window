@@ -56,6 +56,11 @@ public class DummyWindowEngine implements BaseWindowEngine {
     }
 
     @Override
+    public void update() {
+
+    }
+
+    @Override
     public void showCursor() {
         // does nothing.
     }
