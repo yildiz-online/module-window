@@ -25,6 +25,7 @@
 package be.yildizgames.module.window.input;
 
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -33,10 +34,37 @@ import org.junit.jupiter.api.Test;
 public class MouseLeftClickListenerTest {
 
     @Test
+    public void testClick() {
+        DummyListener l = new DummyListener();
+        Assertions.assertFalse(l.clicked);
+        l.click();
+        Assertions.assertTrue(l.clicked);
+    }
+
+    @Test
     public void testClickAt() {
-        MouseLeftClickListener l = () -> {
-        };
+        DummyListener l = new DummyListener();
         l.clickAt(MouseMoveMockFactory.get(10, 10));
+        Assertions.assertEquals(10, l.p.getX());
+        Assertions.assertEquals(10, l.p.getY());
+    }
+
+    private class DummyListener implements MouseLeftClickListener {
+
+        private MousePosition p;
+
+        private boolean clicked;
+
+        @Override
+        public void click() {
+            this.clicked = true;
+        }
+
+        @Override
+        public void clickAt(MousePosition position) {
+            this.clicked = true;
+            this.p = position;
+        }
     }
 
 }
