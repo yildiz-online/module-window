@@ -47,9 +47,9 @@ public class WindowTreeElement {
         this.id = id;
         this.title = title;
         if(elements == null) {
-            children = Collections.emptyList();
+            this.children = Collections.emptyList();
         } else {
-            children = Arrays.asList(elements);
+            this.children = Arrays.asList(elements);
         }
     }
 
