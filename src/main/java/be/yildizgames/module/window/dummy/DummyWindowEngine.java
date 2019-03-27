@@ -57,7 +57,7 @@ public class DummyWindowEngine implements BaseWindowEngine {
 
     @Override
     public void update() {
-
+        // does nothing.
     }
 
     @Override
