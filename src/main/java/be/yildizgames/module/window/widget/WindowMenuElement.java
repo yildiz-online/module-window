@@ -23,32 +23,20 @@
  *
  *
  */
-
 package be.yildizgames.module.window.widget;
 
-/**
- * A native widget dropdown.
- * @author Grégory Van den Borre
- */
-public interface WindowDropdown extends BaseWindowWidget<WindowDropdown> {
+public class WindowMenuElement {
 
-    /**
-     * Set an element of the dropdown selected.
-     * @param line Line to set selected
-     * @return This object for chaining.
-     */
-    WindowDropdown select(int line);
+    final int id;
 
-    /**
-     * Set the dropdown elements.
-     * @param items Items to set.
-     * @return This object for chaining.
-     */
-    WindowDropdown setItems(Object... items);
+    final String title;
 
-    /**
-     * Provide the index of the currently selected line.
-     * @return The selected line index.
-     */
-    int getSelectionIndex();
+    //final SelectionBehavior behavior;
+
+    WindowMenuElement(int id, String title/*, SelectionBehavior behavior*/) {
+        super();
+        this.id = id;
+        this.title = title;
+        //this.behavior = behavior;
+    }
 }

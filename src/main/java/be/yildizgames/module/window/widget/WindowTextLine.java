@@ -26,6 +26,8 @@
 
 package be.yildizgames.module.window.widget;
 
+import be.yildizgames.module.color.Color;
+
 /**
  * A native widget text line.
  * @author Grégory Van den Borre
@@ -53,4 +55,10 @@ public interface WindowTextLine {
      * @return This object.
      */
     WindowTextLine setPosition(int left, int top);
+
+    int getLeft();
+
+    int getTop();
+
+    WindowTextLine setColor(Color color);
 }

@@ -139,9 +139,17 @@ public interface WindowShell extends BaseWindowWidget<WindowShell>{
 
     WindowProgressBar createProgressBar();
 
-    WindowTreeRoot createTreeRoot(int height, int width, WindowTreeElement... elements);
+    WindowTreeRoot createTreeRoot(int width, int height, WindowTreeElement... elements);
 
     WindowDropdown createDropdown();
 
     WindowButtonText createTextButton();
+
+    WindowInputBox createInputBox();
+
+    WindowShell createChildWindow();
+
+    WindowMenuBar createMenuBar();
+
+    WindowModalFile createOpenFileBox();
 }
