@@ -25,18 +25,7 @@
  */
 package be.yildizgames.module.window.widget;
 
-public class WindowMenuElement {
+public interface WindowMenuElementSelectListener {
 
-    public final int id;
-
-    public final String title;
-
-    public final WindowMenuElementSelectListener listener;
-
-    public WindowMenuElement(int id, String title, WindowMenuElementSelectListener l) {
-        super();
-        this.id = id;
-        this.title = title;
-        this.listener = l;
-    }
+    void select();
 }

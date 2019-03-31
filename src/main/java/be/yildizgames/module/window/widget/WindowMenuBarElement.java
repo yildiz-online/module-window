@@ -31,7 +31,7 @@ import java.util.List;
 
 public class WindowMenuBarElement {
 
-    final String title;
+    public final String title;
 
     private final List<WindowMenuElement> children;
 
@@ -45,7 +45,7 @@ public class WindowMenuBarElement {
         }
     }
 
-    List<WindowMenuElement> getChildren() {
+    public List<WindowMenuElement> getChildren() {
         return this.children;
     }
 }

@@ -25,18 +25,13 @@
  */
 package be.yildizgames.module.window.widget;
 
-public class WindowMenuElement {
+import java.nio.file.Path;
 
-    public final int id;
+/**
+ * @author Grégory Van den Borre
+ */
+@FunctionalInterface
+public interface WindowModalFileOpenListener {
 
-    public final String title;
-
-    public final WindowMenuElementSelectListener listener;
-
-    public WindowMenuElement(int id, String title, WindowMenuElementSelectListener l) {
-        super();
-        this.id = id;
-        this.title = title;
-        this.listener = l;
-    }
+    void open(Path s);
 }

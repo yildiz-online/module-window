@@ -149,7 +149,7 @@ public interface WindowShell extends BaseWindowWidget<WindowShell>{
 
     WindowShell createChildWindow();
 
-    WindowMenuBar createMenuBar();
+    WindowMenuBar createMenuBar(WindowMenuBarElement... elements);
 
     WindowModalFile createOpenFileBox();
 }

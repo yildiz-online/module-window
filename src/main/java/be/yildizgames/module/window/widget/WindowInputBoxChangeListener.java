@@ -23,13 +23,7 @@
  */
 package be.yildizgames.module.window.widget;
 
-public interface WindowModalFile {
+public interface WindowInputBoxChangeListener {
 
-    WindowModalFile setTitle(String title);
-
-    WindowModalFile setPath(String path);
-
-    WindowModalFile setExtensions(String... extensions);
-
-    WindowModalFile onOpen(WindowModalFileOpenListener c);
+    void onChange();
 }
