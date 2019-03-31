@@ -30,7 +30,7 @@ package be.yildizgames.module.window.widget;
  * A native widget dropdown.
  * @author Grégory Van den Borre
  */
-public interface WindowDropdown extends BaseWindowWidget<WindowDropdown> {
+public interface WindowDropdown extends WindowWidget<WindowDropdown> {
 
     /**
      * Set an element of the dropdown selected.

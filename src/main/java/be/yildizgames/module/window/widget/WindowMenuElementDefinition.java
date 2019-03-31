@@ -23,29 +23,20 @@
  *
  *
  */
-
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.coordinate.Coordinates;
+public class WindowMenuElementDefinition {
 
-/**
- * Base element with common behavior for the different widgets.
- * @param <T> Widget true type.
- * @author Grégory Van den Borre
- */
-public interface BaseWindowWidget <T extends BaseWindowWidget> {
+    public final int id;
 
-    /**
-     * Set the widget size and position.
-     * @param coordinates Widget size and position.
-     * @return This object for chaining.
-     */
-    T setCoordinates(Coordinates coordinates);
+    public final String title;
 
-    /**
-     * Show or hide the widget.
-     * @param visible True will set the widget visible, false will hide it.
-     * @return This object for chaining.
-     */
-    T setVisible(boolean visible);
+    public final WindowMenuElementSelectListener listener;
+
+    public WindowMenuElementDefinition(int id, String title, WindowMenuElementSelectListener l) {
+        super();
+        this.id = id;
+        this.title = title;
+        this.listener = l;
+    }
 }

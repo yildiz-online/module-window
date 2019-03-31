@@ -23,13 +23,29 @@
  *
  *
  */
-
 package be.yildizgames.module.window.widget;
 
-/**
- * A native widget image.
- * @author Grégory Van den Borre
- */
-public interface WindowImage extends WindowWidget<WindowImage> {
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
+public class WindowMenuBarElementDefinition {
+
+    public final String title;
+
+    private final List<WindowMenuElementDefinition> children;
+
+    public WindowMenuBarElementDefinition(String title, WindowMenuElementDefinition... elements) {
+        super();
+        this.title = title;
+        if(elements == null) {
+            children = Collections.emptyList();
+        } else {
+            children = Arrays.asList(elements);
+        }
+    }
+
+    public List<WindowMenuElementDefinition> getChildren() {
+        return this.children;
+    }
 }

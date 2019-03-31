@@ -23,29 +23,37 @@
  *
  *
  */
+
 package be.yildizgames.module.window.widget;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import be.yildizgames.module.coordinate.Coordinates;
 
-public class WindowMenuBarElement {
+/**
+ * Base element with common behavior for the different widgets.
+ * @param <T> Widget true type.
+ * @author Grégory Van den Borre
+ */
+public interface WindowWidget<T extends WindowWidget> {
 
-    public final String title;
+    /**
+     * Set the widget size and position.
+     * @param coordinates Widget size and position.
+     * @return This object for chaining.
+     */
+    T setCoordinates(Coordinates coordinates);
 
-    private final List<WindowMenuElement> children;
+    /**
+     * Show or hide the widget.
+     * @param visible True will set the widget visible, false will hide it.
+     * @return This object for chaining.
+     */
+    T setVisible(boolean visible);
 
-    public WindowMenuBarElement(String title, WindowMenuElement... elements) {
-        super();
-        this.title = title;
-        if(elements == null) {
-            children = Collections.emptyList();
-        } else {
-            children = Arrays.asList(elements);
-        }
-    }
+    int getLeft();
 
-    public List<WindowMenuElement> getChildren() {
-        return this.children;
-    }
+    int getRight();
+
+    int getTop();
+
+    int getBottom();
 }

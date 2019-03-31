@@ -30,7 +30,7 @@ package be.yildizgames.module.window.widget;
  * A native widget text area.
  * @author Grégory Van den Borre
  */
-public interface WindowTextArea extends BaseWindowWidget<WindowTextArea>{
+public interface WindowTextArea extends WindowWidget<WindowTextArea> {
 
     /**
      * Set the text area content.

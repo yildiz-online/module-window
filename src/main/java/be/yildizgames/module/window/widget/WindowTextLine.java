@@ -32,14 +32,8 @@ import be.yildizgames.module.color.Color;
  * A native widget text line.
  * @author Grégory Van den Borre
  */
-public interface WindowTextLine {
+public interface WindowTextLine extends WindowWidget {
 
-    /**
-     * Show or hide the text line.
-     * @param visible True to show, false to hide.
-     * @return This object.
-     */
-    WindowTextLine setVisible(boolean visible);
 
     /**
      * Update the text in the text line.
@@ -56,9 +50,7 @@ public interface WindowTextLine {
      */
     WindowTextLine setPosition(int left, int top);
 
-    int getLeft();
-
-    int getTop();
-
     WindowTextLine setColor(Color color);
+
+    String getText();
 }

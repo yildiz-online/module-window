@@ -33,7 +33,7 @@ import be.yildizgames.module.window.ScreenSize;
  * Native window shell.
  * @author Grégory Van den Borre
  */
-public interface WindowShell extends BaseWindowWidget<WindowShell>{
+public interface WindowShell extends WindowWidget<WindowShell> {
 
     /**
      * The the window title.
@@ -149,7 +149,7 @@ public interface WindowShell extends BaseWindowWidget<WindowShell>{
 
     WindowShell createChildWindow();
 
-    WindowMenuBar createMenuBar(WindowMenuBarElement... elements);
+    WindowMenuBar createMenuBar(WindowMenuBarElementDefinition... elements);
 
     WindowModalFile createOpenFileBox();
 }

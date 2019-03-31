@@ -23,7 +23,7 @@
  */
 package be.yildizgames.module.window.widget;
 
-public interface WindowInputBox extends BaseWindowWidget<WindowInputBox>{
+public interface WindowInputBox extends WindowWidget<WindowInputBox> {
 
     WindowInputBox setText(String text);
 
