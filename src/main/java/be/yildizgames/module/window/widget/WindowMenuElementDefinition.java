@@ -25,6 +25,9 @@
  */
 package be.yildizgames.module.window.widget;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public class WindowMenuElementDefinition {
 
     public final int id;

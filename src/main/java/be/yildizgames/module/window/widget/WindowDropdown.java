@@ -51,4 +51,5 @@ public interface WindowDropdown extends WindowWidget<WindowDropdown> {
      * @return The selected line index.
      */
     int getSelectionIndex();
+
 }

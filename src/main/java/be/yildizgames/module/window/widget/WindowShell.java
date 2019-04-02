@@ -154,4 +154,5 @@ public interface WindowShell extends WindowWidget<WindowShell> {
     WindowMenuBar createMenuBar(WindowMenuBarElementDefinition... elements);
 
     WindowModalFile createOpenFileBox();
+
 }

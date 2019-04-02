@@ -29,6 +29,9 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public class WindowMenuBarElementDefinition {
 
     public final String title;

@@ -40,4 +40,5 @@ public interface WindowButton extends WindowWidget<WindowButton> {
      * @return This object for chaining.
      */
     WindowButton addMouseLeftClickListener(MouseLeftClickListener l);
+
 }

@@ -25,6 +25,9 @@ package be.yildizgames.module.window.widget;
 
 import java.util.Optional;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public interface WindowMenuBar {
 
     Optional<WindowMenuElement> getItemById(int id);

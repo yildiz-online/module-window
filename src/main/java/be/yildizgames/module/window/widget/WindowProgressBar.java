@@ -38,4 +38,5 @@ public interface WindowProgressBar extends WindowWidget<WindowProgressBar> {
      * @return This object for chaining.
      */
     WindowProgressBar setProgress(int progress);
+
 }

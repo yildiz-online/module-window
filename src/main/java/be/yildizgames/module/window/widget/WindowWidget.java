@@ -49,11 +49,27 @@ public interface WindowWidget<T extends WindowWidget> {
      */
     T setVisible(boolean visible);
 
+    /**
+     * Widget left position.
+     * @return the widget left position.
+     */
     int getLeft();
 
+    /**
+     * Widget right position.
+     * @return the widget right position.
+     */
     int getRight();
 
+    /**
+     * Widget top position.
+     * @return the widget top position.
+     */
     int getTop();
 
+    /**
+     * Widget bottom position.
+     * @return the widget bottom position.
+     */
     int getBottom();
 }

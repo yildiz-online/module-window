@@ -36,6 +36,9 @@ import java.util.List;
  */
 public class WindowTreeElement {
 
+    /**
+     * Unique id.
+     */
     public final int id;
 
     public final String title;

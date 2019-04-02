@@ -38,4 +38,5 @@ public interface WindowTextArea extends WindowWidget<WindowTextArea> {
      * @return This object for chaining.
      */
     WindowTextArea setText(String text);
+
 }

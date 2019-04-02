@@ -32,5 +32,8 @@ package be.yildizgames.module.window.widget;
  */
 public interface WindowTreeRoot {
 
+    /**
+     * Delete the tree.
+     */
     void delete();
 }

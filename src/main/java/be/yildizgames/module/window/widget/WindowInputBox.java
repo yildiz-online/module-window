@@ -23,6 +23,9 @@
  */
 package be.yildizgames.module.window.widget;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public interface WindowInputBox extends WindowWidget<WindowInputBox> {
 
     WindowInputBox setText(String text);
