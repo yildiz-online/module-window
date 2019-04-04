@@ -79,7 +79,13 @@ public interface WindowShell extends WindowWidget<WindowShell> {
      * Provide the window size.
      * @return The window size.
      */
-    ScreenSize getScreenSize();
+    ScreenSize getSize();
+
+    /**
+     * Provide the monitor size.
+     * @return The monitor size.
+     */
+    ScreenSize getMonitorSize();
 
     /**
      * Open the window.
@@ -155,4 +161,5 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowModalFile createOpenFileBox();
 
+    WindowFont createFont(String path, int height);
 }

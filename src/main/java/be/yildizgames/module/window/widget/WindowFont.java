@@ -26,24 +26,9 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.color.Color;
+import java.util.UUID;
 
-/**
- * A native widget text area.
- * @author Grégory Van den Borre
- */
-public interface WindowTextArea extends WindowWidget<WindowTextArea> {
+public interface WindowFont {
 
-    /**
-     * Set the text area content.
-     * @param text Text content.
-     * @return This object for chaining.
-     */
-    WindowTextArea setText(String text);
-
-    WindowTextArea setBackground(Color color);
-
-    WindowTextArea setFont(WindowFont font);
-
-    WindowTextArea setForeground(Color color);
+    UUID getId();
 }
