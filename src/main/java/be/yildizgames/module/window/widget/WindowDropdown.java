@@ -46,6 +46,8 @@ public interface WindowDropdown extends WindowWidget<WindowDropdown> {
      */
     WindowDropdown setItems(Object... items);
 
+    WindowDropdown setItems(String... items);
+
     /**
      * Provide the index of the currently selected line.
      * @return The selected line index.
