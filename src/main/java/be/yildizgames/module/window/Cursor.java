@@ -24,7 +24,10 @@
 
 package be.yildizgames.module.window;
 
+import java.util.Objects;
+
 /**
+ * Cusror definition, contains the unique id, the image path, the x offset, if any, the y offset if any.
  * @author Grégory Van den Borre
  */
 public class Cursor {
@@ -69,25 +72,27 @@ public class Cursor {
      */
     public Cursor(final String id, final String path, final int offsetX, final int offsetY) {
         super();
+        Objects.requireNonNull(id);
+        Objects.requireNonNull(path);
         this.id = id;
         this.path = path;
         this.x = offsetX;
         this.y = offsetY;
     }
 
-    public String getId() {
+    public final String getId() {
         return id;
     }
 
-    public String getPath() {
+    public final String getPath() {
         return path;
     }
 
-    public int getX() {
+    public final int getX() {
         return x;
     }
 
-    public int getY() {
+    public final int getY() {
         return y;
     }
 
