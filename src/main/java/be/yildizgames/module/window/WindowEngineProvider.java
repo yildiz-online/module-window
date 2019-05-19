@@ -30,5 +30,6 @@ package be.yildizgames.module.window;
  */
 public interface WindowEngineProvider {
 
+
     BaseWindowEngine getEngine();
 }

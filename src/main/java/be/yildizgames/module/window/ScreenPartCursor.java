@@ -31,6 +31,7 @@ package be.yildizgames.module.window;
  */
 public class ScreenPartCursor {
 
+
     private Cursor up;
 
     private Cursor upLeft;

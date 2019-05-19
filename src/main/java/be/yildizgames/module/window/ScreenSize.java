@@ -27,6 +27,7 @@ package be.yildizgames.module.window;
 
 /**
  * Screen size coordinates in pixels.
+ *
  * @author Grégory Van den Borre
  */
 public class ScreenSize {

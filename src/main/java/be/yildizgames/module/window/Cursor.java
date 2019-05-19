@@ -28,6 +28,7 @@ import java.util.Objects;
 
 /**
  * Cusror definition, contains the unique id, the image path, the x offset, if any, the y offset if any.
+ *
  * @author Grégory Van den Borre
  */
 public class Cursor {

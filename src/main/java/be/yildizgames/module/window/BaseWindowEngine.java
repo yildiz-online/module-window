@@ -36,6 +36,7 @@ import java.util.ServiceLoader;
  */
 public interface BaseWindowEngine extends WindowEngine {
 
+
     /**
      * Update the window wrapping the game viewports.
      * @deprecated Use update instead

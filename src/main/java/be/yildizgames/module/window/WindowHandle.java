@@ -31,6 +31,7 @@ package be.yildizgames.module.window;
  */
 public final class WindowHandle {
 
+
     /**
      * Handle value.
      */

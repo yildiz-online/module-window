@@ -30,6 +30,7 @@ package be.yildizgames.module.window;
  */
 public interface WindowEngine {
 
+
     /**
      * Create a new cursor.
      *

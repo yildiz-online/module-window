@@ -37,6 +37,7 @@ import be.yildizgames.module.window.input.MousePosition;
  */
 public enum ScreenPart {
 
+
     /**
      * From left part of screen to left part + border size.
      */
