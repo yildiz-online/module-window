@@ -42,4 +42,5 @@ public class WindowMenuElementDefinition {
         this.title = title;
         this.listener = l;
     }
+
 }

@@ -30,6 +30,7 @@ import be.yildizgames.module.color.Color;
 
 /**
  * A native widget text area.
+ *
  * @author Grégory Van den Borre
  */
 public interface WindowTextArea extends WindowWidget<WindowTextArea> {

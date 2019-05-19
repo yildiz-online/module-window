@@ -29,4 +29,5 @@ package be.yildizgames.module.window.widget;
 public interface WindowInputBoxChangeListener {
 
     void onChange();
+
 }

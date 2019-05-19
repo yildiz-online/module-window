@@ -31,4 +31,5 @@ public interface WindowMenuElement {
     WindowMenuElement enable();
 
     WindowMenuElement disable();
+
 }

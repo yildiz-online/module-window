@@ -35,4 +35,5 @@ public interface WindowInputBox extends WindowWidget<WindowInputBox> {
     WindowInputBox setToolTip(String tooltip);
 
     WindowInputBox onChange(WindowInputBoxChangeListener l);
+
 }

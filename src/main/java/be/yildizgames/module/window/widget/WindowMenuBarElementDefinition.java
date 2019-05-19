@@ -51,4 +51,5 @@ public class WindowMenuBarElementDefinition {
     public List<WindowMenuElementDefinition> getChildren() {
         return this.children;
     }
+
 }

@@ -30,6 +30,7 @@ import be.yildizgames.module.color.Color;
 
 /**
  * A native widget text line.
+ *
  * @author Grégory Van den Borre
  */
 public interface WindowTextLine extends WindowWidget<WindowTextLine> {

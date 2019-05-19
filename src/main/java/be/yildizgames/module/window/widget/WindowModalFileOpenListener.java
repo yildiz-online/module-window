@@ -34,5 +34,4 @@ import java.nio.file.Path;
 public interface WindowModalFileOpenListener {
 
     void open(Path s);
-
 }

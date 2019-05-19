@@ -31,4 +31,5 @@ import java.util.Optional;
 public interface WindowMenuBar {
 
     Optional<WindowMenuElement> getItemById(int id);
+
 }

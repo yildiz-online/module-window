@@ -28,6 +28,7 @@ package be.yildizgames.module.window.widget;
 
 /**
  * A native widget progress bar.
+ *
  * @author Grégory Van den Borre
  */
 public interface WindowProgressBar extends WindowWidget<WindowProgressBar> {

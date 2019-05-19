@@ -35,4 +35,5 @@ public interface WindowModalFile {
     WindowModalFile setExtensions(String... extensions);
 
     WindowModalFile onOpen(WindowModalFileOpenListener c);
+
 }

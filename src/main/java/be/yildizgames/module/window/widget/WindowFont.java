@@ -28,6 +28,9 @@ package be.yildizgames.module.window.widget;
 
 import java.util.UUID;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public interface WindowFont {
 
     UUID getId();

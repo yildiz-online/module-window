@@ -32,6 +32,7 @@ import java.util.List;
 
 /**
  * A native widget tree element.
+ *
  * @author Grégory Van den Borre
  */
 public class WindowTreeElement {

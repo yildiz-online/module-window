@@ -26,6 +26,9 @@
 
 package be.yildizgames.module.window.widget;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public interface WindowButtonText extends WindowButton {
 
     WindowButtonText setText(String text);

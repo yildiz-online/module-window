@@ -54,4 +54,5 @@ public interface WindowModal {
      * @return This object for chaining.
      */
     WindowModal setText(String text);
+
 }

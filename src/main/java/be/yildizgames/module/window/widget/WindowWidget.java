@@ -31,6 +31,7 @@ import be.yildizgames.module.coordinate.Coordinates;
 /**
  * Base element with common behavior for the different widgets.
  * @param <T> Widget true type.
+ *
  * @author Grégory Van den Borre
  */
 public interface WindowWidget<T extends WindowWidget> {

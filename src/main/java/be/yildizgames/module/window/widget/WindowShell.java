@@ -33,6 +33,7 @@ import java.util.function.Consumer;
 
 /**
  * Native window shell.
+ *
  * @author Grégory Van den Borre
  */
 public interface WindowShell extends WindowWidget<WindowShell> {

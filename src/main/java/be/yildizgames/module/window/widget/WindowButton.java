@@ -30,6 +30,7 @@ import be.yildizgames.module.window.input.MouseLeftClickListener;
 
 /**
  * A native widget button.
+ *
  * @author Grégory Van den Borre
  */
 public interface WindowButton extends WindowWidget<WindowButton> {
