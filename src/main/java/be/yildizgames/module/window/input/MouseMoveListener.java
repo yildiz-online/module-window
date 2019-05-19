@@ -32,6 +32,7 @@ package be.yildizgames.module.window.input;
 @FunctionalInterface
 public interface MouseMoveListener {
 
+
     /**
      * Called when the mouse is moved.
      *

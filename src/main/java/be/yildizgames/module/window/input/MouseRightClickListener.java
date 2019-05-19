@@ -32,6 +32,7 @@ package be.yildizgames.module.window.input;
 @FunctionalInterface
 public interface MouseRightClickListener {
 
+
     /**
      * Called when the right button of the mouse is pressed.
      *

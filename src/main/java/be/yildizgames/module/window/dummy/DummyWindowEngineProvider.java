@@ -37,5 +37,4 @@ public class DummyWindowEngineProvider implements WindowEngineProvider {
     public BaseWindowEngine getEngine() {
         return new DummyWindowEngine();
     }
-
 }

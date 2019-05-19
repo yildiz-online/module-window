@@ -32,6 +32,7 @@ package be.yildizgames.module.window.input;
 @FunctionalInterface
 public interface MouseDragListener {
 
+
     /**
      * Called when the mouse is dragged holding the left button.
      *

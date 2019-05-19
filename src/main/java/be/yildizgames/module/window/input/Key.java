@@ -25,6 +25,9 @@
 
 package be.yildizgames.module.window.input;
 
+/**
+ * @author Grégory Van den Borre
+ */
 public enum Key {
 
     EMPTY,

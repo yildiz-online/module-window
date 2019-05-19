@@ -35,6 +35,7 @@ import be.yildizgames.module.window.input.WindowInputListener;
  */
 public class DummyWindowEngine implements BaseWindowEngine {
 
+
     @Override
     public Cursor createCursor(Cursor cursor) {
         return cursor;

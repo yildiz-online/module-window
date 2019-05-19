@@ -31,6 +31,7 @@ package be.yildizgames.module.window.input;
  */
 public class GameWindowMouseListener {
 
+
     /**
      * Last cursor position.
      */

@@ -29,6 +29,7 @@ package be.yildizgames.module.window.input;
  */
 public class MousePosition {
 
+
     public static final MousePosition ZERO = new MousePosition();
 
     private int x;

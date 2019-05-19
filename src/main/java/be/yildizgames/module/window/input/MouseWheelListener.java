@@ -32,6 +32,7 @@ package be.yildizgames.module.window.input;
 @FunctionalInterface
 public interface MouseWheelListener {
 
+
     /**
      * Method called when the wheel is scrolled.
      *

@@ -31,6 +31,7 @@ package be.yildizgames.module.window.input;
  */
 public interface MouseReleaseListener {
 
+
     /**
      * Called when a button of the mouse is released.
      *

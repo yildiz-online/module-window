@@ -32,6 +32,7 @@ package be.yildizgames.module.window.input;
 @FunctionalInterface
 public interface KeyboardListener {
 
+
     /**
      * Called when a char key is pressed.
      *

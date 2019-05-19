@@ -31,6 +31,7 @@ package be.yildizgames.module.window.input;
  */
 public interface WindowInputListener {
 
+
     default void specialKeyPressed(Key key) {}
 
     default void specialKeyReleased(Key key) {}

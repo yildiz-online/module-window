@@ -32,6 +32,7 @@ package be.yildizgames.module.window.input;
 @FunctionalInterface
 public interface MouseLeftClickListener {
 
+
     /**
      * Called when the left button of the mouse is pressed.
      */
