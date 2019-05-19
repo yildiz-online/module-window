@@ -31,6 +31,7 @@ package be.yildizgames.module.coordinate;
  */
 public class BaseCoordinate {
 
+
     /**
      * Constant with 0 values coordinates.
      */

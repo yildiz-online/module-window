@@ -33,6 +33,7 @@ package be.yildizgames.module.coordinate;
  */
 public final class Coordinates extends BaseCoordinate {
 
+
     /**
      * Full constructor.
      *

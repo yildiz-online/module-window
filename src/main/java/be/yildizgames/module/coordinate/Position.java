@@ -31,6 +31,7 @@ package be.yildizgames.module.coordinate;
  */
 public final class Position extends BaseCoordinate {
 
+
     /**
      * Copy constructor.
      *

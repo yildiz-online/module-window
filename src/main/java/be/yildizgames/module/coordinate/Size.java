@@ -33,6 +33,7 @@ import java.security.InvalidParameterException;
  */
 public final class Size extends BaseCoordinate {
 
+
     /**
      * Full constructor.
      *

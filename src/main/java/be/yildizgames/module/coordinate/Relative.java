@@ -31,6 +31,7 @@ package be.yildizgames.module.coordinate;
  */
 public final class Relative {
 
+
     /**
      * Constant for 1 / 2.
      */
