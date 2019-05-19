@@ -73,5 +73,4 @@ public class CoordinatesTest {
         assertEquals(10, s.width);
         assertEquals(15, s.height);
     }
-
 }

@@ -66,5 +66,4 @@ public class MouseLeftClickListenerTest {
             this.p = position;
         }
     }
-
 }

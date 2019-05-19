@@ -64,5 +64,4 @@ public class SizeTest {
     public void testNegativeWidth() {
         assertThrows(AssertionError.class, () -> new Size(-1, 10));
     }
-
 }

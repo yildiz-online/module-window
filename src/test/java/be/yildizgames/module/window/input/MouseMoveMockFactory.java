@@ -34,4 +34,5 @@ public class MouseMoveMockFactory {
         p.setValues(x, y);
         return p;
     }
+
 }

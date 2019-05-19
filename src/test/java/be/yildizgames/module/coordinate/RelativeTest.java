@@ -40,5 +40,4 @@ public class RelativeTest {
         assertEquals(0.25f, Relative.QUARTER.value, 0.000001);
         assertEquals(0.333333f, Relative.THIRD.value, 0.000001);
     }
-
 }

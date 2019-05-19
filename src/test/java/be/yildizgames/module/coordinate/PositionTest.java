@@ -54,4 +54,5 @@ public class PositionTest {
         assertEquals(10, p.left);
         assertEquals(15, p.top);
     }
+
 }

@@ -38,5 +38,4 @@ public class WindowHandleTest {
         WindowHandle h = new WindowHandle(17);
         assertEquals(17, h.value);
     }
-
 }

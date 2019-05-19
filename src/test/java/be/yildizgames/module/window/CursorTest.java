@@ -53,4 +53,5 @@ public class CursorTest {
             Assertions.assertEquals(3, cursor.getY());
         }
     }
+
 }
