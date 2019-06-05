@@ -26,7 +26,6 @@
 
 package be.yildizgames.module.window;
 
-import be.yildizgames.common.geometry.Point3D;
 import be.yildizgames.common.util.Checker;
 import be.yildizgames.module.window.input.MousePosition;
 
@@ -41,66 +40,52 @@ public enum ScreenPart {
     /**
      * From left part of screen to left part + border size.
      */
-    LEFT(Point3D.X_NEGATIVE),
+    LEFT,
 
     /**
      * From right part of screen to right part - border size.
      */
-    RIGHT(Point3D.X_POSITIVE),
+    RIGHT,
 
     /**
      * From top part to top part + border size.
      */
-    UP(Point3D.Z_NEGATIVE),
+    UP,
 
     /**
      * From bottom part to bottom part - border size.
      */
-    BOTTOM(Point3D.Z_POSITIVE),
+    BOTTOM,
 
     /**
      * From top and left part.
      */
-    LEFT_UP(Point3D.valueOfXZ(-1, -1)),
+    LEFT_UP,
 
     /**
      * From top and right part.
      */
-    RIGHT_UP(Point3D.valueOfXZ(1, -1)),
+    RIGHT_UP,
 
     /**
      * From bottom and left part.
      */
-    LEFT_BOTTOM(Point3D.valueOfXZ(-1, 1)),
+    LEFT_BOTTOM,
 
     /**
      * From bottom and right part.
      */
-    RIGHT_BOTTOM(Point3D.valueOfXZ(1, 1)),
+    RIGHT_BOTTOM,
 
     /**
      * If in none of the other screen parts.
      */
-    CENTER(Point3D.ZERO);
+    CENTER;
 
     /**
      * Border limit.
      */
     private static final int BORDER_SIZE = 5;
-
-    /**
-     * Direction associated to the screen part.
-     */
-    private final Point3D direction;
-
-    /**
-     * Full constructor.
-     *
-     * @param associatedDirection Direction matching the screen part.
-     */
-    ScreenPart(final Point3D associatedDirection) {
-        this.direction = associatedDirection;
-    }
 
     /**
      * Retrieve the screen part containing the given position.
@@ -139,12 +124,5 @@ public enum ScreenPart {
             return ScreenPart.BOTTOM;
         }
         return ScreenPart.CENTER;
-    }
-
-    /**
-     * @return the associated direction.
-     */
-    public Point3D getDirection() {
-        return this.direction;
     }
 }
