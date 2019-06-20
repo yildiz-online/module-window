@@ -29,8 +29,6 @@ package be.yildizgames.module.window.widget;
 import be.yildizgames.module.color.Color;
 import be.yildizgames.module.window.ScreenSize;
 
-import java.util.function.Consumer;
-
 /**
  * Native window shell.
  *

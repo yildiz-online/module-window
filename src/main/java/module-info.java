@@ -24,6 +24,8 @@
 
 module be.yildizgames.module.window {
 
+    uses be.yildizgames.module.window.WindowEngineProvider;
+
     requires be.yildizgames.common.util;
 
     exports be.yildizgames.module.color;

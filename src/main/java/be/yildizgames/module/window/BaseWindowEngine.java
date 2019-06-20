@@ -30,20 +30,15 @@ import be.yildizgames.module.window.input.WindowInputListener;
 import java.util.ServiceLoader;
 
 /**
- * Complete window engine, in addition of the window engine exposed API, provide some functionalities to be used internally by associated engines..
+ * Complete window engine, in addition of the window engine exposed API, provide some functionality to be used internally by associated engines..
  *
  * @author Grégory Van den Borre
  */
 public interface BaseWindowEngine extends WindowEngine {
 
-
     /**
      * Update the window wrapping the game viewports.
-     * @deprecated Use update instead
      */
-    @Deprecated(forRemoval = true, since = "3.0.0")
-    void updateWindow();
-
     void update();
 
     /**

@@ -52,11 +52,6 @@ public class DummyWindowEngine implements BaseWindowEngine {
     }
 
     @Override
-    public void updateWindow() {
-        // does nothing.
-    }
-
-    @Override
     public void update() {
         // does nothing.
     }

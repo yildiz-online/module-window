@@ -80,12 +80,12 @@ public class BaseCoordinateTest {
         BaseCoordinate bc = new BaseCoordinate(width, height, left, top);
         BaseCoordinate bc2 = new BaseCoordinate(width, height, left, top);
         assertEquals(bc, bc2);
-        assertFalse(bc.equals(null));
-        assertFalse(bc.equals(new BaseCoordinate(width + 1, height, left, top)));
-        assertFalse(bc.equals(new BaseCoordinate(width, height + 1, left, top)));
-        assertFalse(bc.equals(new BaseCoordinate(width, height, left + 1, top)));
-        assertFalse(bc.equals(new BaseCoordinate(width, height, left, top + 1)));
-        assertFalse(bc.equals("abc"));
+        assertNotEquals(null, bc);
+        assertNotEquals(bc, new BaseCoordinate(width + 1, height, left, top));
+        assertNotEquals(bc, new BaseCoordinate(width, height + 1, left, top));
+        assertNotEquals(bc, new BaseCoordinate(width, height, left + 1, top));
+        assertNotEquals(bc, new BaseCoordinate(width, height, left, top + 1));
+        assertNotEquals("abc", bc);
     }
 
     @Test

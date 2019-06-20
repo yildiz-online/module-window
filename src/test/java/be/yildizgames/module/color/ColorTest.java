@@ -51,12 +51,12 @@ public class ColorTest {
     /***/
     @Test
     public final void testEqualsObject() {
-        assertTrue(Color.BLACK.equals(Color.BLACK));
-        assertTrue(Color.BLACK.equals(Color.rgb(0, 0, 0)));
-        assertFalse(Color.BLACK.equals(null));
-        assertFalse(Color.BLACK.equals("aString"));
-        assertFalse(Color.BLACK.equals(Color.rgb(1, 0, 0)));
-        assertFalse(Color.BLACK.equals(Color.rgb(0, 1, 0)));
+        assertEquals(Color.BLACK, Color.BLACK);
+        assertEquals(Color.BLACK, Color.rgb(0, 0, 0));
+        assertNotEquals(null, Color.BLACK);
+        assertNotEquals("aString", Color.BLACK);
+        assertNotEquals(Color.BLACK, Color.rgb(1, 0, 0));
+        assertNotEquals(Color.BLACK, Color.rgb(0, 1, 0));
         assertNotEquals(Color.BLACK, Color.rgb(0, 0, 1));
         assertEquals(Color.BLACK, Color.BLACK);
         assertEquals(Color.BLACK, Color.rgba(0, 0, 0, 255));
