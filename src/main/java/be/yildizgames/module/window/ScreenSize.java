@@ -53,4 +53,9 @@ public class ScreenSize {
         this.width = width;
         this.height = height;
     }
+
+    @Override
+    public final String toString() {
+        return this.width + "*" + this.height;
+    }
 }

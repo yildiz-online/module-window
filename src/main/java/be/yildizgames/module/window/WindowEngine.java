@@ -23,6 +23,8 @@
  */
 package be.yildizgames.module.window;
 
+import be.yildizgames.module.window.widget.WindowShell;
+
 /**
  * Window engine API.
  *
@@ -63,7 +65,7 @@ public interface WindowEngine {
     void hideCursor();
 
     /**
-     * @return The screen coordinates.
+     * @return The screen size.
      */
     ScreenSize getScreenSize();
 
@@ -73,4 +75,6 @@ public interface WindowEngine {
      * @param file Icon file.
      */
     void setWindowIcon(String file);
+
+    WindowShell createShell();
 }

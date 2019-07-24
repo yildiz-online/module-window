@@ -29,6 +29,7 @@ import be.yildizgames.module.window.ScreenSize;
 import be.yildizgames.module.window.BaseWindowEngine;
 import be.yildizgames.module.window.WindowHandle;
 import be.yildizgames.module.window.input.WindowInputListener;
+import be.yildizgames.module.window.widget.WindowShell;
 
 /**
  * @author Grégory Van den Borre
@@ -74,6 +75,11 @@ public class DummyWindowEngine implements BaseWindowEngine {
     @Override
     public void setWindowIcon(String file) {
         // does nothing.
+    }
+
+    @Override
+    public WindowShell createShell() {
+        return null;
     }
 
     @Override
