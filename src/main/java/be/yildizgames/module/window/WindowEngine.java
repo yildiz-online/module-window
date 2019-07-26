@@ -23,7 +23,7 @@
  */
 package be.yildizgames.module.window;
 
-import be.yildizgames.module.window.widget.WindowShell;
+import be.yildizgames.module.window.widget.WindowShellFactory;
 
 /**
  * Window engine API.
@@ -76,5 +76,7 @@ public interface WindowEngine {
      */
     void setWindowIcon(String file);
 
-    WindowShell createShell();
+    WindowShellFactory getWindowShellFactory();
+
+    WindowThreadManager getThreadManager();
 }
