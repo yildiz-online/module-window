@@ -65,7 +65,7 @@ public interface WindowEngine {
     void hideCursor();
 
     /**
-     * @return The screen size.
+     * @return The screen size, never null.
      */
     ScreenSize getScreenSize();
 
@@ -76,7 +76,15 @@ public interface WindowEngine {
      */
     void setWindowIcon(String file);
 
+    /**
+     * Provide the factory to build window shell and widgets.
+     * @return The factory, never null.
+     */
     WindowShellFactory getWindowShellFactory();
 
+    /**
+     * Provide the manager to handle threads in window.
+     * @return The manager, never null.
+     */
     WindowThreadManager getThreadManager();
 }

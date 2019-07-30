@@ -27,6 +27,8 @@
 package be.yildizgames.module.window.widget;
 
 import be.yildizgames.module.coordinate.Coordinates;
+import be.yildizgames.module.coordinate.Position;
+import be.yildizgames.module.coordinate.Size;
 
 /**
  * Base element with common behavior for the different widgets.
@@ -42,6 +44,10 @@ public interface WindowWidget<T extends WindowWidget> {
      * @return This object for chaining.
      */
     T setCoordinates(Coordinates coordinates);
+
+    T setSize(Size size);
+
+    T setPosition(Position position);
 
     /**
      * Show or hide the widget.

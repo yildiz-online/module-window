@@ -31,4 +31,7 @@ package be.yildizgames.module.window.widget;
  *
  * @author Grégory Van den Borre
  */
-public interface WindowImage extends WindowWidget<WindowImage> {}
+public interface WindowImage extends WindowWidget<WindowImage> {
+
+    WindowImage setImage(String url);
+}
