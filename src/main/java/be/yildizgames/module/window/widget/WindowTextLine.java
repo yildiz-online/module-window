@@ -54,4 +54,6 @@ public interface WindowTextLine extends WindowWidget<WindowTextLine> {
     WindowTextLine setColor(Color color);
 
     String getText();
+
+    WindowTextLine setUnderline(boolean active);
 }
