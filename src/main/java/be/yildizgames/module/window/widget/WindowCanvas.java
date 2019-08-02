@@ -25,8 +25,12 @@
  */
 package be.yildizgames.module.window.widget;
 
+import be.yildizgames.module.window.WindowHandle;
+
 /**
  * @author Grégory Van den Borre
  */
 public interface WindowCanvas {
+  
+  WindowHandle getHandle();
 }
