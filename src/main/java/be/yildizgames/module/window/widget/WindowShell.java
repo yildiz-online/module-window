@@ -28,6 +28,7 @@ package be.yildizgames.module.window.widget;
 
 import be.yildizgames.module.color.Color;
 import be.yildizgames.module.window.ScreenSize;
+import be.yildizgames.module.window.input.KeyboardListener;
 
 /**
  * Native window shell.
@@ -163,4 +164,10 @@ public interface WindowShell extends WindowWidget<WindowShell> {
     WindowFont createFont(String path, int height);
 
     WindowCanvas createCanvas();
+
+    WindowShell addKeyListener(KeyboardListener listener);
+
+    WindowShell toBack();
+
+    WindowMediaPlayer createMediaPlayer();
 }

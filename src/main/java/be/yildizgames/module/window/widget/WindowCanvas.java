@@ -25,6 +25,9 @@
  */
 package be.yildizgames.module.window.widget;
 
+import be.yildizgames.module.coordinate.Coordinates;
+import be.yildizgames.module.coordinate.Position;
+import be.yildizgames.module.coordinate.Size;
 import be.yildizgames.module.window.WindowHandle;
 
 /**
@@ -33,4 +36,10 @@ import be.yildizgames.module.window.WindowHandle;
 public interface WindowCanvas {
   
   WindowHandle getHandle();
+
+  WindowCanvas setCoordinates(Coordinates coordinates);
+
+  WindowCanvas setSize(Size size);
+
+  WindowCanvas setPosition(Position position);
 }
