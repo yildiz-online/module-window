@@ -161,4 +161,6 @@ public interface WindowShell extends WindowWidget<WindowShell> {
     WindowModalFile createOpenFileBox();
 
     WindowFont createFont(String path, int height);
+
+    WindowCanvas createCanvas();
 }
