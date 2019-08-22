@@ -170,4 +170,8 @@ public interface WindowShell extends WindowWidget<WindowShell> {
     WindowShell toBack();
 
     WindowMediaPlayer createMediaPlayer();
+
+    default void exit() {
+
+    }
 }
