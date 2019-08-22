@@ -26,6 +26,7 @@ package be.yildizgames.module.window;
 
 import be.yildizgames.module.window.dummy.DummyWindowEngineProvider;
 import be.yildizgames.module.window.input.WindowInputListener;
+import be.yildizgames.module.window.widget.WindowImageProvider;
 
 import java.util.ServiceLoader;
 
@@ -61,5 +62,10 @@ public interface BaseWindowEngine extends WindowEngine {
     static BaseWindowEngine getEngine() {
         ServiceLoader<WindowEngineProvider> provider = ServiceLoader.load(WindowEngineProvider.class);
         return provider.findFirst().orElseGet(DummyWindowEngineProvider::new).getEngine();
+    }
+
+    static WindowEngine getEngine(WindowImageProvider imageProvider) {
+        ServiceLoader<WindowEngineProvider> provider = ServiceLoader.load(WindowEngineProvider.class);
+        return provider.findFirst().orElseGet(DummyWindowEngineProvider::new).getEngine(imageProvider);
     }
 }

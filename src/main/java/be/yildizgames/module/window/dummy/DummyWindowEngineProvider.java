@@ -27,6 +27,7 @@ package be.yildizgames.module.window.dummy;
 
 import be.yildizgames.module.window.BaseWindowEngine;
 import be.yildizgames.module.window.WindowEngineProvider;
+import be.yildizgames.module.window.widget.WindowImageProvider;
 
 /**
  * @author Grégory Van den Borre
@@ -35,6 +36,11 @@ public class DummyWindowEngineProvider implements WindowEngineProvider {
 
     @Override
     public BaseWindowEngine getEngine() {
+        return new DummyWindowEngine();
+    }
+
+    @Override
+    public BaseWindowEngine getEngine(WindowImageProvider imageProvider) {
         return new DummyWindowEngine();
     }
 }

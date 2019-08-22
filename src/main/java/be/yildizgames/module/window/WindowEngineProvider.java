@@ -25,11 +25,16 @@
 
 package be.yildizgames.module.window;
 
+import be.yildizgames.module.window.widget.WindowImageProvider;
+
 /**
  * @author Grégory Van den Borre
  */
 public interface WindowEngineProvider {
 
-
     BaseWindowEngine getEngine();
+
+    default BaseWindowEngine getEngine(WindowImageProvider imageProvider) {
+        return getEngine();
+    }
 }
