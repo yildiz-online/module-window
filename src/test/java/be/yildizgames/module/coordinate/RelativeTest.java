@@ -35,7 +35,7 @@ public class RelativeTest {
 
     @Test
     public void testRelative() {
-        assertEquals(15, new Relative(15).value, 0.000001);
+        assertEquals(15, Relative.valueOf(15).value, 0.000001);
         assertEquals(0.5f, Relative.HALF.value, 0.000001);
         assertEquals(0.25f, Relative.QUARTER.value, 0.000001);
         assertEquals(0.333333f, Relative.THIRD.value, 0.000001);

@@ -49,7 +49,7 @@ public class MouseLeftClickListenerTest {
         Assertions.assertEquals(10, l.p.getY());
     }
 
-    private class DummyListener implements MouseLeftClickListener {
+    private static class DummyListener implements MouseLeftClickListener {
 
         private MousePosition p;
 

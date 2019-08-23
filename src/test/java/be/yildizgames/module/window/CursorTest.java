@@ -33,7 +33,7 @@ import org.junit.jupiter.api.Test;
 public class CursorTest {
 
     @Nested
-    public class Constructor {
+    public static class Constructor {
 
         @Test
         public void happyFlow() {

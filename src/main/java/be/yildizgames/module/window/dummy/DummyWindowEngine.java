@@ -37,12 +37,11 @@ import be.yildizgames.module.window.widget.WindowShellFactory;
  */
 public class DummyWindowEngine implements BaseWindowEngine {
 
-    private final System.Logger logger = System.getLogger(DummyWindowEngine.class.getName());
-
     public DummyWindowEngine() {
         super();
-        this.logger.log(System.Logger.Level.INFO, "Window Engine Dummy implementation initializing...");
-        this.logger.log(System.Logger.Level.INFO, "Window Engine Dummy implementation initialized.");
+        System.Logger logger = System.getLogger(DummyWindowEngine.class.getName());
+        logger.log(System.Logger.Level.INFO, "Window Engine Dummy implementation initializing...");
+        logger.log(System.Logger.Level.INFO, "Window Engine Dummy implementation initialized.");
     }
 
 
