@@ -67,8 +67,7 @@ public final class Relative {
      */
     public final float value;
 
-    @Deprecated
-    public Relative(float value) {
+    private Relative(float value) {
         this.value = value;
     }
 
