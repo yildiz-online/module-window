@@ -35,13 +35,16 @@ import be.yildizgames.module.color.Color;
  */
 public interface WindowTextLine extends WindowWidget<WindowTextLine> {
 
-
     /**
      * Update the text in the text line.
      * @param text New text to set.
      * @return This object.
      */
     WindowTextLine setText(String text);
+
+    default WindowTextLine wrapText() {
+        return this;
+    }
 
     /**
      * Update the text line position.
