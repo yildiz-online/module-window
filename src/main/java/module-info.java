@@ -27,6 +27,7 @@ module be.yildizgames.module.window {
     uses be.yildizgames.module.window.WindowEngineProvider;
 
     requires be.yildizgames.common.util;
+    requires be.yildizgames.common.client;
 
     exports be.yildizgames.module.color;
     exports be.yildizgames.module.coordinate;

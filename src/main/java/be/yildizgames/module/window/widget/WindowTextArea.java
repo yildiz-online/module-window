@@ -26,6 +26,7 @@
 
 package be.yildizgames.module.window.widget;
 
+import be.yildizgames.common.client.translation.TranslationKey;
 import be.yildizgames.module.color.Color;
 
 /**
@@ -41,6 +42,11 @@ public interface WindowTextArea extends WindowWidget<WindowTextArea> {
      * @return This object for chaining.
      */
     WindowTextArea setText(String text);
+
+    default WindowTextArea setText(TranslationKey key) {
+        this.setText("Translation not implemented");
+        return this;
+    }
 
     WindowTextArea setBackground(Color color);
 
