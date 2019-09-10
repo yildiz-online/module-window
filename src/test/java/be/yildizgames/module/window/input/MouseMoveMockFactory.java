@@ -27,9 +27,9 @@ package be.yildizgames.module.window.input;
 /**
  * @author Grégory Van den Borre
  */
-public class MouseMoveMockFactory {
+class MouseMoveMockFactory {
 
-    public static MousePosition get(int x, int y) {
+    static MousePosition get(int x, int y) {
         MousePosition p = new MousePosition();
         p.setValues(x, y);
         return p;

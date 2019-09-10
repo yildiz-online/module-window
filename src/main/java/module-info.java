@@ -22,7 +22,7 @@
  *
  */
 
-module be.yildizgames.module.window {
+open module be.yildizgames.module.window {
 
     uses be.yildizgames.module.window.WindowEngineProvider;
 

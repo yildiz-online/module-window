@@ -32,17 +32,17 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * @author Grégory Van den Borre
  */
-public class ColorTest {
+class ColorTest {
 
     @Test
-    public final void testAdd() {
+    final void testAdd() {
         Color base = Color.rgba(10, 20, 30, 40);
         Color base2 = base.add(10);
         assertEquals(Color.rgba(20, 30, 40, 40), base2);
     }
 
     @Test
-    public final void testAddAll() {
+    final void testAddAll() {
         Color base = Color.rgba(10, 20, 30, 40);
         Color base2 = base.add(1, 2, 3);
         assertEquals(Color.rgba(11, 22, 33, 40), base2);
@@ -50,7 +50,7 @@ public class ColorTest {
 
     /***/
     @Test
-    public final void testEqualsObject() {
+    final void testEqualsObject() {
         assertEquals(Color.BLACK, Color.BLACK);
         assertEquals(Color.BLACK, Color.rgb(0, 0, 0));
         assertNotEquals(null, Color.BLACK);
@@ -66,20 +66,20 @@ public class ColorTest {
 
     /***/
     @Test
-    public final void testHashCode() {
+    final void testHashCode() {
         assertEquals(Color.BLACK.hashCode(), Color.rgb(0, 0, 0).hashCode());
     }
 
     /***/
     @Test
-    public final void testToString() {
+    final void testToString() {
         Color c = Color.BLACK;
         assertEquals("0,0,0," + Color.MAX_VALUE, c.toString());
     }
 
     /***/
     @Test
-    public final void testYzColorIntIntInt() {
+    final void testYzColorIntIntInt() {
         final int value = 5;
         final int tooHighValue = 1000;
         final int tooLowValue = -5;

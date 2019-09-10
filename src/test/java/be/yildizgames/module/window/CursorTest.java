@@ -30,13 +30,13 @@ import org.junit.jupiter.api.Test;
 /**
  * @author Grégory Van den Borre
  */
-public class CursorTest {
+class CursorTest {
 
     @Nested
-    public class Constructor {
+    class Constructor {
 
         @Test
-        public void happyFlow() {
+        void happyFlow() {
             Cursor cursor = new Cursor("test", "test.gif");
             Assertions.assertEquals("test", cursor.getId());
             Assertions.assertEquals("test.gif", cursor.getPath());
@@ -45,7 +45,7 @@ public class CursorTest {
         }
 
         @Test
-        public void allParameters() {
+        void allParameters() {
             Cursor cursor = new Cursor("test", "test.gif",5 , 3);
             Assertions.assertEquals("test", cursor.getId());
             Assertions.assertEquals("test.gif", cursor.getPath());

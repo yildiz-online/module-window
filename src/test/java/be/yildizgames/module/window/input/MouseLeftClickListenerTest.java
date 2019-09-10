@@ -31,10 +31,10 @@ import org.junit.jupiter.api.Test;
 /**
  * @author Grégory Van den Borre
  */
-public class MouseLeftClickListenerTest {
+class MouseLeftClickListenerTest {
 
     @Test
-    public void testClick() {
+    void testClick() {
         DummyListener l = new DummyListener();
         Assertions.assertFalse(l.clicked);
         l.click();
@@ -42,7 +42,7 @@ public class MouseLeftClickListenerTest {
     }
 
     @Test
-    public void testClickAt() {
+    void testClickAt() {
         DummyListener l = new DummyListener();
         l.clickAt(MouseMoveMockFactory.get(10, 10));
         Assertions.assertEquals(10, l.p.getX());
