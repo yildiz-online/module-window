@@ -5,6 +5,6 @@ package be.yildizgames.module.window.widget;
  */
 public enum WindowShellOptions {
 
-    NO_CLOSE, FULLSCREEN
+    NO_CLOSE, FULLSCREEN, TRANSPARENT
 
 }
