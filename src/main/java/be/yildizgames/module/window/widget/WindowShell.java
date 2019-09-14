@@ -170,7 +170,11 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowShell toBack();
 
-    default WindowShell minimize() {
+    default WindowShell minimize(OnMinimize... minimizes) {
+        return this;
+    }
+
+    default WindowShell maximize() {
         return this;
     }
 
