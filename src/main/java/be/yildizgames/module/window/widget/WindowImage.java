@@ -34,4 +34,8 @@ package be.yildizgames.module.window.widget;
 public interface WindowImage extends WindowWidget<WindowImage> {
 
     WindowImage setImage(String url);
+
+    default WindowImage addEffect(ImageEffect effect) {
+        return this;
+    }
 }
