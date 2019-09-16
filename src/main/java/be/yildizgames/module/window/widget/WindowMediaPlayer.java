@@ -12,7 +12,7 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.coordinate.Coordinates;
+import be.yildizgames.module.coordinate.BaseCoordinate;
 import be.yildizgames.module.coordinate.Position;
 import be.yildizgames.module.coordinate.Size;
 
@@ -25,7 +25,7 @@ public interface WindowMediaPlayer {
 
     WindowMediaPlayer setMedia(String url);
 
-    WindowMediaPlayer setCoordinates(Coordinates coordinates);
+    WindowMediaPlayer setCoordinates(BaseCoordinate coordinates);
 
     WindowMediaPlayer setSize(Size size);
 
