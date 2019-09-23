@@ -67,11 +67,11 @@ public class BaseCoordinate {
      */
     protected BaseCoordinate(final int widthValue, final int heightValue, final int leftValue, final int topValue) {
         super();
-        if(widthValue <= 0) {
-            throw new IllegalArgumentException("Width must be higher than 0");
+        if(widthValue < 0) {
+            throw new IllegalArgumentException("Width must be positive");
         }
-        if(heightValue <= 0) {
-            throw new IllegalArgumentException("Height must be higher than 0");
+        if(heightValue < 0) {
+            throw new IllegalArgumentException("Height must be positive");
         }
         this.width = widthValue;
         this.height = heightValue;
