@@ -52,16 +52,16 @@ class SizeTest {
 
     @Test
     void testNegative() {
-        assertThrows(AssertionError.class, () -> new Size(-1));
+        assertThrows(IllegalArgumentException.class, () -> new Size(-1));
     }
 
     @Test
     void testNegativeHeight() {
-        assertThrows(AssertionError.class, () -> new Size(10, -1));
+        assertThrows(IllegalArgumentException.class, () -> new Size(10, -1));
     }
 
     @Test
     void testNegativeWidth() {
-        assertThrows(AssertionError.class, () -> new Size(-1, 10));
+        assertThrows(IllegalArgumentException.class, () -> new Size(-1, 10));
     }
 }

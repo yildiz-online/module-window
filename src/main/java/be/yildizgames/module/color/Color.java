@@ -84,42 +84,42 @@ public final class Color implements Serializable {
     /**
      * Red value, must be between MIN_VALUE and MAX_VALUE.
      */
-    public final int red;
+    public final int redValue;
 
     /**
      * Green value, must be between MIN_VALUE and MAX_VALUE.
      */
-    public final int green;
+    public final int greenValue;
 
     /**
      * Blue value, must be between MIN_VALUE and MAX_VALUE.
      */
-    public final int blue;
+    public final int blueValue;
 
     /**
      * Alpha value, must be between MIN_VALUE and MAX_VALUE.
      */
-    public final int alpha;
+    public final int alphaValue;
 
     /**
      * Red value, must be between 0 and 1.
      */
-    public final float normalizedRed;
+    public final float normalizedRedValue;
 
     /**
      * Green value, must be between 0 and 1.
      */
-    public final float normalizedGreen;
+    public final float normalizedGreenValue;
 
     /**
      * Blue value, must be between 0 and 1.
      */
-    public final float normalizedBlue;
+    public final float normalizedBlueValue;
 
     /**
      * Alpha value, must be between 0 and 1.
      */
-    public final float normalizedAlpha;
+    public final float normalizedAlphaValue;
 
     /**
      * Full constructor.
@@ -131,14 +131,14 @@ public final class Color implements Serializable {
      */
     private Color(final int redValue, final int greenValue, final int blueValue, final int alphaValue) {
         super();
-        this.red = Color.checkValue(redValue);
-        this.green = Color.checkValue(greenValue);
-        this.blue = Color.checkValue(blueValue);
-        this.alpha = Color.checkValue(alphaValue);
-        this.normalizedRed = this.red / (float) Color.MAX_VALUE;
-        this.normalizedBlue = this.blue / (float) Color.MAX_VALUE;
-        this.normalizedGreen = this.green / (float) Color.MAX_VALUE;
-        this.normalizedAlpha = this.alpha / (float) Color.MAX_VALUE;
+        this.redValue = Color.checkValue(redValue);
+        this.greenValue = Color.checkValue(greenValue);
+        this.blueValue = Color.checkValue(blueValue);
+        this.alphaValue = Color.checkValue(alphaValue);
+        this.normalizedRedValue = this.redValue / (float) Color.MAX_VALUE;
+        this.normalizedBlueValue = this.blueValue / (float) Color.MAX_VALUE;
+        this.normalizedGreenValue = this.greenValue / (float) Color.MAX_VALUE;
+        this.normalizedAlphaValue = this.alphaValue / (float) Color.MAX_VALUE;
     }
 
     /**
@@ -206,11 +206,11 @@ public final class Color implements Serializable {
      * value.
      */
     public Color add(final int value) {
-        return Color.rgba(this.red + value, this.green + value, this.blue + value, this.alpha);
+        return Color.rgba(this.redValue + value, this.greenValue + value, this.blueValue + value, this.alphaValue);
     }
 
     public Color add(final int red, final int green, final int blue) {
-        return Color.rgba(this.red + red, this.green + green, this.blue + blue, this.alpha);
+        return Color.rgba(this.redValue + red, this.greenValue + green, this.blueValue + blue, this.alphaValue);
     }
 
     /**
@@ -228,17 +228,17 @@ public final class Color implements Serializable {
             return false;
         }
         Color other = (Color) obj;
-        return this.blue == other.blue && this.green == other.green && this.red == other.red && this.alpha == other.alpha;
+        return this.blueValue == other.blueValue && this.greenValue == other.greenValue && this.redValue == other.redValue && this.alphaValue == other.alphaValue;
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 31;
         int result = 1;
-        result = PRIME * result + this.blue;
-        result = PRIME * result + this.green;
-        result = PRIME * result + this.red;
-        result = PRIME * result + this.alpha;
+        result = PRIME * result + this.blueValue;
+        result = PRIME * result + this.greenValue;
+        result = PRIME * result + this.redValue;
+        result = PRIME * result + this.alphaValue;
         return result;
     }
 
@@ -247,6 +247,6 @@ public final class Color implements Serializable {
      */
     @Override
     public String toString() {
-        return this.red + "," + this.green + "," + this.blue + "," + this.alpha;
+        return this.redValue + "," + this.greenValue + "," + this.blueValue + "," + this.alphaValue;
     }
 }

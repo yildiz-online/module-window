@@ -84,23 +84,23 @@ class ColorTest {
         final int tooHighValue = 1000;
         final int tooLowValue = -5;
         Color ac = Color.rgb(value);
-        assertEquals(value, ac.red);
-        assertEquals(value, ac.blue);
-        assertEquals(value, ac.green);
-        assertEquals(Color.MAX_VALUE, ac.alpha);
+        assertEquals(value, ac.redValue);
+        assertEquals(value, ac.blueValue);
+        assertEquals(value, ac.greenValue);
+        assertEquals(Color.MAX_VALUE, ac.alphaValue);
 
         Color c = Color.rgb(value, value + 2, value - 2);
-        assertEquals(value, c.red);
-        assertEquals(value - 2, c.blue);
-        assertEquals(value + 2, c.green);
+        assertEquals(value, c.redValue);
+        assertEquals(value - 2, c.blueValue);
+        assertEquals(value + 2, c.greenValue);
         c = Color.rgb(tooHighValue, tooHighValue, tooHighValue);
-        assertEquals(Color.MAX_VALUE, c.red);
-        assertEquals(Color.MAX_VALUE, c.blue);
-        assertEquals(Color.MAX_VALUE, c.green);
+        assertEquals(Color.MAX_VALUE, c.redValue);
+        assertEquals(Color.MAX_VALUE, c.blueValue);
+        assertEquals(Color.MAX_VALUE, c.greenValue);
         c = Color.rgb(tooLowValue, tooLowValue, tooLowValue);
-        assertEquals(Color.MIN_VALUE, c.red);
-        assertEquals(Color.MIN_VALUE, c.blue);
-        assertEquals(Color.MIN_VALUE, c.green);
+        assertEquals(Color.MIN_VALUE, c.redValue);
+        assertEquals(Color.MIN_VALUE, c.blueValue);
+        assertEquals(Color.MIN_VALUE, c.greenValue);
     }
 
 }

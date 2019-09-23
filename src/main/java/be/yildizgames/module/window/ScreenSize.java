@@ -48,8 +48,12 @@ public class ScreenSize {
      * @param height Screen height, in pixels, cannot be smaller than 0.
      */
     public ScreenSize(final int width, final int height) {
-        assert width > 0;
-        assert height > 0;
+        if(width <= 0) {
+            throw new IllegalArgumentException("Width must be higher than 0");
+        }
+        if(height <= 0) {
+            throw new IllegalArgumentException("Height must be higher than 0");
+        }
         this.width = width;
         this.height = height;
     }
