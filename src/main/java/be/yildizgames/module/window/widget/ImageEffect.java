@@ -17,5 +17,5 @@ package be.yildizgames.module.window.widget;
  */
 public enum ImageEffect {
 
-    DESATURATE, NORMAL_SATURATION;
+    DESATURATE, NORMAL_SATURATION
 }
