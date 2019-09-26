@@ -186,11 +186,7 @@ public final class Color implements Serializable {
     private static int checkValue(final int value) {
         if (value >= Color.MAX_VALUE) {
             return Color.MAX_VALUE;
-        } else if (value <= Color.MIN_VALUE) {
-            return Color.MIN_VALUE;
-        } else {
-            return value;
-        }
+        } else return Math.max(value, Color.MIN_VALUE);
     }
 
     public static Color random() {
