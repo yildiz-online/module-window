@@ -165,7 +165,7 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowFont createFont(String path, int height);
 
-    WindowNotification showNotification(String title, String text, String type);
+    WindowNotification createNotification();
 
     WindowCanvas createCanvas();
 

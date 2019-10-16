@@ -26,4 +26,16 @@
 package be.yildizgames.module.window.widget;
 
 public interface WindowNotification {
+
+    void show();
+
+    void showError();
+
+    void showWarning();
+
+    void showInfo();
+
+    WindowNotification setTitle(String title);
+
+    WindowNotification setText(String text);
 }
