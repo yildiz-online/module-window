@@ -25,17 +25,54 @@
  */
 package be.yildizgames.module.window.widget;
 
+import java.time.Duration;
+
+/**
+ * A notification to display in the window, the visual will depend on the implementation.
+ * Different types of notification are possible to display informative, warning or error notification.
+ *
+ * @author Grégory Van den Borre
+ */
 public interface WindowNotification {
 
+    /**
+     * Display a standard notification.
+     */
     void show();
 
+    /**
+     * Display an error notification.
+     */
     void showError();
 
+    /**
+     * Display a warning notification.
+     */
     void showWarning();
 
+    /**
+     * Display a informative notification.
+     */
     void showInfo();
 
+    /**
+     * Hide the notification after a given time.
+     * @param duration Duration of the notification display, null is not allowed.
+     * @return This object, never null.
+     */
+    WindowNotification hideAfter(Duration duration);
+
+    /**
+     * Set the notification title.
+     * @param title Notification title, null is not allowed.
+     * @return This object, never null.
+     */
     WindowNotification setTitle(String title);
 
+    /**
+     * Set the notification text.
+     * @param text Notification text, null is not allowed.
+     * @return This object, never null.
+     */
     WindowNotification setText(String text);
 }
