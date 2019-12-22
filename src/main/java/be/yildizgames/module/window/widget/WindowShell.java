@@ -169,6 +169,10 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowCanvas createCanvas();
 
+    default WindowPopup createPopup() {
+        return null;
+    }
+
     WindowShell addKeyListener(KeyboardListener listener);
 
     WindowShell toBack();
