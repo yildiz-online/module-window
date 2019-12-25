@@ -52,14 +52,6 @@ public interface WindowTextLine extends WindowWidget<WindowTextLine> {
         return this;
     }
 
-    /**
-     * Update the text line position.
-     * @param left Left position.
-     * @param top Top position.
-     * @return This object.
-     */
-    WindowTextLine setPosition(int left, int top);
-
     WindowTextLine setColor(Color color);
 
     String getText();
