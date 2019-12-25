@@ -47,7 +47,15 @@ public interface WindowWidget<T extends WindowWidget> {
 
     T setSize(Size size);
 
+    default T setSize(int width, int height) {
+        return this.setSize(new Size(width, height));
+    }
+
     T setPosition(Position position);
+
+    default T setPosition(int left, int top) {
+        return this.setPosition(new Position(left, top));
+    }
 
     /**
      * Show or hide the widget.

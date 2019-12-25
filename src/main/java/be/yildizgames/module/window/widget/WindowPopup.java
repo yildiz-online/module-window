@@ -30,4 +30,9 @@ public interface WindowPopup {
     WindowButton createButton();
 
     void close();
+
+    WindowPopup centerOnScreen();
+
+    WindowPopup setPosition(int left, int top);
+
 }
