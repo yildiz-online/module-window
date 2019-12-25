@@ -12,9 +12,22 @@
 
 package be.yildizgames.module.window.widget;
 
+import be.yildizgames.module.color.Color;
+
 /**
  * @author Grégory Van den Borre
  */
 public interface WindowPopup {
+
     WindowTextLine createTextLine();
+
+    WindowPopup setTitle(String title);
+
+    WindowPopup setBackground(Color color);
+
+    WindowPopup setSize(int width, int height);
+
+    WindowButton createButton();
+
+    void close();
 }
