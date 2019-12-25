@@ -157,7 +157,7 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowInputBox createInputBox();
 
-    WindowShell createChildWindow();
+    WindowShell createChildWindow(WindowShellOptions... options);
 
     WindowMenuBar createMenuBar(WindowMenuBarElementDefinition... elements);
 
