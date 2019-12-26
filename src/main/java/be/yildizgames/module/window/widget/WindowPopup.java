@@ -25,6 +25,8 @@ public interface WindowPopup {
 
     WindowPopup setBackground(Color color);
 
+    WindowPopup setBackground(String file);
+
     WindowPopup setSize(int width, int height);
 
     WindowButton createButton();
