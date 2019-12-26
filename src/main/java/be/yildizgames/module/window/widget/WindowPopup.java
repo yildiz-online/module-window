@@ -41,5 +41,5 @@ public interface WindowPopup {
 
     WindowInputBox createInputBox();
 
-    WindowImage createImage();
+    WindowImage createImage(String image);
 }
