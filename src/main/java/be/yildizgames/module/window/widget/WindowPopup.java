@@ -29,6 +29,8 @@ public interface WindowPopup {
 
     WindowButton createButton();
 
+    WindowButtonText createTextButton();
+
     void close();
 
     WindowPopup centerOnScreen();
