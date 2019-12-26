@@ -37,4 +37,5 @@ public interface WindowPopup {
 
     WindowPopup setPosition(int left, int top);
 
+    WindowInputBox createInputBox();
 }
