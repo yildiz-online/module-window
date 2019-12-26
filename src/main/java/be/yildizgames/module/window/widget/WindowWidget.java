@@ -29,6 +29,7 @@ package be.yildizgames.module.window.widget;
 import be.yildizgames.module.coordinate.Coordinates;
 import be.yildizgames.module.coordinate.Position;
 import be.yildizgames.module.coordinate.Size;
+import be.yildizgames.module.window.input.MouseOverListener;
 
 /**
  * Base element with common behavior for the different widgets.
@@ -87,4 +88,8 @@ public interface WindowWidget<T extends WindowWidget> {
      * @return the widget bottom position.
      */
     int getBottom();
+
+    default T addOnMouseOverListener(MouseOverListener l) {
+        return (T)this;
+    }
 }
