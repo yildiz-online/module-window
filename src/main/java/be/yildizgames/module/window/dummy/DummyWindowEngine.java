@@ -26,11 +26,11 @@ package be.yildizgames.module.window.dummy;
 
 import be.yildizgames.module.window.BaseWindowEngine;
 import be.yildizgames.module.window.Cursor;
+import be.yildizgames.module.window.RegisteredView;
 import be.yildizgames.module.window.ScreenSize;
 import be.yildizgames.module.window.WindowHandle;
 import be.yildizgames.module.window.WindowThreadManager;
 import be.yildizgames.module.window.input.WindowInputListener;
-import be.yildizgames.module.window.widget.WindowShellFactory;
 
 /**
  * @author Grégory Van den Borre
@@ -86,13 +86,13 @@ public class DummyWindowEngine implements BaseWindowEngine {
     }
 
     @Override
-    public WindowShellFactory getWindowShellFactory() {
+    public WindowThreadManager getThreadManager() {
         return null;
     }
 
     @Override
-    public WindowThreadManager getThreadManager() {
-        return null;
+    public void registerView(RegisteredView view) {
+        // does nothing
     }
 
     @Override
