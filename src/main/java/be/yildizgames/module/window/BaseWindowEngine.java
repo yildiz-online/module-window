@@ -64,7 +64,7 @@ public interface BaseWindowEngine extends WindowEngine {
         return provider.findFirst().orElseGet(DummyWindowEngineProvider::new).getEngine();
     }
 
-    static WindowEngine getEngine(WindowImageProvider imageProvider) {
+    static BaseWindowEngine getEngine(WindowImageProvider imageProvider) {
         ServiceLoader<WindowEngineProvider> provider = ServiceLoader.load(WindowEngineProvider.class);
         return provider.findFirst().orElseGet(DummyWindowEngineProvider::new).getEngine(imageProvider);
     }
