@@ -87,4 +87,6 @@ public interface WindowEngine {
      * @return The manager, never null.
      */
     WindowThreadManager getThreadManager();
+
+    void registerView(RegisteredView view);
 }
