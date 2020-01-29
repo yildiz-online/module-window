@@ -165,6 +165,10 @@ public interface WindowShell extends WindowWidget<WindowShell> {
         return null;
     }
 
+    default WindowCheckBox createCheckBox() {
+        return null;
+    }
+
     WindowShell addKeyListener(KeyboardListener listener);
 
     WindowShell toBack();
