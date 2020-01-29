@@ -33,6 +33,8 @@ public interface WindowPopup {
 
     WindowButtonText createTextButton();
 
+    WindowDropdown createDropdown();
+
     void close();
 
     WindowPopup centerOnScreen();
