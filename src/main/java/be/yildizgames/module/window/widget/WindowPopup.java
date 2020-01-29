@@ -44,4 +44,8 @@ public interface WindowPopup {
     WindowInputBox createInputBox();
 
     WindowImage createImage(String image);
+
+    default WindowCheckBox createCheckBox() {
+        return null;
+    }
 }
