@@ -26,18 +26,11 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.common.client.translation.TranslationKey;
-
 /**
  * @author Grégory Van den Borre
  */
 public interface WindowButtonText extends WindowButton {
 
     WindowButtonText setText(String text);
-
-    default WindowButtonText setText(TranslationKey key) {
-        this.setText("Translation not implemented");
-        return this;
-    }
 
 }

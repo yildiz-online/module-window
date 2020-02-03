@@ -26,7 +26,6 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.common.client.translation.TranslationKey;
 import be.yildizgames.module.color.Color;
 
 /**
@@ -42,11 +41,6 @@ public interface WindowTextLine extends WindowWidget<WindowTextLine> {
      * @return This object.
      */
     WindowTextLine setText(String text);
-
-    default WindowTextLine setText(TranslationKey key) {
-        this.setText("Translation not implemented");
-        return this;
-    }
 
     default WindowTextLine wrapText() {
         return this;

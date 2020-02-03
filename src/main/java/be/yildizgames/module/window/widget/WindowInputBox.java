@@ -23,8 +23,6 @@
  */
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.common.client.translation.TranslationKey;
-
 /**
  * @author Grégory Van den Borre
  */
@@ -35,11 +33,6 @@ public interface WindowInputBox extends WindowWidget<WindowInputBox> {
     String getText();
 
     WindowInputBox setToolTip(String tooltip);
-
-    default WindowInputBox setToolTip(TranslationKey key) {
-        this.setToolTip("Translation not implemented");
-        return this;
-    }
 
     WindowInputBox onChange(WindowInputBoxChangeListener l);
 

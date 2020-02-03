@@ -67,11 +67,6 @@
             <version>1.0.6</version>
         </dependency>
         <dependency>
-            <groupId>be.yildiz-games</groupId>
-            <artifactId>common-client</artifactId>
-            <version>3.0.2</version>
-        </dependency>
-        <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <scope>test</scope>
