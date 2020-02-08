@@ -42,4 +42,6 @@ public interface WindowButton extends WindowWidget<WindowButton> {
      */
     WindowButton addMouseLeftClickListener(MouseLeftClickListener l);
 
+    WindowButton setBackground(String image);
+
 }
