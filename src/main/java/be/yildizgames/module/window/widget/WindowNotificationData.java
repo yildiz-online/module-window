@@ -17,9 +17,9 @@ package be.yildizgames.module.window.widget;
  */
 public class WindowNotificationData {
 
-    public final String title;
+    final String title;
 
-    public final String body;
+    final String body;
 
     public WindowNotificationData(final String title, final String body) {
         this.title = title;
