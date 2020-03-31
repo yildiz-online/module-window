@@ -35,4 +35,6 @@ public interface WindowCheckBox extends WindowWidget<WindowCheckBox>{
     WindowCheckBox check();
 
     WindowCheckBox uncheck();
+
+    WindowCheckBox setCaption(String text);
 }
