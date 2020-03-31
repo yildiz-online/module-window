@@ -75,4 +75,10 @@ public interface WindowNotification {
      * @return This object, never null.
      */
     WindowNotification setText(String text);
+
+    default WindowNotification setData(WindowNotificationData data) {
+        this.setTitle(data.title);
+        this.setText(data.body);
+        return this;
+    }
 }
