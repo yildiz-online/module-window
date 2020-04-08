@@ -183,6 +183,8 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowMediaPlayer createMediaPlayer();
 
+    DirectoryChooser createDirectoryChooser();
+
     default void exit() {
 
     }
