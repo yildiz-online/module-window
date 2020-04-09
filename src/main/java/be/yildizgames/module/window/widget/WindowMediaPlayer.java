@@ -36,4 +36,6 @@ public interface WindowMediaPlayer {
     WindowMediaPlayer play();
 
     WindowMediaPlayer stop();
+
+    WindowMediaPlayer setVisible(boolean visible);
 }
