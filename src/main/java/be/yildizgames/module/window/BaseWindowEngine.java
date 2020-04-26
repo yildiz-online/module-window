@@ -40,12 +40,12 @@ public interface BaseWindowEngine extends WindowEngine {
     /**
      * Update the window wrapping the game viewports.
      */
-    void update();
+    BaseWindowEngine update();
 
     /**
      * Delete the resources used when loading the engine.
      */
-    void deleteLoadingResources();
+    BaseWindowEngine deleteLoadingResources();
 
     /**
      * @return The handle of this window.
@@ -57,7 +57,7 @@ public interface BaseWindowEngine extends WindowEngine {
      *
      * @param listener Listener to add.
      */
-    void registerInput(WindowInputListener listener);
+    BaseWindowEngine registerInput(WindowInputListener listener);
 
     static BaseWindowEngine getEngine() {
         ServiceLoader<WindowEngineProvider> provider = ServiceLoader.load(WindowEngineProvider.class);

@@ -44,70 +44,69 @@ public class DummyWindowEngine implements BaseWindowEngine {
         logger.log(System.Logger.Level.INFO, "Window Engine Dummy implementation initialized.");
     }
 
-
     @Override
-    public Cursor createCursor(Cursor cursor) {
+    public final Cursor createCursor(Cursor cursor) {
         return cursor;
     }
 
     @Override
-    public void setWindowTitle(String title) {
-        // does nothing.
+    public final DummyWindowEngine setWindowTitle(String title) {
+        return this;
     }
 
     @Override
-    public void setCursor(Cursor cursor) {
-        // does nothing.
+    public final DummyWindowEngine setCursor(Cursor cursor) {
+        return this;
     }
 
     @Override
-    public void update() {
-        // does nothing.
+    public final DummyWindowEngine update() {
+        return this;
     }
 
     @Override
-    public void showCursor() {
-        // does nothing.
+    public final DummyWindowEngine showCursor() {
+        return this;
     }
 
     @Override
-    public void hideCursor() {
-        // does nothing.
+    public final DummyWindowEngine hideCursor() {
+        return this;
     }
 
     @Override
-    public ScreenSize getScreenSize() {
+    public final ScreenSize getScreenSize() {
         return new ScreenSize(1,1);
     }
 
     @Override
-    public void setWindowIcon(String file) {
-        // does nothing.
+    public final DummyWindowEngine setWindowIcon(String file) {
+        return this;
     }
 
     @Override
-    public WindowThreadManager getThreadManager() {
+    public final WindowThreadManager getThreadManager() {
         return null;
     }
 
     @Override
-    public void registerView(RegisteredView view) {
-        // does nothing
+    public final DummyWindowEngine registerView(RegisteredView view) {
+        return this;
     }
 
     @Override
-    public void deleteLoadingResources() {
-        // does nothing.
+    public final DummyWindowEngine deleteLoadingResources() {
+        return this;
     }
 
     @Override
-    public WindowHandle getHandle() {
+    public final WindowHandle getHandle() {
         return new WindowHandle(0L);
     }
 
     @Override
-    public void registerInput(WindowInputListener listener) {
-        // does nothing.
+    public final DummyWindowEngine registerInput(WindowInputListener listener) {
+        return this;
     }
 
 }

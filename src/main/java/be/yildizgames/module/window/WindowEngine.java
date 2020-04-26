@@ -23,8 +23,6 @@
  */
 package be.yildizgames.module.window;
 
-import be.yildizgames.module.window.widget.WindowShellFactory;
-
 /**
  * Window engine API.
  *
@@ -45,24 +43,24 @@ public interface WindowEngine {
      *
      * @param title Title to print.
      */
-    void setWindowTitle(String title);
+    WindowEngine setWindowTitle(String title);
 
     /**
      * Set a new cursor in the game window.
      *
      * @param cursor Cursor to use.
      */
-    void setCursor(Cursor cursor);
+    WindowEngine setCursor(Cursor cursor);
 
     /**
      * Display the mouse.
      */
-    void showCursor();
+    WindowEngine showCursor();
 
     /**
      * Hide the mouse.
      */
-    void hideCursor();
+    WindowEngine hideCursor();
 
     /**
      * @return The screen size, never null.
@@ -74,7 +72,7 @@ public interface WindowEngine {
      *
      * @param file Icon file.
      */
-    void setWindowIcon(String file);
+    WindowEngine setWindowIcon(String file);
 
     /**
      * Provide the manager to handle threads in window.
@@ -82,5 +80,5 @@ public interface WindowEngine {
      */
     WindowThreadManager getThreadManager();
 
-    void registerView(RegisteredView view);
+    WindowEngine registerView(RegisteredView view);
 }
