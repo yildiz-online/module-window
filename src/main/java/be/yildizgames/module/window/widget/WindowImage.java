@@ -38,4 +38,11 @@ public interface WindowImage extends WindowWidget<WindowImage> {
     default WindowImage addEffect(ImageEffect effect) {
         return this;
     }
+
+    /**
+     * @return The metadata of the loaded image.
+     */
+    default ImageMetadata getLoadedImageMetadata() {
+        return new ImageMetadata(0,0);
+    }
 }
