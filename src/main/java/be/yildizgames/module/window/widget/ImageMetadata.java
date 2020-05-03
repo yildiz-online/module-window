@@ -21,12 +21,23 @@ public class ImageMetadata {
 
     private final double height;
 
+    private final double ratio;
+
     public ImageMetadata(double width, double height) {
         this.width = width;
         this.height = height;
+        this.ratio = width / height;
     }
 
-    public double getRatio() {
-        return width / height;
+    public final double getRatio() {
+        return this.ratio;
+    }
+
+    public final double getWidth() {
+        return width;
+    }
+
+    public final double getHeight() {
+        return height;
     }
 }

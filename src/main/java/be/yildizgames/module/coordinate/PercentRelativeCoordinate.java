@@ -23,6 +23,8 @@
  */
 package be.yildizgames.module.coordinate;
 
+import be.yildizgames.module.window.widget.ImageMetadata;
+
 import java.util.Objects;
 
 /**
@@ -49,5 +51,21 @@ public class PercentRelativeCoordinate implements RelativeCoordinate {
     @Override
     public Coordinates compute(BaseCoordinate percents) {
         return this.compute(percents.width, percents.height, percents.left, percents.top);
+    }
+
+    @Override
+    public BaseCoordinate computeWithRatio(int percentWidth, int percentHeight, int percentLeft, int percentTop, ImageMetadata imageMetadata) {
+        float width = root.width * 0.01f * percentWidth;
+        float height = root.width * (float)imageMetadata.getRatio();
+
+        float maxHeight = root.height * 0.01f * percentHeight;
+        if(height > maxHeight) {
+            height = maxHeight;
+            width = root.height * (float)imageMetadata.getRatio();
+        }
+
+        float top =  root.top + root.height * 0.01f * percentTop;
+        float left = root.left + root.width * 0.01f * percentLeft;
+        return new Coordinates(Math.round(width), Math.round(height),  Math.round(left), Math.round(top));
     }
 }

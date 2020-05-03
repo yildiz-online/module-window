@@ -23,9 +23,13 @@
  */
 package be.yildizgames.module.coordinate;
 
+import be.yildizgames.module.window.widget.ImageMetadata;
+
 public interface RelativeCoordinate {
 
     BaseCoordinate compute(int relativeWidth, int relativeHeight, int relativeTop, int relativeLeft);
 
     BaseCoordinate compute(BaseCoordinate relative);
+
+    BaseCoordinate computeWithRatio(int relativeWidth, int relativeHeight, int relativeTop, int relativeLeft, ImageMetadata imageMetadata);
 }
