@@ -56,12 +56,12 @@ public class PercentRelativeCoordinate implements RelativeCoordinate {
     @Override
     public BaseCoordinate computeWithRatio(int percentWidth, int percentHeight, int percentLeft, int percentTop, ImageMetadata imageMetadata) {
         float width = root.width * 0.01f * percentWidth;
-        float height = root.width * (float)imageMetadata.getRatio();
+        float height = width / (float)imageMetadata.getRatio();
 
         float maxHeight = root.height * 0.01f * percentHeight;
         if(height > maxHeight) {
-            height = maxHeight;
-            width = root.height * (float)imageMetadata.getRatio();
+            height = root.height * 0.01f * percentHeight;
+            width = height * (float)imageMetadata.getRatio();
         }
 
         float top =  root.top + root.height * 0.01f * percentTop;

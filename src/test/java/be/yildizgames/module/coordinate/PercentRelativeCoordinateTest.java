@@ -6,6 +6,7 @@
  */
 package be.yildizgames.module.coordinate;
 
+import be.yildizgames.module.window.widget.ImageMetadata;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -50,6 +51,30 @@ class PercentRelativeCoordinateTest {
             Assertions.assertEquals(120, result.top);
         }
 
+    }
+
+    @Nested
+    class WithRatio {
+
+        @Test
+        void happyFlow() {
+            PercentRelativeCoordinate coordinate = new PercentRelativeCoordinate(new Coordinates(1200, 1000, 100, 100));
+            BaseCoordinate result = coordinate.computeWithRatio(10,10,10,10, new ImageMetadata(512, 256));
+            Assertions.assertEquals(120, result.width);
+            Assertions.assertEquals(60, result.height);
+            Assertions.assertEquals(220, result.left);
+            Assertions.assertEquals(200, result.top);
+        }
+
+        @Test
+        void heighLargerThanWidth() {
+            PercentRelativeCoordinate coordinate = new PercentRelativeCoordinate(new Coordinates(1200, 1000, 100, 100));
+            BaseCoordinate result = coordinate.computeWithRatio(10,10,10,10, new ImageMetadata(256, 512));
+            Assertions.assertEquals(50, result.width);
+            Assertions.assertEquals(100, result.height);
+            Assertions.assertEquals(220, result.left);
+            Assertions.assertEquals(200, result.top);
+        }
     }
 
 }
