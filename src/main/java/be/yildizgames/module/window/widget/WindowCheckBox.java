@@ -37,4 +37,6 @@ public interface WindowCheckBox extends WindowWidget<WindowCheckBox>{
     WindowCheckBox uncheck();
 
     WindowCheckBox setCaption(String text);
+
+    WindowCheckBox onChange(WindowWidgetChangeListener<Boolean> listener);
 }

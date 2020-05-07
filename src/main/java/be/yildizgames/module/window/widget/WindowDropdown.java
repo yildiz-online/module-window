@@ -55,4 +55,5 @@ public interface WindowDropdown extends WindowWidget<WindowDropdown> {
      */
     int getSelectionIndex();
 
+    WindowDropdown onChange(WindowWidgetChangeListener<Integer> listener);
 }
