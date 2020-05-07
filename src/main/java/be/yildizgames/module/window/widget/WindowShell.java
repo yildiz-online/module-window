@@ -189,10 +189,6 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     }
 
-    default void requestFocus() {
-
-    }
-
     default WindowHandle getHandle() {
         return new WindowHandle(0);
     }

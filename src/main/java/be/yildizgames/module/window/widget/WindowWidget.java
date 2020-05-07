@@ -48,6 +48,8 @@ public interface WindowWidget<T extends WindowWidget> {
 
     T setSize(Size size);
 
+    T requestFocus();
+
     default T setSize(int width, int height) {
         return this.setSize(new Size(width, height));
     }
