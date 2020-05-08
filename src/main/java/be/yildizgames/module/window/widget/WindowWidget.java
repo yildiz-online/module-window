@@ -94,4 +94,6 @@ public interface WindowWidget<T extends WindowWidget> {
     default T addOnMouseOverListener(MouseOverListener l) {
         return (T)this;
     }
+
+    default T fireEvent(WidgetEvent event) { return (T)this; };
 }
