@@ -52,5 +52,15 @@ public interface WindowTextLine extends WindowWidget<WindowTextLine> {
 
     WindowTextLine setUnderline(boolean active);
 
+    default WindowTextLine alignText(TextAlignment alignment) {
+        return this;
+    }
+
     WindowTextLine setFont(WindowFont font);
+
+    public enum TextAlignment {
+
+        LEFT, CENTER, RIGHT
+
+    }
 }
