@@ -96,4 +96,8 @@ public interface WindowWidget<T extends WindowWidget> {
     }
 
     default T fireEvent(WidgetEvent event) { return (T)this; };
+
+    default boolean isFocused() {
+        return false;
+    }
 }
