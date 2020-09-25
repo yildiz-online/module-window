@@ -10,32 +10,14 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package be.yildizgames.module.window.widget;
-
-import be.yildizgames.module.coordinates.Coordinates;
-import be.yildizgames.module.coordinates.Position;
-import be.yildizgames.module.coordinates.Size;
-
-import java.nio.file.Path;
+package be.yildizgames.module.coordinates;
 
 /**
  * @author Grégory Van den Borre
  */
-public interface WindowMediaPlayer {
+public interface Position {
 
-    WindowMediaPlayer setMedia(String url);
+    int getLeft();
 
-    WindowMediaPlayer setCoordinates(Coordinates coordinates);
-
-    WindowMediaPlayer setSize(Size size);
-
-    WindowMediaPlayer setPosition(Position position);
-
-    WindowMediaPlayer setMedia(Path path);
-
-    WindowMediaPlayer play();
-
-    WindowMediaPlayer stop();
-
-    WindowMediaPlayer setVisible(boolean visible);
+    int getTop();
 }

@@ -10,32 +10,22 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package be.yildizgames.module.window.widget;
+package be.yildizgames.module.coordinates;
 
-import be.yildizgames.module.coordinates.Coordinates;
-import be.yildizgames.module.coordinates.Position;
-import be.yildizgames.module.coordinates.Size;
+import org.junit.jupiter.api.Test;
 
-import java.nio.file.Path;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author Grégory Van den Borre
  */
-public interface WindowMediaPlayer {
+class RelativeTest {
 
-    WindowMediaPlayer setMedia(String url);
-
-    WindowMediaPlayer setCoordinates(Coordinates coordinates);
-
-    WindowMediaPlayer setSize(Size size);
-
-    WindowMediaPlayer setPosition(Position position);
-
-    WindowMediaPlayer setMedia(Path path);
-
-    WindowMediaPlayer play();
-
-    WindowMediaPlayer stop();
-
-    WindowMediaPlayer setVisible(boolean visible);
+    @Test
+    void testRelative() {
+        assertEquals(15, Relative.valueOf(15).value, 0.000001);
+        assertEquals(0.5f, Relative.HALF.value, 0.000001);
+        assertEquals(0.25f, Relative.QUARTER.value, 0.000001);
+        assertEquals(0.333333f, Relative.THIRD.value, 0.000001);
+    }
 }

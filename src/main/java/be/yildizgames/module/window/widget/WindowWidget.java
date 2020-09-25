@@ -26,9 +26,11 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.coordinate.Coordinates;
-import be.yildizgames.module.coordinate.Position;
-import be.yildizgames.module.coordinate.Size;
+import be.yildizgames.module.coordinates.Coordinates;
+import be.yildizgames.module.coordinates.CoordinatesProvider;
+import be.yildizgames.module.coordinates.FullCoordinates;
+import be.yildizgames.module.coordinates.Position;
+import be.yildizgames.module.coordinates.Size;
 import be.yildizgames.module.window.input.MouseOverListener;
 
 /**
@@ -37,7 +39,7 @@ import be.yildizgames.module.window.input.MouseOverListener;
  *
  * @author Grégory Van den Borre
  */
-public interface WindowWidget<T extends WindowWidget> {
+public interface WindowWidget<T extends WindowWidget> extends CoordinatesProvider {
 
     /**
      * Set the widget size and position.
@@ -46,18 +48,30 @@ public interface WindowWidget<T extends WindowWidget> {
      */
     T setCoordinates(Coordinates coordinates);
 
+    default T setCoordinates(int width, int height, int left, int top) {
+        return setCoordinates(FullCoordinates.full(width, height, left, top));
+    }
+
     T setSize(Size size);
 
     T requestFocus();
 
     default T setSize(int width, int height) {
-        return this.setSize(new Size(width, height));
+        return this.setSize(FullCoordinates.size(width, height));
+    }
+
+    default T setSize(int size) {
+        return this.setSize(FullCoordinates.size(size, size));
     }
 
     T setPosition(Position position);
 
     default T setPosition(int left, int top) {
-        return this.setPosition(new Position(left, top));
+        return this.setPosition(FullCoordinates.position(left, top));
+    }
+
+    default T setPosition(int pos) {
+        return this.setPosition(FullCoordinates.position(pos, pos));
     }
 
     /**

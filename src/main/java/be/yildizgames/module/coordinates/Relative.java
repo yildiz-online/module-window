@@ -21,15 +21,61 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  SOFTWARE.
  *
  */
-package be.yildizgames.module.coordinate;
 
-import be.yildizgames.module.window.widget.ImageMetadata;
+package be.yildizgames.module.coordinates;
 
-public interface RelativeCoordinate {
+/**
+ * Wrapper class for a relative value.
+ *
+ * @author Grégory Van den Borre
+ */
+public final class Relative {
 
-    BaseCoordinate compute(int relativeWidth, int relativeHeight, int relativeTop, int relativeLeft);
 
-    BaseCoordinate compute(BaseCoordinate relative);
+    /**
+     * Constant for 1 / 2.
+     */
+    public static final Relative HALF = Relative.valueOf(0.5f);
 
-    BaseCoordinate computeWithRatio(int relativeWidth, int relativeHeight, int relativeTop, int relativeLeft, ImageMetadata imageMetadata);
+    /**
+     * Constant for 1 / 3.
+     */
+    public static final Relative THIRD = Relative.valueOf(0.3333333f);
+
+    /**
+     * Constant for 1 / 4.
+     */
+    public static final Relative QUARTER = Relative.valueOf(0.25f);
+
+    /**
+     * Constant for 1 / 5.
+     */
+    public static final Relative FIFTH = Relative.valueOf(0.2f);
+
+    /**
+     * Constant for 1 / 8.
+     */
+    public static final Relative HEIGHTH = Relative.valueOf(0.125f);
+
+    /**
+     * Constant for 1 / 10.
+     */
+    public static final Relative TENTH = Relative.valueOf(0.1f);
+
+    /**
+     * Relative value.
+     */
+    public final float value;
+
+    private Relative(float value) {
+        this.value = value;
+    }
+
+    public static Relative valueOf(float value) {
+        return new Relative(value);
+    }
+
+    public float of(float v) {
+        return v * this.value;
+    }
 }

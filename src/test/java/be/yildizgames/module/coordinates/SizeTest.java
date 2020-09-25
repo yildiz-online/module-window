@@ -10,32 +10,44 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package be.yildizgames.module.window.widget;
+package be.yildizgames.module.coordinates;
 
-import be.yildizgames.module.coordinates.Coordinates;
-import be.yildizgames.module.coordinates.Position;
-import be.yildizgames.module.coordinates.Size;
+import org.junit.jupiter.api.Test;
 
-import java.nio.file.Path;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * @author Grégory Van den Borre
  */
-public interface WindowMediaPlayer {
+class SizeTest {
 
-    WindowMediaPlayer setMedia(String url);
+    @Test
+    void test() {
+        Size s = FullCoordinates.size(15, 20);
+        assertEquals(15, s.getWidth());
+        assertEquals(20, s.getHeight());
+        Size s2 = FullCoordinates.size(s);
+        assertEquals(s, s2);
+        Coordinates bc = FullCoordinates.full(FullCoordinates.position(5, 10));
+        Size s3 = FullCoordinates.size(bc);
+        assertEquals(s3, FullCoordinates.ZERO);
+        s = FullCoordinates.size(10);
+        assertEquals(FullCoordinates.full(10, 10, 0, 0), s);
+    }
 
-    WindowMediaPlayer setCoordinates(Coordinates coordinates);
+    @Test
+    void testNegative() {
+        assertThrows(IllegalArgumentException.class, () -> FullCoordinates.size(-1));
+    }
 
-    WindowMediaPlayer setSize(Size size);
+    @Test
+    void testNegativeHeight() {
+        assertThrows(IllegalArgumentException.class, () -> FullCoordinates.size(10, -1));
+    }
 
-    WindowMediaPlayer setPosition(Position position);
-
-    WindowMediaPlayer setMedia(Path path);
-
-    WindowMediaPlayer play();
-
-    WindowMediaPlayer stop();
-
-    WindowMediaPlayer setVisible(boolean visible);
+    @Test
+    void testNegativeWidth() {
+        assertThrows(IllegalArgumentException.class, () -> FullCoordinates.size(-1, 10));
+    }
 }

@@ -10,32 +10,37 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package be.yildizgames.module.window.widget;
+package be.yildizgames.module.coordinates;
 
-import be.yildizgames.module.coordinates.Coordinates;
-import be.yildizgames.module.coordinates.Position;
-import be.yildizgames.module.coordinates.Size;
+import org.junit.jupiter.api.Test;
 
-import java.nio.file.Path;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * @author Grégory Van den Borre
  */
-public interface WindowMediaPlayer {
+class PositionTest {
 
-    WindowMediaPlayer setMedia(String url);
+    @Test
+    void testPositionBaseCoordinate() {
+        Coordinates bc = FullCoordinates.full(0, 0, 5, 10);
+        Position p = FullCoordinates.position(bc);
+        assertEquals(bc, p);
+        assertThrows(NullPointerException.class, () -> FullCoordinates.position(null));
+    }
 
-    WindowMediaPlayer setCoordinates(Coordinates coordinates);
+    @Test
+    void testPositionInt() {
+        Position p = FullCoordinates.position(10);
+        assertEquals(FullCoordinates.position(10, 10), p);
+    }
 
-    WindowMediaPlayer setSize(Size size);
+    @Test
+    void testPositionIntInt() {
+        Position p = FullCoordinates.position(10, 15);
+        assertEquals(10, p.getLeft());
+        assertEquals(15, p.getTop());
+    }
 
-    WindowMediaPlayer setPosition(Position position);
-
-    WindowMediaPlayer setMedia(Path path);
-
-    WindowMediaPlayer play();
-
-    WindowMediaPlayer stop();
-
-    WindowMediaPlayer setVisible(boolean visible);
 }

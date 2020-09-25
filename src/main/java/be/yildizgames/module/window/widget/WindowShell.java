@@ -27,7 +27,7 @@
 package be.yildizgames.module.window.widget;
 
 import be.yildizgames.module.color.Color;
-import be.yildizgames.module.coordinate.BaseCoordinate;
+import be.yildizgames.module.coordinates.Coordinates;
 import be.yildizgames.module.window.ScreenSize;
 import be.yildizgames.module.window.WindowHandle;
 import be.yildizgames.module.window.input.KeyboardListener;
@@ -197,5 +197,5 @@ public interface WindowShell extends WindowWidget<WindowShell> {
         return this;
     }
 
-    BaseCoordinate getCoordinates();
+    Coordinates getCoordinates();
 }

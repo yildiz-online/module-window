@@ -29,7 +29,7 @@ open module be.yildizgames.module.window {
     requires be.yildizgames.common.util;
 
     exports be.yildizgames.module.color;
-    exports be.yildizgames.module.coordinate;
+    exports be.yildizgames.module.coordinates;
     exports be.yildizgames.module.window;
     exports be.yildizgames.module.window.widget;
     exports be.yildizgames.module.window.input;

@@ -22,40 +22,34 @@
  *
  */
 
-package be.yildizgames.module.coordinate;
+package be.yildizgames.module.coordinates;
 
 /**
  * Base class for coordinates, only to be subclassed.
  *
  * @author Grégory Van den Borre
  */
-public class BaseCoordinate {
-
-
-    /**
-     * Constant with 0 values coordinates.
-     */
-    public static final BaseCoordinate ZERO = new BaseCoordinate(0, 0, 0, 0);
+class BaseCoordinate implements Coordinates {
 
     /**
      * Width value.
      */
-    public final int width;
+    private final int width;
 
     /**
      * Height value.
      */
-    public final int height;
+    private final int height;
 
     /**
      * X position value.
      */
-    public final int left;
+    private final int left;
 
     /**
      * Y position value.
      */
-    public final int top;
+    private final int top;
 
     /**
      * Full constructor.
@@ -128,5 +122,25 @@ public class BaseCoordinate {
     @Override
     public final String toString() {
         return "Width:" + this.width + ", height:" + this.height + ", left:" + this.left + ", top:" + this.top;
+    }
+
+    @Override
+    public final int getWidth() {
+        return this.width;
+    }
+
+    @Override
+    public final int getHeight() {
+        return this.height;
+    }
+
+    @Override
+    public final int getLeft() {
+        return this.left;
+    }
+
+    @Override
+    public final int getTop() {
+        return this.top;
     }
 }

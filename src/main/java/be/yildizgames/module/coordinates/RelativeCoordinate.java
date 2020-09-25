@@ -21,61 +21,27 @@
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  SOFTWARE.
  *
  */
+package be.yildizgames.module.coordinates;
 
-package be.yildizgames.module.coordinate;
+import be.yildizgames.module.window.widget.ImageMetadata;
 
-/**
- * Wrapper class for a relative value.
- *
- * @author Grégory Van den Borre
- */
-public final class Relative {
+public interface RelativeCoordinate {
 
+    Coordinates compute(int relativeWidth, int relativeHeight, int relativeLeft, int relativeTop);
 
-    /**
-     * Constant for 1 / 2.
-     */
-    public static final Relative HALF = Relative.valueOf(0.5f);
+    Coordinates compute(Coordinates relative);
 
-    /**
-     * Constant for 1 / 3.
-     */
-    public static final Relative THIRD = Relative.valueOf(0.3333333f);
+    Coordinates compute(CoordinatesProvider provider);
 
-    /**
-     * Constant for 1 / 4.
-     */
-    public static final Relative QUARTER = Relative.valueOf(0.25f);
+    Size computeSizeWithRatio(int percent, ImageMetadata imageMetadata);
 
-    /**
-     * Constant for 1 / 5.
-     */
-    public static final Relative FIFTH = Relative.valueOf(0.2f);
+    Size computeSizeWithRatio(int percentWidth, int percentHeight, ImageMetadata imageMetadata);
 
-    /**
-     * Constant for 1 / 8.
-     */
-    public static final Relative HEIGHTH = Relative.valueOf(0.125f);
+    Coordinates computeWithRatio(int relativeWidth, int relativeHeight, int relativeLeft, int relativeTop, ImageMetadata imageMetadata);
 
-    /**
-     * Constant for 1 / 10.
-     */
-    public static final Relative TENTH = Relative.valueOf(0.1f);
+    Coordinates computeWithRatio(Coordinates percent, ImageMetadata imageMetadata);
 
-    /**
-     * Relative value.
-     */
-    public final float value;
+    Position computePosition(int relativeLeft, int relativeTop);
 
-    private Relative(float value) {
-        this.value = value;
-    }
-
-    public static Relative valueOf(float value) {
-        return new Relative(value);
-    }
-
-    public float of(float v) {
-        return v * this.value;
-    }
+    Coordinates computeWithRatio(CoordinatesProvider percent, ImageMetadata imageMetadata);
 }

@@ -22,11 +22,14 @@
  *
  */
 
-package be.yildizgames.module.coordinate;
+package be.yildizgames.module.coordinates;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * @author Grégory Van den Borre
@@ -35,10 +38,10 @@ class BaseCoordinateTest {
 
     @Test
     void test() {
-        assertEquals(0, BaseCoordinate.ZERO.width);
-        assertEquals(0, BaseCoordinate.ZERO.height);
-        assertEquals(0, BaseCoordinate.ZERO.left);
-        assertEquals(0, BaseCoordinate.ZERO.top);
+        assertEquals(0, FullCoordinates.ZERO.getWidth());
+        assertEquals(0, FullCoordinates.ZERO.getHeight());
+        assertEquals(0, FullCoordinates.ZERO.getLeft());
+        assertEquals(0, FullCoordinates.ZERO.getTop());
     }
 
     @Test
@@ -48,10 +51,10 @@ class BaseCoordinateTest {
         int width = 12;
         int height = 9;
         BaseCoordinate bc = new BaseCoordinate(width, height, left, top);
-        assertEquals(top, bc.top);
-        assertEquals(left, bc.left);
-        assertEquals(width, bc.width);
-        assertEquals(height, bc.height);
+        assertEquals(top, bc.getTop());
+        assertEquals(left, bc.getLeft());
+        assertEquals(width, bc.getWidth());
+        assertEquals(height, bc.getHeight());
     }
 
     @Test
