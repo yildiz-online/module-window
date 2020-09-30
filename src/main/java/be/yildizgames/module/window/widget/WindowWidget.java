@@ -52,6 +52,8 @@ public interface WindowWidget<T extends WindowWidget> extends CoordinatesProvide
         return setCoordinates(FullCoordinates.full(width, height, left, top));
     }
 
+    T setOpacity(float opacity);
+
     T setSize(Size size);
 
     T requestFocus();
