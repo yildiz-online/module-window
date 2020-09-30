@@ -103,6 +103,8 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowShape createRectangle();
 
+    WindowToggle createToggle();
+
     /**
      * Create a new message modal window.
      * @return The created modal window.
