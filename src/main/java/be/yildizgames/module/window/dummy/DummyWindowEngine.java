@@ -65,6 +65,11 @@ public class DummyWindowEngine implements BaseWindowEngine {
     }
 
     @Override
+    public BaseWindowEngine setLoadingImage(String image) {
+        return this;
+    }
+
+    @Override
     public final DummyWindowEngine showCursor() {
         return this;
     }

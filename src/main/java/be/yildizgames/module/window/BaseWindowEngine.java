@@ -42,6 +42,8 @@ public interface BaseWindowEngine extends WindowEngine {
      */
     BaseWindowEngine update();
 
+    BaseWindowEngine setLoadingImage(String image);
+
     /**
      * Delete the resources used when loading the engine.
      */
