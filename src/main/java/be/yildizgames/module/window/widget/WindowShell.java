@@ -101,6 +101,8 @@ public interface WindowShell extends WindowWidget<WindowShell> {
      */
     void checkForEvent();
 
+    WindowShape createRectangle();
+
     /**
      * Create a new message modal window.
      * @return The created modal window.
