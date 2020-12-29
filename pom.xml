@@ -40,14 +40,10 @@
     <parent>
         <groupId>be.yildiz-games</groupId>
         <artifactId>parent</artifactId>
-        <version>3.0.13</version>
+        <version>4.0.0</version>
     </parent>
 
     <packaging>jar</packaging>
-
-    <properties>
-        <java.version>11</java.version>
-    </properties>
 
     <scm>
         <connection>scm:git:https://github.com/yildiz-online/module-window</connection>
