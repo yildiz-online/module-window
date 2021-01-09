@@ -17,15 +17,13 @@ package be.yildizgames.module.window;
  */
 public interface ViewableElement<T> {
 
-    T show();
-
-    T hide();
-
-    default T setVisible(boolean visible) {
-        if (visible) {
-            return this.show();
-        } else {
-            return this.hide();
-        }
+    default T show() {
+        return this.setVisible(true);
     }
+
+    default T hide() {
+        return this.setVisible(false);
+    }
+
+    T setVisible(boolean visible);
 }
