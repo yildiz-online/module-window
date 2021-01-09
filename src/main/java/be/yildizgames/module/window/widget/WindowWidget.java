@@ -31,6 +31,7 @@ import be.yildizgames.module.coordinates.CoordinatesProvider;
 import be.yildizgames.module.coordinates.FullCoordinates;
 import be.yildizgames.module.coordinates.Position;
 import be.yildizgames.module.coordinates.Size;
+import be.yildizgames.module.window.ViewableElement;
 import be.yildizgames.module.window.input.MouseOverListener;
 
 /**
@@ -39,7 +40,7 @@ import be.yildizgames.module.window.input.MouseOverListener;
  *
  * @author Grégory Van den Borre
  */
-public interface WindowWidget<T extends WindowWidget> extends CoordinatesProvider {
+public interface WindowWidget<T extends WindowWidget> extends CoordinatesProvider, ViewableElement<T> {
 
     /**
      * Set the widget size and position.
