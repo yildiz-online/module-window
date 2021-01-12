@@ -31,7 +31,7 @@ package be.yildizgames.module.window.widget;
  *
  * @author Grégory Van den Borre
  */
-public interface WindowDropdown extends WindowWidget<WindowDropdown> {
+public interface WindowDropdown extends WindowWidget<WindowDropdown>, CaptionAssociated<WindowDropdown> {
 
     /**
      * Set an element of the dropdown selected.

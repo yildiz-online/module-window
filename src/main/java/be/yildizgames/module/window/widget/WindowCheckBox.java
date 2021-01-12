@@ -28,15 +28,13 @@ package be.yildizgames.module.window.widget;
  *
  * @author Grégory Van den Borre
  */
-public interface WindowCheckBox extends WindowWidget<WindowCheckBox>{
+public interface WindowCheckBox extends WindowWidget<WindowCheckBox>, CaptionAssociated<WindowCheckBox> {
 
     boolean isChecked();
 
     WindowCheckBox check();
 
     WindowCheckBox uncheck();
-
-    WindowCheckBox setCaption(String text);
 
     WindowCheckBox onChange(WindowWidgetChangeListener<Boolean> listener);
 }
