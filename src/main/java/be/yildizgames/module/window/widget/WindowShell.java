@@ -202,4 +202,8 @@ public interface WindowShell extends WindowWidget<WindowShell> {
     }
 
     Coordinates getCoordinates();
+
+    WindowShell showCursor();
+
+    WindowShell hideCursor();
 }
