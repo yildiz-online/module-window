@@ -15,10 +15,22 @@ package be.yildizgames.module.window.widget;
 /**
  * @author Grégory Van den Borre
  */
-public interface WindowToggle extends WindowWidget <WindowToggle> {
+public interface WindowToggle extends WindowWidget <WindowToggle>, CaptionAssociated<WindowToggle> {
 
     WindowToggle check();
 
     WindowToggle uncheck();
 
+    boolean isChecked();
+
+    default WindowToggle setSelected(boolean selected) {
+        if(selected) {
+            this.check();
+        } else {
+            this.uncheck();
+        }
+        return this;
+    }
+
+    WindowToggle onChange(WindowWidgetChangeListener<Boolean> listener);
 }

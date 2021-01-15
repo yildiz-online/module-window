@@ -36,5 +36,14 @@ public interface WindowCheckBox extends WindowWidget<WindowCheckBox>, CaptionAss
 
     WindowCheckBox uncheck();
 
+    default WindowCheckBox setSelected(boolean selected) {
+        if(selected) {
+            this.check();
+        } else {
+            this.uncheck();
+        }
+        return this;
+    }
+
     WindowCheckBox onChange(WindowWidgetChangeListener<Boolean> listener);
 }
