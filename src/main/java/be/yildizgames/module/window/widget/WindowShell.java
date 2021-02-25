@@ -163,6 +163,8 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowNotification createNotification();
 
+    WindowNotificationPane createNotificationPane();
+
     WindowCanvas createCanvas();
 
     default WindowPopup createPopup() {
