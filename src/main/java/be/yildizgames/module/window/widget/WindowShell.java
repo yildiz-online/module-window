@@ -205,7 +205,11 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     Coordinates getCoordinates();
 
+    WindowAlert createAlert();
+
     WindowShell showCursor();
 
     WindowShell hideCursor();
+
+    WindowFileChooser createFileChooser();
 }
