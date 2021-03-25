@@ -26,19 +26,59 @@
 package be.yildizgames.module.window.input;
 
 /**
+ * Keyboard keys
  * @author Grégory Van den Borre
  */
 public enum Key {
 
+    /**
+     * None.
+     */
     EMPTY,
+
+    /**
+     * Main enter.
+     */
     ENTER,
+
+    /**
+     * Control.
+     */
     CTRL,
+
+    /**
+     * Shift, left or right.
+     */
     SHIFT,
+
+    /**
+     * Escape.
+     */
     ESC,
+
+    /**
+     * Tabulation.
+     */
     TAB,
+
+    /**
+     * Arrow up.
+     */
     UP,
+
+    /**
+     * Arrow down.
+     */
     DOWN,
+
+    /**
+     * Arrow left.
+     */
     LEFT,
+
+    /**
+     * Arrow right.
+     */
     RIGHT,
     END,
     INSERT,
