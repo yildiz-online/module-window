@@ -17,7 +17,13 @@ package be.yildizgames.module.window.widget;
  */
 public interface WindowAlert {
 
-    WindowAlert open();
+    WindowAlert setHeaderText(String header);
+
+    WindowAlert setContentText(String content);
+
+    WindowAlert setTitle(String title);
+
+    WindowAlert open(OnClickAlertButtonListener listener);
 
     WindowAlert close();
 
@@ -27,5 +33,15 @@ public interface WindowAlert {
 
     }
 
-    void setType(AlertType type);
+    WindowAlert setType(AlertType type);
+
+    enum AlertButtonType {
+        APPLY, CANCEL, CLOSE, NO, FINISH, NEXT, PREVIOUS, YES, OK
+    }
+
+    interface OnClickAlertButtonListener {
+
+        void onClick(AlertButtonType buttonType);
+
+    }
 }
