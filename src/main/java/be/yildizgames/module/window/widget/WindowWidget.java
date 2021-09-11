@@ -33,6 +33,7 @@ import be.yildizgames.module.coordinates.Position;
 import be.yildizgames.module.coordinates.Size;
 import be.yildizgames.module.window.ViewableElement;
 import be.yildizgames.module.window.input.MouseOverListener;
+import be.yildizgames.module.window.widget.animation.AnimationBehavior;
 
 /**
  * Base element with common behavior for the different widgets.
@@ -40,7 +41,19 @@ import be.yildizgames.module.window.input.MouseOverListener;
  *
  * @author Grégory Van den Borre
  */
-public interface WindowWidget<T extends WindowWidget> extends CoordinatesProvider, ViewableElement<T> {
+public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProvider, ViewableElement<T> {
+
+    T setScaleAnimation(AnimationBehavior animation);
+
+    T playScaleAnimation();
+
+    T stopScaleAnimation();
+
+    T setTranslationAnimation(AnimationBehavior animation);
+
+    T playTranslationAnimation();
+
+    T stopTranslationAnimation();
 
     /**
      * Set the widget size and position.
