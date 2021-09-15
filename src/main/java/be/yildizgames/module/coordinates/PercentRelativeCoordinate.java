@@ -46,17 +46,33 @@ public class PercentRelativeCoordinate implements RelativeCoordinate {
 
     @Override
     public final Coordinates compute(int percentWidth, int percentHeight, int percentLeft, int percentTop) {
-        float width = root.getWidth() * 0.01f * percentWidth;
-        float height = root.getHeight() * 0.01f * percentHeight;
-        float top =  root.getTop() + root.getHeight() * 0.01f * percentTop;
-        float left = root.getLeft() + root.getWidth() * 0.01f * percentLeft;
+        var w = root.getWidth();
+        var h = root.getHeight();
+        if(w == 0) {
+            w = 1;
+        }
+        if(h == 0) {
+            h = 1;
+        }
+        float width = w * 0.01f * percentWidth;
+        float height = h * 0.01f * percentHeight;
+        float top =  root.getTop() + h * 0.01f * percentTop;
+        float left = root.getLeft() + w * 0.01f * percentLeft;
         return FullCoordinates.full(Math.round(width), Math.round(height),  Math.round(left), Math.round(top));
     }
 
     @Override
     public final Position computePosition(int percentLeft, int percentTop) {
-        float top =  root.getTop() + root.getHeight() * 0.01f * percentTop;
-        float left = root.getLeft() + root.getWidth() * 0.01f * percentLeft;
+        var w = root.getWidth();
+        var h = root.getHeight();
+        if(w == 0) {
+            w = 1;
+        }
+        if(h == 0) {
+            h = 1;
+        }
+        float top =  root.getTop() + h * 0.01f * percentTop;
+        float left = root.getLeft() + w * 0.01f * percentLeft;
         return FullCoordinates.position(Math.round(left), Math.round(top));
     }
 
@@ -82,17 +98,26 @@ public class PercentRelativeCoordinate implements RelativeCoordinate {
 
     @Override
     public final Coordinates computeWithRatio(int percentWidth, int percentHeight, int percentLeft, int percentTop, ImageMetadata imageMetadata) {
-        float width = root.getWidth() * 0.01f * percentWidth;
+        var w = root.getWidth();
+        var h = root.getHeight();
+        if(w == 0) {
+            w = 1;
+        }
+        if(h == 0) {
+            h = 1;
+        }
+
+        float width = w * 0.01f * percentWidth;
         float height = width / (float)imageMetadata.getRatio();
 
-        float maxHeight = root.getHeight() * 0.01f * percentHeight;
+        float maxHeight = h * 0.01f * percentHeight;
         if(height > maxHeight) {
             height = root.getHeight() * 0.01f * percentHeight;
             width = height * (float)imageMetadata.getRatio();
         }
 
-        float top =  root.getTop() + root.getHeight() * 0.01f * percentTop;
-        float left = root.getLeft() + root.getWidth() * 0.01f * percentLeft;
+        float top =  root.getTop() + h * 0.01f * percentTop;
+        float left = root.getLeft() + w * 0.01f * percentLeft;
         return FullCoordinates.full(Math.round(width), Math.round(height),  Math.round(left), Math.round(top));
     }
 
