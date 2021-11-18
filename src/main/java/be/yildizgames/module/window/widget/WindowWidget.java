@@ -125,7 +125,9 @@ public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProv
         return (T)this;
     }
 
-    default T fireEvent(WidgetEvent event) { return (T)this; };
+    default T fireEvent(WidgetEvent event) {
+        return (T) this;
+    }
 
     default boolean isFocused() {
         return false;

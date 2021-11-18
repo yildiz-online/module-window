@@ -49,6 +49,7 @@ class CoordinatesTest {
         assertEquals(10, c.getWidth());
         assertEquals(14, c.getLeft());
         assertEquals(16, c.getTop());
-        assertThrows(NullPointerException.class, () -> FullCoordinates.full(FullCoordinates.size(10, 15), null));
+        var s = FullCoordinates.size(10, 15);
+        assertThrows(NullPointerException.class, () -> FullCoordinates.full(s, null));
     }
 }

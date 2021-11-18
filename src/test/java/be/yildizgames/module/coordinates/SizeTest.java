@@ -31,7 +31,7 @@ class SizeTest {
         assertEquals(s, s2);
         Coordinates bc = FullCoordinates.full(FullCoordinates.position(5, 10));
         Size s3 = FullCoordinates.size(bc);
-        assertEquals(s3, FullCoordinates.ZERO);
+        assertEquals(FullCoordinates.ZERO, s3);
         s = FullCoordinates.size(10);
         assertEquals(FullCoordinates.full(10, 10, 0, 0), s);
     }
