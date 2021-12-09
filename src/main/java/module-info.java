@@ -22,15 +22,17 @@
  *
  */
 
-module be.yildizgames.module.window {
+open module be.yildizgames.module.window {
 
     uses be.yildizgames.module.window.WindowEngineProvider;
 
     requires be.yildizgames.common.util;
+    requires java.desktop;
 
     exports be.yildizgames.module.color;
     exports be.yildizgames.module.coordinates;
     exports be.yildizgames.module.window;
+    exports be.yildizgames.module.window.util.image;
     exports be.yildizgames.module.window.widget;
     exports be.yildizgames.module.window.input;
     exports be.yildizgames.module.window.widget.animation;

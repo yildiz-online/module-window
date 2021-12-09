@@ -23,6 +23,8 @@
  */
 package be.yildizgames.module.window;
 
+import be.yildizgames.module.window.util.image.ImageResizeChecker;
+
 /**
  * Window engine API.
  *
@@ -76,9 +78,12 @@ public interface WindowEngine {
 
     /**
      * Provide the manager to handle threads in window.
+     *
      * @return The manager, never null.
      */
     WindowThreadManager getThreadManager();
+
+    ImageResizeChecker createImageResizeChecker(int width, int height);
 
     WindowEngine registerView(RegisteredView view);
 }
