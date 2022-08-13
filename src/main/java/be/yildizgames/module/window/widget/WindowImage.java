@@ -35,6 +35,8 @@ public interface WindowImage extends WindowWidget<WindowImage> {
 
     WindowImage setImage(String url);
 
+    WindowImage preserveRatio();
+
     default WindowImage addEffect(ImageEffect effect) {
         return this;
     }
@@ -43,6 +45,6 @@ public interface WindowImage extends WindowWidget<WindowImage> {
      * @return The metadata of the loaded image.
      */
     default ImageMetadata getLoadedImageMetadata() {
-        return new ImageMetadata(0,0);
+        return new ImageMetadata(0, 0);
     }
 }
