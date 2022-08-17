@@ -26,12 +26,11 @@ package be.yildizgames.module.window.dummy;
 
 import be.yildizgames.module.window.BaseWindowEngine;
 import be.yildizgames.module.window.Cursor;
-import be.yildizgames.module.window.util.image.ImageResizeChecker;
 import be.yildizgames.module.window.RegisteredView;
 import be.yildizgames.module.window.ScreenSize;
-import be.yildizgames.module.window.WindowHandle;
 import be.yildizgames.module.window.WindowThreadManager;
 import be.yildizgames.module.window.input.WindowInputListener;
+import be.yildizgames.module.window.util.image.ImageResizeChecker;
 
 /**
  * @author Grégory Van den Borre
@@ -110,10 +109,6 @@ public class DummyWindowEngine implements BaseWindowEngine {
         return this;
     }
 
-    @Override
-    public final WindowHandle getHandle() {
-        return new WindowHandle(0L);
-    }
 
     @Override
     public final DummyWindowEngine registerInput(WindowInputListener listener) {
