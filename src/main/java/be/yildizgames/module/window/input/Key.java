@@ -101,6 +101,21 @@ public enum Key {
     BREAK,
     ALT,
     PAUSE,
-    DELETE
+    A,
+    Q,
+    W,
+    E,
+    R,
+    T,
+    Y,
+    U,
+    I,
+    O,
+    P,
+    OPEN_BRACKET,
+    CLOSE_BRACKET,
+    BACK_SLASH, S, D, F, G, H, J, K, L, SEMICOLON, QUOTE, Z, X, C, V, B, N, M, COMMA, PERIOD, SLASH, BACK_QUOTE, DIGIT1, DIGIT2, DIGIT3, DIGIT4, DIGIT5, DIGIT6, DIGIT7, DIGIT8, DIGIT9, DIGIT0, SUBTRACT, EQUALS, SPACE, BACK_SPACE, DELETE
 
 }
+
+
