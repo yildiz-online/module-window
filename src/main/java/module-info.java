@@ -36,4 +36,5 @@ open module be.yildizgames.module.window {
     exports be.yildizgames.module.window.widget;
     exports be.yildizgames.module.window.input;
     exports be.yildizgames.module.window.widget.animation;
+    exports be.yildizgames.module.window.widget.experimental;
 }
