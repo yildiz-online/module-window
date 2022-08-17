@@ -29,7 +29,6 @@ package be.yildizgames.module.window.widget;
 import be.yildizgames.module.color.Color;
 import be.yildizgames.module.coordinates.Coordinates;
 import be.yildizgames.module.window.ScreenSize;
-import be.yildizgames.module.window.WindowHandle;
 import be.yildizgames.module.window.input.KeyboardListener;
 
 /**
@@ -167,41 +166,25 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowCanvas createCanvas();
 
-    default WindowPopup createPopup() {
-        return null;
-    }
+    WindowPopup createPopup();
 
-    default WindowCheckBox createCheckBox() {
-        return null;
-    }
+    WindowCheckBox createCheckBox();
 
     WindowShell addKeyListener(KeyboardListener listener);
 
     WindowShell toBack();
 
-    default WindowShell minimize(OnMinimize... minimizes) {
-        return this;
-    }
+    WindowShell toFront();
 
-    default WindowShell maximize() {
-        return this;
-    }
+    WindowShell minimize(OnMinimize... minimizes);
+
+    WindowShell maximize();
 
     WindowMediaPlayer createMediaPlayer();
 
     DirectoryChooser createDirectoryChooser();
 
-    default void exit() {
-
-    }
-
-    default WindowHandle getHandle() {
-        return new WindowHandle(0);
-    }
-
-    default WindowShell toFront() {
-        return this;
-    }
+    void exit();
 
     Coordinates getCoordinates();
 
