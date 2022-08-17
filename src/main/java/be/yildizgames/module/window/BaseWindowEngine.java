@@ -50,11 +50,6 @@ public interface BaseWindowEngine extends WindowEngine {
     BaseWindowEngine deleteLoadingResources();
 
     /**
-     * @return The handle of this window.
-     */
-    WindowHandle getHandle();
-
-    /**
      * Add an input listener to retrieve input event from this window.
      *
      * @param listener Listener to add.
