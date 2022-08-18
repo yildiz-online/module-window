@@ -30,6 +30,7 @@ import be.yildizgames.module.color.Color;
 import be.yildizgames.module.coordinates.Coordinates;
 import be.yildizgames.module.window.ScreenSize;
 import be.yildizgames.module.window.input.KeyboardListener;
+import be.yildizgames.module.window.widget.experimental.VirtualKeyboard;
 
 /**
  * Native window shell.
@@ -181,6 +182,8 @@ public interface WindowShell extends WindowWidget<WindowShell> {
     WindowShell maximize();
 
     WindowMediaPlayer createMediaPlayer();
+
+    VirtualKeyboard createVirtualKeyboard(KeyboardListener listener);
 
     DirectoryChooser createDirectoryChooser();
 

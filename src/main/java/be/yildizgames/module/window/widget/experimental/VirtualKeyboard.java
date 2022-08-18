@@ -22,4 +22,8 @@ public interface VirtualKeyboard {
     VirtualKeyboard setSize(Key key, int width, int height);
 
     VirtualKeyboard setImage(Key key, String image);
+
+    KeyboardLayout getLayout();
+
+    VirtualKeyboard setVisible(boolean visible);
 }
