@@ -29,34 +29,9 @@ import be.yildizgames.module.window.input.Key;
 /**
  * @author Grégory Van den Borre
  */
-public class KeyboardLayoutKey {
-
-    private final String unshifted;
-
-    private final String shifted;
-
-    private final Key code;
-
-    public KeyboardLayoutKey(String unshifted, String shifted, Key code) {
-        super();
-        this.unshifted = unshifted;
-        this.shifted = shifted;
-        this.code = code;
-    }
-
-    public String getUnshifted() {
-        return this.unshifted;
-    }
-
-    public String getShifted() {
-        return this.shifted;
-    }
-
-    public Key getCode() {
-        return this.code;
-    }
+public record KeyboardLayoutKey(String unshifted, String shifted, Key code) {
 
     public boolean isLetter() {
-        return this.getUnshifted().length() == 1 && Character.isLetter(this.getUnshifted().charAt(0));
+        return this.unshifted.length() == 1 && Character.isLetter(this.unshifted.charAt(0));
     }
 }
