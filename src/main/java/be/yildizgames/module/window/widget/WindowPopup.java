@@ -13,6 +13,7 @@
 package be.yildizgames.module.window.widget;
 
 import be.yildizgames.module.color.Color;
+import be.yildizgames.module.coordinates.ParentRelativePosition;
 
 /**
  * @author Grégory Van den Borre
@@ -45,7 +46,9 @@ public interface WindowPopup {
 
     WindowImage createImage(String image);
 
-    default WindowCheckBox createCheckBox() {
-        return null;
-    }
+    WindowCheckBox createCheckBox();
+
+    WindowPopup setPosition(ParentRelativePosition parentRelativePosition);
+
+    WindowPopup setVisible(boolean visible);
 }

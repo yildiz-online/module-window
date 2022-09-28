@@ -80,6 +80,10 @@ public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProv
         return this.setSize(FullCoordinates.size(size, size));
     }
 
+    int getHeight();
+
+    int getWidth();
+
     T setPosition(Position position);
 
     default T setPosition(int left, int top) {
