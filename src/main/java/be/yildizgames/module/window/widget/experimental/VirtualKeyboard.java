@@ -12,6 +12,9 @@
 
 package be.yildizgames.module.window.widget.experimental;
 
+import be.yildizgames.module.color.Color;
+import be.yildizgames.module.coordinates.Position;
+import be.yildizgames.module.coordinates.Size;
 import be.yildizgames.module.window.input.Key;
 
 /**
@@ -21,9 +24,27 @@ public interface VirtualKeyboard {
 
     VirtualKeyboard setSize(Key key, int width, int height);
 
+    VirtualKeyboard setPosition(Position position);
+
+    VirtualKeyboard setSize(Size size);
+
     VirtualKeyboard setImage(Key key, String image);
+
+    VirtualKeyboard setColor(Key key, Color color);
+
+    int getWidth();
+
+    VirtualKeyboard setBackground(Color color);
+
+    VirtualKeyboard press(Key key);
+
+    VirtualKeyboard setBackground(String image);
 
     KeyboardLayout getLayout();
 
     VirtualKeyboard setVisible(boolean visible);
+
+    VirtualKeyboard shift(boolean enabled);
+
+    VirtualKeyboard capsLock(boolean enabled);
 }
