@@ -26,6 +26,8 @@
 
 package be.yildizgames.module.window.widget.experimental;
 
+import java.util.List;
+
 /**
  * @author Grégory Van den Borre
  */
@@ -35,4 +37,6 @@ public interface KeyboardLayout {
     int getNumberOfKeyForRow(int row);
 
     KeyboardLayoutKey getKey(int row, int key);
+
+    List<KeyboardLayoutKey> getKeys();
 }

@@ -27,6 +27,9 @@ package be.yildizgames.module.window.widget.experimental;
 
 import be.yildizgames.module.window.input.Key;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author Grégory Van den Borre
  */
@@ -87,6 +90,9 @@ public class QwertyKeyboardLayout implements KeyboardLayout {
                     new KeyboardLayoutKey(",", "<", Key.COMMA),
                     new KeyboardLayoutKey(".", ">", Key.PERIOD),
                     new KeyboardLayoutKey("/", "?", Key.SLASH)
+            },
+            {
+                    new KeyboardLayoutKey(" ", " ", Key.SPACE)
             }
     };
 
@@ -96,7 +102,7 @@ public class QwertyKeyboardLayout implements KeyboardLayout {
 
     @Override
     public final int getNumberOfRows() {
-        return 4;
+        return 5;
     }
 
     @Override
@@ -105,7 +111,14 @@ public class QwertyKeyboardLayout implements KeyboardLayout {
     }
 
     @Override
-    public KeyboardLayoutKey getKey(int row, int key) {
-        return this.keys[row][key];
+    public KeyboardLayoutKey getKey(int column, int key) {
+        return this.keys[column][key];
+    }
+
+    @Override
+    public List<KeyboardLayoutKey> getKeys() {
+        return Arrays.stream(this.keys)
+                .flatMap(Arrays::stream)
+                .toList();
     }
 }
