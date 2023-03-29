@@ -23,7 +23,6 @@
  */
 package be.yildizgames.module.window;
 
-import be.yildizgames.module.window.audio.AudioEffect;
 import be.yildizgames.module.window.util.image.ImageResizeChecker;
 
 /**
@@ -87,6 +86,4 @@ public interface WindowEngine {
     ImageResizeChecker createImageResizeChecker(int width, int height);
 
     WindowEngine registerView(RegisteredView view);
-
-    AudioEffect createAudioEffect(String file);
 }

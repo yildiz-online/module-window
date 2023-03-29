@@ -29,6 +29,7 @@ package be.yildizgames.module.window.widget;
 import be.yildizgames.module.color.Color;
 import be.yildizgames.module.coordinates.Coordinates;
 import be.yildizgames.module.window.ScreenSize;
+import be.yildizgames.module.window.audio.AudioEffect;
 import be.yildizgames.module.window.input.KeyboardListener;
 import be.yildizgames.module.window.widget.experimental.VirtualKeyboard;
 
@@ -198,4 +199,6 @@ public interface WindowShell extends WindowWidget<WindowShell> {
     WindowShell hideCursor();
 
     WindowFileChooser createFileChooser();
+
+    AudioEffect createAudioEffect(String file);
 }
