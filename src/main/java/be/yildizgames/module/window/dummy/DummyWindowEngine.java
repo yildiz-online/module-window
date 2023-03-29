@@ -29,7 +29,6 @@ import be.yildizgames.module.window.Cursor;
 import be.yildizgames.module.window.RegisteredView;
 import be.yildizgames.module.window.ScreenSize;
 import be.yildizgames.module.window.WindowThreadManager;
-import be.yildizgames.module.window.audio.AudioEffect;
 import be.yildizgames.module.window.input.WindowInputListener;
 import be.yildizgames.module.window.util.image.ImageResizeChecker;
 
@@ -103,11 +102,6 @@ public class DummyWindowEngine implements BaseWindowEngine {
     @Override
     public final DummyWindowEngine registerView(RegisteredView view) {
         return this;
-    }
-
-    @Override
-    public AudioEffect createAudioEffect(String file) {
-        return null;
     }
 
     @Override
