@@ -57,6 +57,7 @@ public interface WindowTextLine extends WindowWidget<WindowTextLine> {
     }
 
     WindowTextLine setFont(WindowFont font);
+    WindowTextLine setFont(String path, int height);
 
     public enum TextAlignment {
 
