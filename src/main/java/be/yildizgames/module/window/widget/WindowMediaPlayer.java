@@ -15,13 +15,14 @@ package be.yildizgames.module.window.widget;
 import be.yildizgames.module.coordinates.Coordinates;
 import be.yildizgames.module.coordinates.Position;
 import be.yildizgames.module.coordinates.Size;
+import be.yildizgames.module.window.ViewableElement;
 
 import java.nio.file.Path;
 
 /**
  * @author Grégory Van den Borre
  */
-public interface WindowMediaPlayer {
+public interface WindowMediaPlayer extends ViewableElement<WindowMediaPlayer> {
 
     WindowMediaPlayer setMedia(String url);
 
@@ -36,6 +37,4 @@ public interface WindowMediaPlayer {
     WindowMediaPlayer play();
 
     WindowMediaPlayer stop();
-
-    WindowMediaPlayer setVisible(boolean visible);
 }
