@@ -1,6 +1,6 @@
 /*
  This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
- Copyright (c) 2018-2023 Grégory Van den Borre
+ Copyright (c) 2019-2023 Grégory Van den Borre
  More infos available: https://engine.yildiz-games.be
  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  documentation files (the "Software"), to deal in the Software without restriction, including without limitation
@@ -12,22 +12,37 @@
  OR COPYRIGHT  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
+package be.yildizgames.module.window.screen;
 
-open module be.yildizgames.module.window {
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 
-    uses be.yildizgames.module.window.WindowEngineProvider;
+/**
+ * @author Grégory Van den Borre
+ */
+class CursorTest {
 
-    requires be.yildizgames.common.util;
-    requires java.desktop;
+    @Nested
+    class Constructor {
 
-    exports be.yildizgames.module.color;
-    exports be.yildizgames.module.coordinates;
-    exports be.yildizgames.module.window;
-    exports be.yildizgames.module.window.util.image;
-    exports be.yildizgames.module.window.widget;
-    exports be.yildizgames.module.window.input;
-    exports be.yildizgames.module.window.audio;
-    exports be.yildizgames.module.window.widget.animation;
-    exports be.yildizgames.module.window.widget.experimental;
-    exports be.yildizgames.module.window.screen;
+        @Test
+        void happyFlow() {
+            Cursor cursor = new Cursor("test", "test.gif");
+            Assertions.assertEquals("test", cursor.getId());
+            Assertions.assertEquals("test.gif", cursor.getPath());
+            Assertions.assertEquals(0, cursor.getX());
+            Assertions.assertEquals(0, cursor.getY());
+        }
+
+        @Test
+        void allParameters() {
+            Cursor cursor = new Cursor("test", "test.gif",5 , 3);
+            Assertions.assertEquals("test", cursor.getId());
+            Assertions.assertEquals("test.gif", cursor.getPath());
+            Assertions.assertEquals(5, cursor.getX());
+            Assertions.assertEquals(3, cursor.getY());
+        }
+    }
+
 }

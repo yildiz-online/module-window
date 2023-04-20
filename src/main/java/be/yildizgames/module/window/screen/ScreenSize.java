@@ -12,71 +12,44 @@
  OR COPYRIGHT  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package be.yildizgames.module.window;
 
-import be.yildizgames.module.window.screen.Cursor;
-import be.yildizgames.module.window.screen.ScreenSize;
-import be.yildizgames.module.window.util.image.ImageResizeChecker;
+package be.yildizgames.module.window.screen;
 
 /**
- * Window engine API.
+ * Screen size coordinates in pixels.
  *
  * @author Grégory Van den Borre
  */
-public interface WindowEngine {
-
-
-    /**
-     * Create a new cursor.
-     *
-     * @param cursor Contains the data to build the cursor.
-     */
-    Cursor createCursor(Cursor cursor);
+public class ScreenSize {
 
     /**
-     * Set the title for the main window.
-     *
-     * @param title Title to print.
+     * Screen width, in pixels.
      */
-    WindowEngine setWindowTitle(String title);
+    public final int width;
 
     /**
-     * Set a new cursor in the game window.
-     *
-     * @param cursor Cursor to use.
+     * Screen height, in pixels.
      */
-    WindowEngine setCursor(Cursor cursor);
+    public final int height;
 
     /**
-     * Display the mouse.
+     * Create a new screen size instance.
+     * @param width Screen width, in pixels, cannot be smaller than 0.
+     * @param height Screen height, in pixels, cannot be smaller than 0.
      */
-    WindowEngine showCursor();
+    public ScreenSize(final int width, final int height) {
+        if(width <= 0) {
+            throw new IllegalArgumentException("Width must be higher than 0");
+        }
+        if(height <= 0) {
+            throw new IllegalArgumentException("Height must be higher than 0");
+        }
+        this.width = width;
+        this.height = height;
+    }
 
-    /**
-     * Hide the mouse.
-     */
-    WindowEngine hideCursor();
-
-    /**
-     * @return The screen size, never null.
-     */
-    ScreenSize getScreenSize();
-
-    /**
-     * Set the window icon.
-     *
-     * @param file Icon file.
-     */
-    WindowEngine setWindowIcon(String file);
-
-    /**
-     * Provide the manager to handle threads in window.
-     *
-     * @return The manager, never null.
-     */
-    WindowThreadManager getThreadManager();
-
-    ImageResizeChecker createImageResizeChecker(int width, int height);
-
-    WindowEngine registerView(RegisteredView view);
+    @Override
+    public final String toString() {
+        return this.width + "*" + this.height;
+    }
 }
