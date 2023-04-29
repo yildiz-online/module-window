@@ -47,8 +47,4 @@ public interface WindowImage extends WindowWidget<WindowImage> {
     default ImageMetadata getLoadedImageMetadata() {
         return new ImageMetadata(0, 0);
     }
-
-    WindowImage toFront();
-
-    WindowImage toBack();
 }

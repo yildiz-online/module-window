@@ -136,4 +136,8 @@ public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProv
     default boolean isFocused() {
         return false;
     }
+
+    T toFront();
+
+    T toBack();
 }
