@@ -15,16 +15,24 @@ package be.yildizgames.module.window.widget.experimental;
 import be.yildizgames.module.color.Color;
 import be.yildizgames.module.coordinates.Position;
 import be.yildizgames.module.coordinates.Size;
+import be.yildizgames.module.window.ViewableElement;
 import be.yildizgames.module.window.input.Key;
+import be.yildizgames.module.window.input.KeyboardListener;
 
 /**
  * @author Grégory Van den Borre
  */
-public interface VirtualKeyboard {
+public interface VirtualKeyboard extends ViewableElement<VirtualKeyboard> {
 
     VirtualKeyboard setSize(Key key, int width, int height);
 
+    VirtualKeyboard addListener(KeyboardListener listener);
+
     VirtualKeyboard setPosition(Position position);
+
+    int getLeft();
+
+    int getTop();
 
     VirtualKeyboard setSize(Size size);
 
@@ -42,7 +50,7 @@ public interface VirtualKeyboard {
 
     KeyboardLayout getLayout();
 
-    VirtualKeyboard setVisible(boolean visible);
+    VirtualKeyboard toFront();
 
     VirtualKeyboard shift(boolean enabled);
 
