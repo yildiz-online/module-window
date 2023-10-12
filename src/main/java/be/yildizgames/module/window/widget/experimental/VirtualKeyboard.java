@@ -30,6 +30,8 @@ public interface VirtualKeyboard extends ViewableElement<VirtualKeyboard> {
 
     VirtualKeyboard setPosition(Position position);
 
+    Size getSize();
+
     int getLeft();
 
     int getTop();
