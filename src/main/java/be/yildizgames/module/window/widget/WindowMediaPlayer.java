@@ -13,6 +13,7 @@
 package be.yildizgames.module.window.widget;
 
 import be.yildizgames.module.coordinates.Coordinates;
+import be.yildizgames.module.coordinates.FullCoordinates;
 import be.yildizgames.module.coordinates.Position;
 import be.yildizgames.module.coordinates.Size;
 import be.yildizgames.module.window.ViewableElement;
@@ -26,11 +27,45 @@ public interface WindowMediaPlayer extends ViewableElement<WindowMediaPlayer> {
 
     WindowMediaPlayer setMedia(String url);
 
-    WindowMediaPlayer setCoordinates(Coordinates coordinates);
 
     WindowMediaPlayer setSize(Size size);
 
     WindowMediaPlayer setPosition(Position position);
+
+    WindowMediaPlayer setCoordinates(Coordinates coordinates);
+
+    /**
+     * Widget left position.
+     * @return the widget left position.
+     */
+    int getLeft();
+
+    /**
+     * Widget right position.
+     * @return the widget right position.
+     */
+    int getRight();
+
+    /**
+     * Widget top position.
+     * @return the widget top position.
+     */
+    int getTop();
+
+    /**
+     * Widget bottom position.
+     * @return the widget bottom position.
+     */
+    int getBottom();
+
+
+    default WindowMediaPlayer setTop(int top) {
+        return this.setPosition(FullCoordinates.position(getLeft(), top));
+    }
+
+    default WindowMediaPlayer setLeft(int left) {
+        return this.setPosition(FullCoordinates.position(left, getTop()));
+    }
 
     WindowMediaPlayer setMedia(Path path);
 
