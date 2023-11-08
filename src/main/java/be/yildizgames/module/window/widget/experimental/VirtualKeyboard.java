@@ -28,6 +28,8 @@ public interface VirtualKeyboard extends ViewableElement<VirtualKeyboard> {
 
     VirtualKeyboard addListener(KeyboardListener listener);
 
+    VirtualKeyboard clearListeners();
+
     VirtualKeyboard setPosition(Position position);
 
     Size getSize();
