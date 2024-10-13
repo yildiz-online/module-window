@@ -43,6 +43,8 @@ import be.yildizgames.module.window.widget.animation.AnimationBehavior;
  */
 public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProvider, ViewableElement<T> {
 
+    T setCssStyleClass(String cssClass);
+
     T setScaleAnimation(AnimationBehavior animation);
 
     T playScaleAnimation();

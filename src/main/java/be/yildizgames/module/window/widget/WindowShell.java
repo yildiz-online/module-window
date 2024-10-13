@@ -17,10 +17,12 @@ package be.yildizgames.module.window.widget;
 
 import be.yildizgames.module.color.Color;
 import be.yildizgames.module.coordinates.Coordinates;
-import be.yildizgames.module.window.screen.ScreenSize;
 import be.yildizgames.module.window.audio.AudioEffect;
 import be.yildizgames.module.window.input.KeyboardListener;
+import be.yildizgames.module.window.screen.ScreenSize;
 import be.yildizgames.module.window.widget.experimental.VirtualKeyboard;
+
+import java.nio.file.Path;
 
 /**
  * Native window shell.
@@ -28,6 +30,12 @@ import be.yildizgames.module.window.widget.experimental.VirtualKeyboard;
  * @author Grégory Van den Borre
  */
 public interface WindowShell extends WindowWidget<WindowShell> {
+
+    void addState(StateName name);
+
+    void addGridState(StateName name);
+
+    void selectState(StateName name);
 
     /**
      * The the window title.
@@ -44,11 +52,19 @@ public interface WindowShell extends WindowWidget<WindowShell> {
     WindowShell setIcon(String file);
 
     /**
-     * Set the window background color.
+     * Set the window background color for the active state.
      * @param color Color to use.
      * @return This object for chaining.
      */
     WindowShell setBackground(Color color);
+
+    /**
+     * Set the window background color for a given state.
+     * @param color Color to use.
+     * @param state State name.
+     * @return This object for chaining.
+     */
+    WindowShell setBackground(Color color, StateName state);
 
     /**
      * Set the window background image.
@@ -56,6 +72,8 @@ public interface WindowShell extends WindowWidget<WindowShell> {
      * @return This object for chaining.
      */
     WindowShell setBackground(String file);
+
+    WindowShell setBackground(String file, StateName state);
 
     WindowShell setFullScreen();
 
@@ -86,6 +104,8 @@ public interface WindowShell extends WindowWidget<WindowShell> {
      */
     void update();
 
+    WindowShell setCss(Path cssFile);
+
     /**
      * Check for an event without sleeping.
      */
@@ -93,7 +113,11 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowShape createRectangle();
 
+    WindowShape createRectangle(StateName state);
+
     WindowToggle createToggle();
+
+    WindowNotificationPane createNotificationPane(StateName state);
 
     /**
      * Create a new message modal window.
@@ -119,6 +143,8 @@ public interface WindowShell extends WindowWidget<WindowShell> {
      */
     WindowTextLine createTextLine();
 
+    WindowTextLine createTextLine(StateName state);
+
     /**
      * Create a new button widget.
      * @return The created button.
@@ -127,19 +153,29 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowButton createButton(String background, String hover);
 
+    WindowButton createButton(StateName state);
+
     /**
      * Create a new image widget.
      * @return The created image.
      */
     WindowImage createImage(String image);
 
+    WindowImage createImage(String image, StateName state);
+
     WindowProgressBar createProgressBar();
 
     WindowTreeRoot createTreeRoot(int width, int height, WindowTreeElement... elements);
 
+    WindowProgressBar createProgressBar(StateName state);
+
     WindowDropdown createDropdown();
 
+    WindowDropdown createDropdown(StateName state);
+
     WindowButtonText createTextButton();
+
+    WindowButtonText createTextButton(StateName state);
 
     WindowInputBox createInputBox();
 
@@ -149,15 +185,23 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowModalFile createOpenFileBox();
 
+    WindowCheckBox createCheckBox(StateName state);
+
     WindowFont createFont(String path, int height);
 
+    WindowToggle createToggle(StateName state);
+
     WindowNotification createNotification();
+
+    VirtualKeyboard createVirtualKeyboard(KeyboardListener listener, StateName state);
 
     WindowNotificationPane createNotificationPane();
 
     WindowCanvas createCanvas();
 
     WindowPopup createPopup();
+
+    WindowInputBox createInputBox(StateName state);
 
     WindowCheckBox createCheckBox();
 
@@ -172,6 +216,8 @@ public interface WindowShell extends WindowWidget<WindowShell> {
     WindowShell maximize();
 
     WindowMediaPlayer createMediaPlayer();
+
+    WindowMediaPlayer createMediaPlayer(StateName state);
 
     VirtualKeyboard createVirtualKeyboard(KeyboardListener listener);
 
