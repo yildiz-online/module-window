@@ -31,9 +31,7 @@ import java.nio.file.Path;
  */
 public interface WindowShell extends WindowWidget<WindowShell> {
 
-    void addState(StateName name);
-
-    void addGridState(StateName name);
+    WindowState addState(StateName name);
 
     void selectState(StateName name);
 
@@ -179,8 +177,6 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowInputBox createInputBox();
 
-    WindowShell createChildWindow(WindowShellOptions... options);
-
     WindowMenuBar createMenuBar(WindowMenuBarElementDefinition... elements);
 
     WindowModalFile createOpenFileBox();
@@ -198,8 +194,6 @@ public interface WindowShell extends WindowWidget<WindowShell> {
     WindowNotificationPane createNotificationPane();
 
     WindowCanvas createCanvas();
-
-    WindowPopup createPopup();
 
     WindowInputBox createInputBox(StateName state);
 
