@@ -15,12 +15,12 @@
 
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.color.Color;
 import be.yildizgames.module.coordinates.Coordinates;
+import be.yildizgames.module.coordinates.Position;
+import be.yildizgames.module.coordinates.Size;
 import be.yildizgames.module.window.audio.AudioEffect;
 import be.yildizgames.module.window.input.KeyboardListener;
 import be.yildizgames.module.window.screen.ScreenSize;
-import be.yildizgames.module.window.widget.experimental.VirtualKeyboard;
 
 import java.nio.file.Path;
 
@@ -29,11 +29,11 @@ import java.nio.file.Path;
  *
  * @author Grégory Van den Borre
  */
-public interface WindowShell extends WindowWidget<WindowShell> {
+public interface WindowShell {
 
-    WindowState addState(StateName name);
+    WindowState createState();
 
-    void selectState(StateName name);
+    WindowShell setVisible(boolean visible);
 
     /**
      * The the window title.
@@ -48,30 +48,6 @@ public interface WindowShell extends WindowWidget<WindowShell> {
      * @return This object for chaining.
      */
     WindowShell setIcon(String file);
-
-    /**
-     * Set the window background color for the active state.
-     * @param color Color to use.
-     * @return This object for chaining.
-     */
-    WindowShell setBackground(Color color);
-
-    /**
-     * Set the window background color for a given state.
-     * @param color Color to use.
-     * @param state State name.
-     * @return This object for chaining.
-     */
-    WindowShell setBackground(Color color, StateName state);
-
-    /**
-     * Set the window background image.
-     * @param file Background image file.
-     * @return This object for chaining.
-     */
-    WindowShell setBackground(String file);
-
-    WindowShell setBackground(String file, StateName state);
 
     WindowShell setFullScreen();
 
@@ -109,95 +85,13 @@ public interface WindowShell extends WindowWidget<WindowShell> {
      */
     void checkForEvent();
 
-    WindowShape createRectangle();
-
-    WindowShape createRectangle(StateName state);
-
-    WindowToggle createToggle();
-
-    WindowNotificationPane createNotificationPane(StateName state);
-
-    /**
-     * Create a new message modal window.
-     * @return The created modal window.
-     */
-    WindowModal createMessageBox();
-
-    /**
-     * Create a new message modal window with a button for confirmation.
-     * @return The created modal window.
-     */
-    WindowModal createMessageButtonBox();
-
-    /**
-     * Create a new text area widget.
-     * @return The created text area.
-     */
-    WindowTextArea createTextArea();
-
-    /**
-     * Create a new text line widget.
-     * @return The created text line.
-     */
-    WindowTextLine createTextLine();
-
-    WindowTextLine createTextLine(StateName state);
-
-    /**
-     * Create a new button widget.
-     * @return The created button.
-     */
-    WindowButton createButton();
-
-    WindowButton createButton(String background, String hover);
-
-    WindowButton createButton(StateName state);
-
-    /**
-     * Create a new image widget.
-     * @return The created image.
-     */
-    WindowImage createImage(String image);
-
-    WindowImage createImage(String image, StateName state);
-
-    WindowProgressBar createProgressBar();
-
-    WindowTreeRoot createTreeRoot(int width, int height, WindowTreeElement... elements);
-
-    WindowProgressBar createProgressBar(StateName state);
-
-    WindowDropdown createDropdown();
-
-    WindowDropdown createDropdown(StateName state);
-
-    WindowButtonText createTextButton();
-
-    WindowButtonText createTextButton(StateName state);
-
-    WindowInputBox createInputBox();
-
-    WindowMenuBar createMenuBar(WindowMenuBarElementDefinition... elements);
-
-    WindowModalFile createOpenFileBox();
-
-    WindowCheckBox createCheckBox(StateName state);
-
     WindowFont createFont(String path, int height);
-
-    WindowToggle createToggle(StateName state);
 
     WindowNotification createNotification();
 
-    VirtualKeyboard createVirtualKeyboard(KeyboardListener listener, StateName state);
+    WindowShell setSize(Size size);
 
-    WindowNotificationPane createNotificationPane();
-
-    WindowCanvas createCanvas();
-
-    WindowInputBox createInputBox(StateName state);
-
-    WindowCheckBox createCheckBox();
+    WindowShell setPosition(Position position);
 
     WindowShell addKeyListener(KeyboardListener listener);
 
@@ -209,11 +103,7 @@ public interface WindowShell extends WindowWidget<WindowShell> {
 
     WindowShell maximize();
 
-    WindowMediaPlayer createMediaPlayer();
-
-    WindowMediaPlayer createMediaPlayer(StateName state);
-
-    VirtualKeyboard createVirtualKeyboard(KeyboardListener listener);
+    WindowShell hide();
 
     DirectoryChooser createDirectoryChooser();
 

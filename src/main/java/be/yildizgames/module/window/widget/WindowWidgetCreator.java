@@ -10,10 +10,22 @@ public interface WindowWidgetCreator {
 
     WindowToggle createToggle();
 
+    /**
+     * Create a new text line widget.
+     * @return The created text line.
+     */
     WindowTextLine createTextLine();
 
+    /**
+     * Create a new button widget.
+     * @return The created button.
+     */
     WindowButton createButton();
 
+    /**
+     * Create a new image widget.
+     * @return The created image.
+     */
     WindowImage createImage(String image);
 
     WindowProgressBar createProgressBar();
@@ -38,6 +50,10 @@ public interface WindowWidgetCreator {
 
     WindowModal createMessageButtonBox();
 
+    /**
+     * Create a new text area widget.
+     * @return The created text area.
+     */
     WindowTextArea createTextArea();
 
     WindowMenuBar createMenuBar(WindowMenuBarElementDefinition... elements);
