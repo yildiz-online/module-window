@@ -22,6 +22,7 @@ import be.yildizgames.module.window.audio.AudioEffect;
 import be.yildizgames.module.window.input.KeyboardListener;
 import be.yildizgames.module.window.screen.ScreenSize;
 
+import java.io.IOException;
 import java.nio.file.Path;
 
 /**
@@ -32,6 +33,8 @@ import java.nio.file.Path;
 public interface WindowShell {
 
     WindowState createState();
+
+    WindowState createState(Path template) throws IOException;
 
     WindowShell setVisible(boolean visible);
 
