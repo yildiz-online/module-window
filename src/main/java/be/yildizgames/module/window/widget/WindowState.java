@@ -8,7 +8,7 @@ public interface WindowState extends WindowWidgetCreator {
 
     WindowState activate();
 
-    WindowShell getWindow();
+    BorderLayout createBorderLayout();
 
     /**
      * Set the window background color for the active state.
@@ -31,4 +31,8 @@ public interface WindowState extends WindowWidgetCreator {
     Optional<WindowShape> findShape(String id);
 
     Optional<WindowButton> findButton(String id);
+
+    Optional<GridLayout> findGrid(String id);
+
+    Optional<TileLayout> findTile(String id);
 }

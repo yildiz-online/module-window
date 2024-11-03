@@ -65,4 +65,6 @@ public interface WindowWidgetCreator {
     WindowCanvas createCanvas();
 
     WindowButton createButton(String background, String hover);
+
+    WindowShell getWindow();
 }
