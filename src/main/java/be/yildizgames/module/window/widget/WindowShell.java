@@ -24,6 +24,7 @@ import be.yildizgames.module.window.screen.ScreenSize;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Properties;
 
 /**
  * Native window shell.
@@ -35,6 +36,8 @@ public interface WindowShell {
     WindowState createState();
 
     WindowState createState(Path template) throws IOException;
+
+    WindowState createState(Path template, Properties properties) throws IOException;
 
     WindowShell setVisible(boolean visible);
 
