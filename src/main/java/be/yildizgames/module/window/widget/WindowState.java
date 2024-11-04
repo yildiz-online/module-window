@@ -34,5 +34,7 @@ public interface WindowState extends WindowWidgetCreator {
 
     Optional<GridLayout> findGrid(String id);
 
+    Optional<WindowScrollbar> findScrollbar(String id);
+
     Optional<TileLayout> findTile(String id);
 }
