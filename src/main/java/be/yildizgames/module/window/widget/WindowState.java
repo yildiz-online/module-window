@@ -39,4 +39,9 @@ public interface WindowState extends WindowWidgetCreator {
     Optional<TileLayout> findTile(String id);
 
     Optional<BorderLayout> findBorder(String id);
+
+    Optional<WindowMediaPlayer> findMediaPlayer(String id);
+
+    Optional<WindowInputBox> findInputBox(String id);
+
 }
