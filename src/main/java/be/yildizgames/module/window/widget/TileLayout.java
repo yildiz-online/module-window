@@ -1,7 +1,5 @@
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.coordinates.Position;
-
 /**
  * @author Grégory Van den Borre
  */
@@ -11,7 +9,11 @@ public interface TileLayout {
 
     void setGap(int horizontal, int vertical);
 
-   int numberOfRow();
+    int numberOfRow();
 
-   int numberOfColumn();
+    int numberOfColumn();
+
+    void removeItem(WindowImage image);
+
+    int getSize();
 }
