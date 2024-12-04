@@ -67,4 +67,6 @@ public interface WindowWidgetCreator {
     WindowButton createButton(String background, String hover);
 
     WindowShell getWindow();
+
+    WindowMultiLayerImage createMultiLayerImage();
 }
