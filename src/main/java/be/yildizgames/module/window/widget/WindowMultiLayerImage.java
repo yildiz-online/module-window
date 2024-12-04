@@ -27,4 +27,6 @@ public interface WindowMultiLayerImage extends WindowWidget<WindowMultiLayerImag
     WindowMultiLayerImage toFront();
 
     WindowMultiLayerImage toBack();
+
+    WindowMultiLayerImage preserveRatio();
 }
