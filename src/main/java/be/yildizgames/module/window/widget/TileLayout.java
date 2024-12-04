@@ -3,9 +3,9 @@ package be.yildizgames.module.window.widget;
 /**
  * @author Grégory Van den Borre
  */
-public interface TileLayout {
+public interface TileLayout<T extends WindowWidget<T>> {
 
-    void addItem(WindowImage image);
+    void addItem(T image);
 
     void setGap(int horizontal, int vertical);
 
@@ -13,7 +13,7 @@ public interface TileLayout {
 
     int numberOfColumn();
 
-    void removeItem(WindowImage image);
+    void removeItem(T image);
 
     int getSize();
 }
