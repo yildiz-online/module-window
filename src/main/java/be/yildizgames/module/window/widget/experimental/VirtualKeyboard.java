@@ -15,14 +15,14 @@ package be.yildizgames.module.window.widget.experimental;
 import be.yildizgames.module.color.Color;
 import be.yildizgames.module.coordinates.Position;
 import be.yildizgames.module.coordinates.Size;
-import be.yildizgames.module.window.ViewableElement;
 import be.yildizgames.module.window.input.Key;
 import be.yildizgames.module.window.input.KeyboardListener;
+import be.yildizgames.module.window.widget.WindowWidget;
 
 /**
  * @author Grégory Van den Borre
  */
-public interface VirtualKeyboard extends ViewableElement<VirtualKeyboard> {
+public interface VirtualKeyboard extends WindowWidget<VirtualKeyboard> {
 
     VirtualKeyboard setSize(Key key, int width, int height);
 
