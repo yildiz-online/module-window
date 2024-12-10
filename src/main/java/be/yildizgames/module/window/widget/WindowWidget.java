@@ -45,7 +45,9 @@ public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProv
 
     T setCssStyleClass(String cssClass);
 
-    T setBlinkAnimation(double duration);
+    T playBlinkAnimation(double duration);
+
+    T stopBlinkAnimation();
 
     T setScaleAnimation(AnimationBehavior animation);
 
