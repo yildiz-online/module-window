@@ -1,10 +1,5 @@
 package be.yildizgames.module.window.widget;
 
-import be.yildizgames.module.coordinates.Coordinates;
-import be.yildizgames.module.coordinates.Position;
-import be.yildizgames.module.coordinates.Size;
-import be.yildizgames.module.window.input.MouseOverListener;
-
 import java.util.Optional;
 
 /**
@@ -12,21 +7,26 @@ import java.util.Optional;
  */
 public interface WindowMultiLayerImage extends WindowWidget<WindowMultiLayerImage> {
 
-    WindowMultiLayerImage setCoordinates(Coordinates coordinates);
-
-    WindowMultiLayerImage setPosition(Position position);
-
-    WindowMultiLayerImage setSize(Size size);
-
+    /**
+     * Set the image to display.
+     *
+     * @param url Url of the image to display [not null].
+     * @param layer Layer [>=0].
+     * @return This object for chaining [not null].
+     */
     WindowMultiLayerImage setImage(String url, int layer);
 
+    /**
+     * Get the image associated to the layer.
+     * @param layer Layer [>=0].
+     * @return The image associated to the layer [not null].
+     */
     Optional<WindowImage> getImage(int layer);
 
-    WindowMultiLayerImage addOnMouseOverListener(MouseOverListener l);
-
-    WindowMultiLayerImage toFront();
-
-    WindowMultiLayerImage toBack();
-
+    /**
+     * Force the displayed image ratio to be preserved.
+     *
+     * @return This object for chaining [not null].
+     */
     WindowMultiLayerImage preserveRatio();
 }
