@@ -33,16 +33,35 @@ package be.yildizgames.module.window.widget;
  */
 public interface WindowImage extends WindowWidget<WindowImage> {
 
+    /**
+     * Set the image to display.
+     *
+     * @param url Url of the image to display [not null].
+     * @return This object for chaining [not null].
+     */
     WindowImage setImage(String url);
 
+    /**
+     * Force the displayed image ratio to be preserved.
+     *
+     * @return This object for chaining [not null].
+     */
     WindowImage preserveRatio();
 
+    /**
+     * Add an effect to the image.
+     *
+     * @param effect Effect to apply [not null].
+     * @return This object for chaining [not null].
+     */
     default WindowImage addEffect(ImageEffect effect) {
         return this;
     }
 
     /**
-     * @return The metadata of the loaded image.
+     * Provide the image metadata.
+     *
+     * @return The metadata of the loaded image [not null].
      */
     default ImageMetadata getLoadedImageMetadata() {
         return new ImageMetadata(0, 0);
