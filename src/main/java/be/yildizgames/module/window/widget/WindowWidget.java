@@ -43,28 +43,68 @@ import be.yildizgames.module.window.widget.animation.AnimationBehavior;
  */
 public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProvider, ViewableElement<T> {
 
+    /**
+     * Apply a css class to the widget.
+     * @param cssClass Name of the css class [not null].
+     * @return This object for chaining [not null].
+     */
     T setCssStyleClass(String cssClass);
 
+    /**
+     * Make this widget blinking indefinitely.
+     * @param duration Blinking rate in seconds [> 0].
+     * @return This object for chaining [not null].
+     */
     T playBlinkAnimation(double duration);
 
+    /**
+     * Stop the widget blinking.
+     * @return This object for chaining [not null].
+     */
     T stopBlinkAnimation();
 
+    /**
+     * Prepare the scale animation for the widget with the necessary scale configuration.
+     * @param animation Scale behavior [not null].
+     * @return This object for chaining [not null].
+     */
     T setScaleAnimation(AnimationBehavior animation);
 
+    /**
+     * Scale the widget following the configuration provided by setScaleAnimation.
+     * @return This object for chaining [not null].
+     */
     T playScaleAnimation();
 
+    /**
+     * Stop the scale animation.
+     * @return This object for chaining [not null].
+     */
     T stopScaleAnimation();
 
+    /**
+     * Prepare the translation animation for the widget with the necessary translation configuration.
+     * @param animation Translation behavior [not null].
+     * @return This object for chaining [not null].
+     */
     T setTranslationAnimation(AnimationBehavior animation);
 
+    /**
+     * Translate the widget following the configuration provided by setTranslationAnimation.
+     * @return This object for chaining [not null].
+     */
     T playTranslationAnimation();
 
+    /**
+     * Stop the translation animation.
+     * @return This object for chaining [not null].
+     */
     T stopTranslationAnimation();
 
     /**
      * Set the widget size and position.
      * @param coordinates Widget size and position.
-     * @return This object for chaining.
+     * @return This object for chaining [not null].
      */
     T setCoordinates(Coordinates coordinates);
 
@@ -86,6 +126,10 @@ public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProv
         return this.setSize(FullCoordinates.size(size, size));
     }
 
+    /**
+     * Provide the widget height.
+     * @return The widget height [>= 0].
+     */
     int getHeight();
 
     int getWidth();
