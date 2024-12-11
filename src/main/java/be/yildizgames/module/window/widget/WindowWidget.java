@@ -134,7 +134,7 @@ public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProv
     /**
      * Set the widget opacity.
      *
-     * @param opacity New opacity, 0 is transparent 1 is opaque [>=0] [<=1].
+     * @param opacity New opacity, 0 is transparent 1 is opaque [>=0] [&le;1].
      * @return This object for chaining [not null].
      */
     T setOpacity(float opacity);
