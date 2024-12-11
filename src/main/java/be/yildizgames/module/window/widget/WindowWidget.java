@@ -37,14 +37,15 @@ import be.yildizgames.module.window.widget.animation.AnimationBehavior;
 
 /**
  * Base element with common behavior for the different widgets.
- * @param <T> Widget true type.
  *
+ * @param <T> Widget true type.
  * @author Grégory Van den Borre
  */
 public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProvider, ViewableElement<T> {
 
     /**
      * Apply a css class to the widget.
+     *
      * @param cssClass Name of the css class [not null].
      * @return This object for chaining [not null].
      */
@@ -52,19 +53,22 @@ public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProv
 
     /**
      * Make this widget blinking indefinitely.
-     * @param duration Blinking rate in seconds [> 0].
+     *
+     * @param duration Blinking rate in seconds [>0].
      * @return This object for chaining [not null].
      */
     T playBlinkAnimation(double duration);
 
     /**
      * Stop the widget blinking.
+     *
      * @return This object for chaining [not null].
      */
     T stopBlinkAnimation();
 
     /**
      * Prepare the scale animation for the widget with the necessary scale configuration.
+     *
      * @param animation Scale behavior [not null].
      * @return This object for chaining [not null].
      */
@@ -72,18 +76,21 @@ public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProv
 
     /**
      * Scale the widget following the configuration provided by setScaleAnimation.
+     *
      * @return This object for chaining [not null].
      */
     T playScaleAnimation();
 
     /**
      * Stop the scale animation.
+     *
      * @return This object for chaining [not null].
      */
     T stopScaleAnimation();
 
     /**
      * Prepare the translation animation for the widget with the necessary translation configuration.
+     *
      * @param animation Translation behavior [not null].
      * @return This object for chaining [not null].
      */
@@ -91,111 +98,222 @@ public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProv
 
     /**
      * Translate the widget following the configuration provided by setTranslationAnimation.
+     *
      * @return This object for chaining [not null].
      */
     T playTranslationAnimation();
 
     /**
      * Stop the translation animation.
+     *
      * @return This object for chaining [not null].
      */
     T stopTranslationAnimation();
 
     /**
      * Set the widget size and position.
-     * @param coordinates Widget size and position.
+     *
+     * @param coordinates New widget size and position [not null].
      * @return This object for chaining [not null].
      */
     T setCoordinates(Coordinates coordinates);
 
+    /**
+     * Set the widget size and position.
+     *
+     * @param width  New widget width [>=0].
+     * @param height New widget height [>=0].
+     * @param left   New widget left position [>=0].
+     * @param top    New widget top position [>=0].
+     * @return This object for chaining [not null].
+     */
     default T setCoordinates(int width, int height, int left, int top) {
         return setCoordinates(FullCoordinates.full(width, height, left, top));
     }
 
+    /**
+     * Set the widget opacity.
+     *
+     * @param opacity New opacity, 0 is transparent 1 is opaque [>=0, <=1].
+     * @return This object for chaining [not null].
+     */
     T setOpacity(float opacity);
 
+    /**
+     * Set the widget size.
+     *
+     * @param size New size [>=0].
+     * @return This object for chaining [not null].
+     */
     T setSize(Size size);
 
+    /**
+     * Request the focus for this widget.
+     *
+     * @return This object for chaining [not null].
+     */
     T requestFocus();
 
+    /**
+     * Set the widget size.
+     *
+     * @param width  New width [>=0].
+     * @param height New height [>=0].
+     * @return This object for chaining [not null].
+     */
     default T setSize(int width, int height) {
         return this.setSize(FullCoordinates.size(width, height));
     }
 
+    /**
+     * Set the widget size.
+     *
+     * @param size New size [>=0].
+     * @return This object for chaining [not null].
+     */
     default T setSize(int size) {
         return this.setSize(FullCoordinates.size(size, size));
     }
 
     /**
      * Provide the widget height.
-     * @return The widget height [>= 0].
+     *
+     * @return The widget height [>=0].
      */
     int getHeight();
 
+    /**
+     * Provide the widget width.
+     *
+     * @return The widget width [>=0].
+     */
     int getWidth();
 
+    /**
+     * Set the widget position.
+     *
+     * @param position New position [not null].
+     * @return This object for chaining [not null].
+     */
     T setPosition(Position position);
 
+    /**
+     * Set the widget top position.
+     *
+     * @param top New top position [>=0].
+     * @return This object for chaining [not null].
+     */
     default T setTop(int top) {
         return this.setPosition(FullCoordinates.position(getLeft(), top));
     }
 
+    /**
+     * Set the widget left position.
+     *
+     * @param left New left position [>=0].
+     * @return This object for chaining [not null].
+     */
     default T setLeft(int left) {
         return this.setPosition(FullCoordinates.position(left, getTop()));
     }
 
+    /**
+     * Set the widget position.
+     *
+     * @param left New left position [>=0].
+     * @param top  New top position [>=0].
+     * @return This object for chaining [not null].
+     */
     default T setPosition(int left, int top) {
         return this.setPosition(FullCoordinates.position(left, top));
     }
 
-    default T setPosition(int pos) {
-        return this.setPosition(FullCoordinates.position(pos, pos));
+    /**
+     * Set the widget position.
+     *
+     * @param position New position [>=0].
+     * @return This object for chaining [not null].
+     */
+    default T setPosition(int position) {
+        return this.setPosition(FullCoordinates.position(position, position));
     }
 
     /**
      * Show or hide the widget.
+     *
      * @param visible True will set the widget visible, false will hide it.
-     * @return This object for chaining.
+     * @return This object for chaining [not null].
      */
     T setVisible(boolean visible);
 
     /**
      * Widget left position.
-     * @return the widget left position.
+     *
+     * @return the widget left position [>= 0].
      */
     int getLeft();
 
     /**
      * Widget right position.
-     * @return the widget right position.
+     *
+     * @return the widget right position [>= 0].
      */
     int getRight();
 
     /**
      * Widget top position.
-     * @return the widget top position.
+     *
+     * @return the widget top position [>= 0].
      */
     int getTop();
 
     /**
      * Widget bottom position.
-     * @return the widget bottom position.
+     *
+     * @return the widget bottom position [>= 0].
      */
     int getBottom();
 
-    default T addOnMouseOverListener(MouseOverListener l) {
-        return (T)this;
+    /**
+     * Add a mouse over listener on this widget.
+     *
+     * @param listener Listener triggered the the mouse is over the widget [not null].
+     * @return This object for chaining [not null].
+     */
+    default T addOnMouseOverListener(MouseOverListener listener) {
+        return (T) this;
     }
 
+    /**
+     * Fire an event from this widget.
+     *
+     * @param event Event to fire [not null].
+     * @return This object for chaining [not null].
+     */
     default T fireEvent(WidgetEvent event) {
         return (T) this;
     }
 
+    /**
+     * Provide the focus state.
+     *
+     * @return True if the widget is focused, false otherwise.
+     */
     default boolean isFocused() {
         return false;
     }
 
+    /**
+     * Put the widget in 'above' the others.
+     *
+     * @return This object for chaining [not null].
+     */
     T toFront();
 
+    /**
+     * Put the widget in 'under' the others.
+     *
+     * @return This object for chaining [not null].
+     */
     T toBack();
 }
