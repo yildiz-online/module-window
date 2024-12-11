@@ -37,26 +37,69 @@ public interface WindowTextLine extends WindowWidget<WindowTextLine> {
 
     /**
      * Update the text in the text line.
-     * @param text New text to set.
-     * @return This object.
+     *
+     * @param text New text to set [not null].
+     * @return This object for chaining [not null].
      */
     WindowTextLine setText(String text);
 
+    /**
+     * Set the text to be wrapped.
+     *
+     * @return This object for chaining [not null].
+     */
     default WindowTextLine wrapText() {
         return this;
     }
 
+    /**
+     * Update the color of the text in the text line.
+     *
+     * @param color New color to set [not null].
+     * @return This object for chaining [not null].
+     */
     WindowTextLine setColor(Color color);
 
+    /**
+     * Provide the textline content.
+     *
+     * @return The text line content [not null].
+     */
     String getText();
 
+    /**
+     * set or unset the text being underlined.
+     *
+     * @param active True will set the text underlined, false will unset it.
+     * @return This object for chaining [not null].
+     */
     WindowTextLine setUnderline(boolean active);
 
+    /**
+     * Align the text in the text line.
+     *
+     * @param alignment Alignment to use [not null].
+     * @return This object for chaining [not null].
+     */
     default WindowTextLine alignText(TextAlignment alignment) {
         return this;
     }
 
+    /**
+     * Update the font in the text line.
+     *
+     * @param font New font to set [not null].
+     * @return This object for chaining [not null].
+     */
     WindowTextLine setFont(WindowFont font);
+
+    /**
+     * Update the font in the text line.
+     *
+     * @param path   New font to set path [not null].
+     * @param height New font to set height [&gt;0].
+     * @return This object for chaining [not null].
+     */
     WindowTextLine setFont(String path, int height);
 
     public enum TextAlignment {
