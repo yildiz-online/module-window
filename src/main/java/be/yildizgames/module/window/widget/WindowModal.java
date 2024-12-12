@@ -36,23 +36,25 @@ public interface WindowModal {
 
     /**
      * Add a listener to be invoked when the button is clicked on.
-     * @param l Listener to invoke.
-     * @return This object for chaining.
+     *
+     * @param l Listener to invoke [not null].
+     * @return This object for chaining [not null].
      */
     WindowModal addMouseLeftClickListener(MouseLeftClickListener l);
 
     /**
      * Set the modal window title.
-     * @param title Title to set.
-     * @return This object for chaining.
+     *
+     * @param title Title to set [not null].
+     * @return This object for chaining [not null].
      */
     WindowModal setTitle(String title);
 
     /**
      * Set the modal window text.
-     * @param text Text to set.
-     * @return This object for chaining.
+     *
+     * @param text Text to set [not null].
+     * @return This object for chaining [not null].
      */
     WindowModal setText(String text);
-
 }
