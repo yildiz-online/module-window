@@ -104,9 +104,6 @@ public final class Color implements Serializable {
     /**
      * Red value, must be between 0 and 1.
      */
-    //FIXME export in a separate class to avoid computing when not required
-    //Create an instance of the new class in the code using it(ogre, javafx,...)
-    //The user of the color class must not know about this new class, it is internal
     public final float normalizedRedValue;
 
     /**

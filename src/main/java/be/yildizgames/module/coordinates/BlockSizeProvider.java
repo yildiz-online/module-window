@@ -11,6 +11,10 @@ import be.yildizgames.module.window.screen.ScreenRatio;
 
 class BlockSizeProvider {
 
+    private BlockSizeProvider() {
+        super();
+    }
+
     static BlockSize getBlockSize(Coordinates coordinates) {
         return switch (ScreenRatio.compute(coordinates.getWidth(), coordinates.getHeight())) {
             case RATIO_16_9 -> new BlockSize(Math.round(coordinates.getWidth() / 15f), Math.round(coordinates.getHeight() / 12f), 15, 12);
