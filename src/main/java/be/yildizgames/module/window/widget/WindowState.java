@@ -44,4 +44,6 @@ public interface WindowState extends WindowWidgetCreator {
 
     Optional<WindowInputBox> findInputBox(String id);
 
+    String getId();
+
 }
