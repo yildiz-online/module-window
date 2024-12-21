@@ -3,7 +3,7 @@ package be.yildizgames.module.window.widget;
 /**
  * @author Grégory Van den Borre
  */
-public interface TileLayout<T extends WindowWidget<T>> {
+public interface TileLayout<T extends WindowWidget<T>> extends WindowWidget<TileLayout<T>>{
 
     void addItem(T image);
 
