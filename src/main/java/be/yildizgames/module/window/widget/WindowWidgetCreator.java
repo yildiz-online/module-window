@@ -69,4 +69,6 @@ public interface WindowWidgetCreator {
     WindowShell getWindow();
 
     WindowMultiLayerImage createMultiLayerImage();
+
+    VerticalLayout createVerticalLayout();
 }
