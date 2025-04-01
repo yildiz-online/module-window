@@ -1,6 +1,7 @@
+
 /*
  This file is part of the Yildiz-Engine project, licenced under the MIT License  (MIT)
- Copyright (c) 2018-2023 Grégory Van den Borre
+ Copyright (c) 2025 Grégory Van den Borre
  More infos available: https://engine.yildiz-games.be
  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
  documentation files (the "Software"), to deal in the Software without restriction, including without limitation
@@ -13,22 +14,36 @@
  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-open module be.yildizgames.module.window {
+package be.yildizgames.module.window.widget.experimental;
 
-    uses be.yildizgames.module.window.WindowEngineProvider;
+import java.util.Arrays;
+import java.util.List;
 
-    requires be.yildizgames.common.util;
-    requires java.desktop;
+/**
+ * @author Grégory Van den Borre
+ */
+class EmailQwertyKeyboardLayout extends BaseEmailKeyboardLayout {
 
-    exports be.yildizgames.module.color;
-    exports be.yildizgames.module.coordinates;
-    exports be.yildizgames.module.window;
-    exports be.yildizgames.module.window.util.image;
-    exports be.yildizgames.module.window.widget;
-    exports be.yildizgames.module.window.input;
-    exports be.yildizgames.module.window.audio;
-    exports be.yildizgames.module.window.widget.animation;
-    exports be.yildizgames.module.window.widget.experimental;
-    exports be.yildizgames.module.window.screen;
-    exports be.yildizgames.module.window.widget.keyboard;
+    EmailQwertyKeyboardLayout() {
+        super(new KeyboardLayoutKey[][]{
+                {
+                        EXCLAMATION, INTERROGATION, PLUS, MINUS, STAR, SLASH, EQUALS, AMP, DOLLAR
+                },
+                {
+                        _1, _2, _3, _4, _5, _6, _7, _8, _9, _0
+                },
+                {
+                        Q, W, E, R, T, Y, U, I, O, P
+                },
+                {
+                        A, S, D, F, G, H, J, K, L
+                },
+                {
+                        Z, X, C, V, B, N, M
+                },
+                {
+                    AT, SPACE, PERIOD
+                }
+        });
+    }
 }

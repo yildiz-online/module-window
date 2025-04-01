@@ -16,18 +16,13 @@
 
 package be.yildizgames.module.window.widget.experimental;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @author Grégory Van den Borre
  */
-public class SimpleQwertyKeyboardLayout extends SimpleKeyboardLayout {
+class SimpleQwertyKeyboardLayout extends BaseSimpleKeyboardLayout {
 
-    private final KeyboardLayoutKey[][] keys;
-
-    public SimpleQwertyKeyboardLayout() {
-        this.keys = new KeyboardLayoutKey[][]{
+    SimpleQwertyKeyboardLayout() {
+        super(new KeyboardLayoutKey[][]{
                 {
                         _1, _2, _3, _4, _5, _6, _7, _8, _9, _0
                 },
@@ -43,22 +38,6 @@ public class SimpleQwertyKeyboardLayout extends SimpleKeyboardLayout {
                 {
                     SPACE
                 }
-        };
-    }
-
-    public final int getNumberOfRows() {
-        return 5;
-    }
-
-    public int getNumberOfKeyForRow(int row) {
-        return this.keys[row].length;
-    }
-
-    public KeyboardLayoutKey getKey(int column, int key) {
-        return this.keys[column][key];
-    }
-
-    public List<KeyboardLayoutKey> getKeys() {
-        return Arrays.stream(this.keys).flatMap(Arrays::stream).toList();
+        });
     }
 }

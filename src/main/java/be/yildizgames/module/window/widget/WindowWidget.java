@@ -189,6 +189,10 @@ public interface WindowWidget<T extends WindowWidget<T>> extends CoordinatesProv
      */
     int getWidth();
 
+    default Size getDimensions() {
+        return FullCoordinates.size(getWidth(), getHeight());
+    }
+
     /**
      * Set the widget position.
      *

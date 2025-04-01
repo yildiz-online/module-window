@@ -29,9 +29,9 @@ import be.yildizgames.module.window.input.Key;
 /**
  * @author Grégory Van den Borre
  */
-public record KeyboardLayoutKey(String unshifted, String shifted, Key code) {
+public record KeyboardLayoutKey(String unShifted, String shifted, Key code) {
 
     public boolean isLetter() {
-        return this.unshifted.length() == 1 && Character.isLetter(this.unshifted.charAt(0));
+        return this.unShifted.length() == 1 && Character.isLetter(this.unShifted.charAt(0));
     }
 }

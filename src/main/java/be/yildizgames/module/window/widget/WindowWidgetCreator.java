@@ -2,7 +2,8 @@ package be.yildizgames.module.window.widget;
 
 import be.yildizgames.module.coordinates.Coordinates;
 import be.yildizgames.module.window.input.KeyboardListener;
-import be.yildizgames.module.window.widget.experimental.VirtualKeyboard;
+import be.yildizgames.module.window.widget.keyboard.KeyboardLayout;
+import be.yildizgames.module.window.widget.keyboard.VirtualKeyboard;
 
 public interface WindowWidgetCreator {
 
@@ -40,7 +41,7 @@ public interface WindowWidgetCreator {
 
     WindowMediaPlayer createMediaPlayer();
 
-    VirtualKeyboard createVirtualKeyboard(KeyboardListener listener);
+    VirtualKeyboard createVirtualKeyboard(KeyboardLayout layout, KeyboardListener listener);
 
     WindowNotificationPane createNotificationPane();
 
