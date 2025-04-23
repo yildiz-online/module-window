@@ -38,7 +38,7 @@ public interface KeyboardLayout {
     /**
      * This provides the number of keys on a specific row on this keyboard.
      *
-     * @param row Row number to use. (>=0 and < getNumberOfRows())
+     * @param row Row number to use. (>=0 and smaller than getNumberOfRows())
      * @return How many keys are on the given row on this keyboard. (>=0)
      */
     int getNumberOfKeyForRow(int row);
@@ -46,7 +46,7 @@ public interface KeyboardLayout {
     /**
      * Retrieve the key position on a given row and key.
      *
-     * @param row Row number to use. (>=0 and < getNumberOfRows())
+     * @param row Row number to use. (>=0 and smaller than getNumberOfRows())
      * @param key Key number to use. (>=0 and getNumberOfKeyForRow(int row))
      * @return The found key. (not null)
      */
