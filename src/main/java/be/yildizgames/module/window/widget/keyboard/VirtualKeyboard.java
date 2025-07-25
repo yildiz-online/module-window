@@ -17,7 +17,6 @@
 package be.yildizgames.module.window.widget.keyboard;
 
 import be.yildizgames.module.color.Color;
-import be.yildizgames.module.coordinates.Size;
 import be.yildizgames.module.window.input.Key;
 import be.yildizgames.module.window.input.KeyboardListener;
 import be.yildizgames.module.window.widget.WindowWidget;
@@ -40,6 +39,8 @@ public interface VirtualKeyboard extends WindowWidget<VirtualKeyboard> {
     VirtualKeyboard setBackground(Color color);
 
     KeyboardLayout getLayout();
+
+    VirtualKeyboard setLayout(KeyboardLayout layout);
 
     VirtualKeyboard shift(boolean enabled);
 
